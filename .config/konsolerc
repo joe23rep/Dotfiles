@@ -1,0 +1,12 @@
+[DownloadDialog Settings]
+Height 1080=485
+Width 1920=700
+
+[MainWindow]
+Height 1080=631
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAPQAAAABAAAAAQAAAAIAAAACPwAAAAA
+Width 1920=1178
+Window-Maximized 1080x1920=true
+
+[Notification Messages]
+CloseAllTabs=true

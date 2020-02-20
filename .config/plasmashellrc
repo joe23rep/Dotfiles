@@ -1,0 +1,76 @@
+[DownloadDialog Settings]
+Height 1080=499
+Width 1920=700
+
+[FileDialogSize]
+Height 1080=678
+Width 1920=1236
+
+[KFileDialog Settings]
+Recent Files[$e]=92i1iwdgvq601.jpg,file:$HOME/.local/share/icons/korla/actions/system-shutdown-symbolic.svg,file:$HOME/Pictures/Wallpapers/tokyo-wallpaper-hd-2560x1440-485030.jpg,file:$HOME/Pictures/Wallpapers/tumblr_nb1oin4x9v1rbcubso1_1280.jpg,file:$HOME/Pictures/Wallpapers/psdn8u743pbz.jpg,file:$HOME/Pictures/Wallpapers/Polar-Lights-Wallpaper-15.jpg,file:$HOME/Pictures/Wallpapers/light_sky_stars_background_85555_1920x1080.jpg,file:$HOME/Pictures/Wallpapers/deer-digital-art-4k-wz.jpg,file:$HOME/Pictures/Wallpapers/1702491-1920x1080-[DesktopNexus.com].jpg,file:$HOME/Pictures/Wallpapers/backgrou.jpg,file:$HOME/Pictures/Wallpapers/japan.jpg,file:$HOME/Pictures/Wallpapers/aurora-lights-wallpaper-3 (1).jpg,file:$HOME/.local/share/icons/korla/actions/icon.svg,file:$HOME/.local/share/icons/korla/actions/scalable/burst.svg
+Recent URLs[$e]=file:$HOME/.local/share/icons/korla/actions/
+detailViewIconSize=0
+
+[PlasmaRunnerManager]
+LaunchCounts=1 services_org.kde.latte-dock.desktop,3 services_kvantummanager.desktop,1 services_deepin-picker.desktop
+pluginWhiteList=services,shell,bookmarks,baloosearch,locations
+
+[PlasmaViews][Panel 1][Horizontal1024]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1152]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1200]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1280]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1366]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1440]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1600]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1680]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1900]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1916]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal1920]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal2048]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal800]
+thickness=45
+
+[PlasmaViews][Panel 1][Horizontal864]
+thickness=45
+
+[PlasmaViews][Panel 115][Defaults]
+thickness=30
+
+[PlasmaViews][Panel 48][Defaults]
+thickness=27
+
+[PlasmaViews][Panel 48][Horizontal1920]
+thickness=27
+
+[PlasmaViews][Panel 88][Defaults]
+thickness=30
+
+[ScreenConnectors]
+0=eDP
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js

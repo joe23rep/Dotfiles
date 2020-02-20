@@ -1,0 +1,37 @@
+[DownloadDialog Settings]
+Height 1080=550
+Width 1920=800
+
+[FileDialogSize]
+Height 1080=480
+Width 1920=1007
+
+[KFileDialog Settings]
+Recent Files[$e]=system-shutdown-symbolic.svg,file:$HOME/.local/share/icons/korla/actions/system-shutdown-symbolic.svg
+Recent URLs[$e]=file:$HOME/.local/share/icons/korla/actions/
+detailViewIconSize=0
+
+[PlasmaRunnerManager]
+LaunchCounts=
+
+[PlasmaThemeExtended]
+outlineWidth=1
+
+[ScreenConnectors]
+10=eDP
+
+[UniversalSettings]
+badges3DStyle=false
+canDisableBorders=false
+currentLayout=Plasma
+downloadWindowSize=800,550
+lastNonAssignedLayout=Plasma
+launchers=applications:org.manjaro.pamac.manager.desktop,applications:com.gexperts.Tilix.desktop,applications:systemsettings.desktop,applications:spotify.desktop,applications:thunderbird.desktop,applications:instagram.desktop,applications:inkscape.desktop,applications:firefox-developer-edition.desktop,applications:org.kde.dolphin.desktop,applications:org.kde.kate.desktop,applications:tusk.desktop,applications:org.kde.gwenview.desktop,applications:kodi.desktop,applications:kazam.desktop,applications:org.gnome.Nautilus.desktop,applications:timeshift-gtk.desktop,applications:code-oss.desktop
+layoutsColumnWidths=120,78,68,0
+layoutsWindowSize=700,562
+memoryUsage=0
+metaPressAndHoldEnabled=true
+mouseSensitivity=2
+screenTrackerInterval=2500
+showInfoWindow=true
+version=1

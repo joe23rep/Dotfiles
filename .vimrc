@@ -5,7 +5,6 @@
 " |  __/| | |_| | (_| | | | | \__ \
 " |_|   |_|\__,_|\__, |_|_| |_|___/
 "                |___/
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
@@ -58,7 +57,7 @@ call plug#end()
 set nocompatible
 
 " No grey left border
-set signcolumn=no
+" set signcolumn=no
 
 " Turn on syntax highlighting
 syntax on

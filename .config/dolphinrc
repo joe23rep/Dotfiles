@@ -1,0 +1,68 @@
+Height 1080=1050
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAADHAAAD9/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAmAAAD9wAAAFoBAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAHgAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAAAAAHgAAAAAoBAAADAAAGuAAAA/cAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+Width 1920=1920
+Window-Maximized 1080x1920=true
+
+[CompactMode]
+FontWeight=50
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[DetailsMode]
+FontWeight=50
+
+[Favorite Profiles]
+Favorites=
+
+[General]
+ConfirmClosingMultipleTabs=false
+ConfirmClosingTerminalRunningProgram=false
+GlobalViewProps=false
+ShowSpaceInfo=false
+UseTabForSwitchingSplitView=true
+Version=200
+ViewPropsTimestamp=2019,10,15,5,8,32
+
+[IconsMode]
+FontWeight=50
+IconSize=144
+MaximumTextLines=2
+PreviewSize=144
+
+[KPropertiesDialog]
+Height 1080=557
+Width 1920=515
+
+[MainWindow]
+Height 1080=1050
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAADHAAADHvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAA9AAADHgAAAFoBAAADAAAAAQAAALgAAAMh/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAD0AAAMhAAAACgEAAAMAAAADAAAHgAAAAL78AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawEAAAAAAAAHgAAAAJEBAAADAAAGuAAAAx4AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1920=1920
+Window-Maximized 1080x1920=true
+
+[Notification Messages]
+ConfirmDelete=true
+ShowPasteUnprintableWarning=true
+
+[Open-with settings]
+CompletionMode=1
+History=neo,cut
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,resvgthumbnailer,ffmpegthumbs
+
+[Search]
+ShowFacetsWidget=true
+
+[SettingsDialog]
+Height 1080=449
+Width 1920=613
+
+[Toolbar mainToolBar]
+ToolButtonStyle=TextBesideIcon
+
+[VersionControl]
+enabledPlugins=Dropbox,Git

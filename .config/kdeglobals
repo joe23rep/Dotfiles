@@ -1,0 +1,208 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar
+
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+Enable=
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=5,5,27
+BackgroundNormal=5,5,30
+DecorationFocus=0,65,98
+DecorationHover=0,65,98
+ForegroundActive=0,255,127
+ForegroundInactive=156,156,156
+ForegroundLink=37,204,247
+ForegroundNegative=0,255,255
+ForegroundNeutral=255,85,255
+ForegroundNormal=161,180,186
+ForegroundPositive=85,255,255
+ForegroundVisited=170,85,255
+
+[Colors:Complementary]
+BackgroundAlternate=5,5,27
+BackgroundNormal=5,5,27
+DecorationFocus=30,146,255
+DecorationHover=61,174,230
+ForegroundActive=246,116,0
+ForegroundInactive=175,176,179
+ForegroundLink=61,174,230
+ForegroundNegative=237,21,21
+ForegroundNeutral=201,206,59
+ForegroundNormal=239,240,241
+ForegroundPositive=17,209,22
+ForegroundVisited=61,174,230
+
+[Colors:Selection]
+BackgroundAlternate=29,153,243
+BackgroundNormal=0,0,67
+DecorationFocus=0,65,98
+DecorationHover=0,65,98
+ForegroundActive=0,255,127
+ForegroundInactive=170,255,255
+ForegroundLink=37,204,247
+ForegroundNegative=0,255,255
+ForegroundNeutral=255,85,255
+ForegroundNormal=0,255,159
+ForegroundPositive=85,255,255
+ForegroundVisited=170,85,255
+
+[Colors:Tooltip]
+BackgroundAlternate=5,5,27
+BackgroundNormal=4,2,18
+DecorationFocus=0,65,98
+DecorationHover=0,65,98
+ForegroundActive=0,255,127
+ForegroundInactive=156,156,156
+ForegroundLink=37,204,247
+ForegroundNegative=0,255,255
+ForegroundNeutral=255,85,255
+ForegroundNormal=161,180,186
+ForegroundPositive=85,255,255
+ForegroundVisited=170,85,255
+
+[Colors:View]
+BackgroundAlternate=5,5,27
+BackgroundNormal=4,2,18
+DecorationFocus=0,65,98
+DecorationHover=0,65,98
+ForegroundActive=0,255,127
+ForegroundInactive=156,156,156
+ForegroundLink=37,204,247
+ForegroundNegative=0,255,255
+ForegroundNeutral=255,85,255
+ForegroundNormal=161,180,186
+ForegroundPositive=85,255,255
+ForegroundVisited=170,85,255
+
+[Colors:Window]
+BackgroundAlternate=5,5,27
+BackgroundNormal=4,2,18
+DecorationFocus=0,65,98
+DecorationHover=0,65,98
+ForegroundActive=0,255,127
+ForegroundInactive=156,156,156
+ForegroundLink=37,204,247
+ForegroundNegative=0,255,255
+ForegroundNeutral=255,85,255
+ForegroundNormal=161,180,186
+ForegroundPositive=85,255,255
+ForegroundVisited=170,85,255
+
+[DirSelect Dialog]
+DirSelectDialog Size=1092,809
+History Items[$e]=file:$HOME/Downloads/Carl,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Layan,file:$HOME/Downloads/Sweet-transparent-toolbar,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Sweet-transparent-toolbar,file:$HOME/Downloads/Sweet-transparent-toolbar,file:$HOME/Downloads/Sweet-transparent-toolbar,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Carl2,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Dubby,file:$HOME/Downloads/Carl,file:$HOME/Downloads/Dubby,file:$HOME/Downloads/dubby,file:$HOME/Downloads/McMojave,file:$HOME/Downloads/Layan,file:$HOME/Downloads/KvGlassManjaro,file:$HOME/Downloads/Carl,file:$HOME/Downloads/FlatBlur-Green,file:$HOME/Downloads/Sweet-transparent-toolbar
+
+[General]
+BrowserApplication[$e]=!firefox-developer-edition
+ColorScheme=NecroLightBg
+Name=necro-light-bg
+TerminalApplication=tilix
+XftHintStyle=hintslight
+XftSubPixel=rgb
+dbfile=/home/joe/.mozilla/firefox/h75u1z1z.default/places.sqlite
+fixed=Bitstream Vera Sans,9,-1,5,50,0,0,0,0,0,Roman
+font=SF Compact Text,11,-1,5,50,0,0,0,0,0,Regular
+menuFont=SF Compact Text,11,-1,5,50,0,0,0,0,0,Regular
+shadeSortColumn=true
+smallestReadableFont=SF Compact Text,10,-1,5,50,0,0,0,0,0,Regular
+toolBarFont=SF Compact Text,11,-1,5,50,0,0,0,0,0,Regular
+
+[Icons]
+Theme=korla
+
+[KDE]
+LookAndFeelPackage=Necro
+ShowDeleteCommand=true
+ShowIconsInMenuItems=true
+ShowIconsOnPushButtons=true
+SingleClick=true
+contrast=4
+widgetStyle=breeze
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Preview Width=284
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=true
+Show Speedbar=true
+Show hidden files=true
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+Speedbar Width=203
+View Style=DetailTree
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[PreviewSettings]
+MaximumRemoteSize=0
+
+[Shortcuts]
+Activate Next Tab=Ctrl+]
+Activate Previous Tab=Ctrl+[
+ActualSize=
+AddBookmark=
+Back=Back
+BackwardWord=
+Begin=
+BeginningOfLine=
+Close=Ctrl+Esc
+Copy=Ctrl+Y; Ctrl+C
+DeleteFile=Shift+Del;\s
+Deselect=
+DocumentBack=
+Forward=Shift+Right; Forward
+ForwardWord=
+FullScreen=
+GotoLine=
+Paste=Ctrl+P; Ctrl+V
+Preferences=
+Print=
+Redo=Shift+U
+ShowMenubar=
+SubstringCompletion=
+TextCompletion=
+Undo=Ctrl+Z;\s
+WhatsThis=
+
+[Toolbar style]
+ToolButtonStyle=TextUnderIcon
+ToolButtonStyleOtherToolbars=TextUnderIcon
+
+[WM]
+activeBackground=4,2,18
+activeBlend=4,2,18
+activeFont=SF Compact Text,11,-1,5,50,0,0,0,0,0,Regular
+activeForeground=4,2,18
+frame=0,0,0
+inactiveBackground=4,2,18
+inactiveBlend=4,2,18
+inactiveForeground=4,2,18
+inactiveFrame=0,0,0

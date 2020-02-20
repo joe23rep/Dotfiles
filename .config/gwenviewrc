@@ -1,0 +1,53 @@
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAP3AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+Window-Maximized 1080x1920=true
+
+[$Version]
+update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update,gwenview.upd:DeleteThumbnailSetting_Rename
+
+[General]
+ViewBackgroundValue=0
+
+[ImageView]
+AlphaBackgroundColor=4,2,18
+AlphaBackgroundMode=AbstractImageView::AlphaBackgroundSolid
+
+[MainWindow]
+Height 1080=1050
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAPdAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1920
+Window-Maximized 1080x1920=true
+
+[Notification Messages]
+SynchronizeCopyCtrl+Y=false
+
+[Recent Files]
+File1[$e]=$HOME/Pictures/UnixPorn/u2itqo7cwnu31.png
+File10[$e]=$HOME/Pictures/UnixPorn/of28zkwek4w31.png
+File2[$e]=$HOME/Pictures/UnixPorn/tmmklq6z5lg21.png
+File3[$e]=$HOME/Pictures/UnixPorn/tim3ujecz5w31.png
+File4[$e]=$HOME/Pictures/UnixPorn/Screenshot_2019-11-15 Instagram photo by brett_james_ling • Nov 14, 2019 at 2 55 AM.png
+File5[$e]=$HOME/Pictures/UnixPorn/rh3n3dxby8fy.png
+File6[$e]=$HOME/Pictures/UnixPorn/rGAqlBr.png
+File7[$e]=$HOME/Pictures/UnixPorn/ra8xyza9ioa31.png
+File8[$e]=$HOME/Pictures/UnixPorn/ptgu3oz33mg31.png
+File9[$e]=$HOME/Pictures/UnixPorn/ojv3rfwdna431.png
+Name1[$e]=u2itqo7cwnu31.png
+Name10[$e]=of28zkwek4w31.png
+Name2[$e]=tmmklq6z5lg21.png
+Name3[$e]=tim3ujecz5w31.png
+Name4[$e]=Screenshot_2019-11-15 Instagram photo by brett_james_ling • Nov 14, 2019 at 2 55 AM.png
+Name5[$e]=rh3n3dxby8fy.png
+Name6[$e]=rGAqlBr.png
+Name7[$e]=ra8xyza9ioa31.png
+Name8[$e]=ptgu3oz33mg31.png
+Name9[$e]=ojv3rfwdna431.png
+
+[SideBar]
+IsVisible BrowseMode=false
+SideBarSplitterSizes=242,1675
+
+[Toolbar mainToolBar]
+ToolButtonStyle=TextBesideIcon
