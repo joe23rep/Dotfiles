@@ -32,11 +32,13 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'amix/open_file_under_cursor.vim' "gf to open file under cursor
 Plug 'maxbrunsfeld/vim-yankstack' "meta p to go backwards in paste history / meta Shift p to go forward
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'tpope/vim-fugitive'
 " Plug 'mattn/emmet-vim'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
+ "test"
 
 " Brief help
 " :PlugInstall		- installs plugins; append `!` to update or just :PluginUpdate
@@ -655,4 +657,4 @@ command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 source ~/.vim/config/coc.vim
 source ~/.vim/config/nerdtree.vim
 
-
+"test
