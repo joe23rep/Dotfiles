@@ -32,13 +32,11 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'amix/open_file_under_cursor.vim' "gf to open file under cursor
 Plug 'maxbrunsfeld/vim-yankstack' "meta p to go backwards in paste history / meta Shift p to go forward
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'tpope/vim-fugitive'
 " Plug 'mattn/emmet-vim'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
- "test"
 
 " Brief help
 " :PlugInstall		- installs plugins; append `!` to update or just :PluginUpdate
@@ -108,6 +106,9 @@ set hidden
 " Always show Statusbar
 set laststatus=2
 
+"stops suggestion window being to wide
+set linebreak
+
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
 set matchpairs+=<:>
 
@@ -148,6 +149,9 @@ set splitbelow splitright
 
 " Automatically remove whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" Automatically switch vim to CWD
+autocmd BufEnter * lcd %:p:h
 
 " Visual autocomplete for command menu
 set wildmenu
@@ -362,9 +366,9 @@ let g:UltiSnipsExpandTrigger="<C-Space>"
 " Nerdtree-----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
-nmap <C-n> :NERDTreeToggle<CR>
-vmap <C-n> <esc>:NERDTReeToggle<CR>
-imap <C-n> <esc>:NERDTReeToggle<CR>
+nmap <C-n> :NERDTreeToggle %<CR>
+vmap <C-n> <esc>:NERDTreeToggle %<CR>
+imap <C-n> <esc>:NERDTreeToggle %<CR>
 
 
 " Auto Close Tag-----------------------------------------------
@@ -397,9 +401,6 @@ let maplocalleader = ','
 
 " Open nerdtree in cwd
 nmap <leader>nn :NERDTreeFind<CR>
-
-" Reload nerdtree
-nmap <leader>nr :NERDTreeFocus<cr>R<c-w><c-p>
 
 " Map leader q to quit without saving
 nmap <leader>q :q!<CR>

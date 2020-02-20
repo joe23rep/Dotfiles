@@ -17,9 +17,9 @@ XRenderSmoothScale=false
 Id_1=f2e2efc9-4ae6-45d8-8069-67964af90b55
 Id_2=b3236006-db2b-497a-989b-a9552fd9a20d
 Id_3=3d34bf47-45bd-48de-b2fe-fbc3eb3d20f8
-Id_4=2d01814d-76aa-4696-95fe-80a25dd7e830
-Id_5=705398a9-7274-428b-b288-a029ebb8238e
-Number=5
+Id_4=4fe64bd7-7cb0-414a-9fd0-cb6add7b304e
+Id_5[$d]
+Number=4
 Rows=1
 
 [Effect-Blur]

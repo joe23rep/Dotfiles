@@ -25,7 +25,7 @@ IntensityEffect=0
 
 [Colors:Button]
 BackgroundAlternate=5,5,27
-BackgroundNormal=5,5,30
+BackgroundNormal=12,12,12
 DecorationFocus=0,65,98
 DecorationHover=0,65,98
 ForegroundActive=0,255,127
@@ -53,7 +53,7 @@ ForegroundVisited=61,174,230
 
 [Colors:Selection]
 BackgroundAlternate=29,153,243
-BackgroundNormal=0,0,67
+BackgroundNormal=0,0,40
 DecorationFocus=0,65,98
 DecorationHover=0,65,98
 ForegroundActive=0,255,127
@@ -67,7 +67,7 @@ ForegroundVisited=170,85,255
 
 [Colors:Tooltip]
 BackgroundAlternate=5,5,27
-BackgroundNormal=4,2,18
+BackgroundNormal=0,0,0
 DecorationFocus=0,65,98
 DecorationHover=0,65,98
 ForegroundActive=0,255,127
@@ -81,7 +81,7 @@ ForegroundVisited=170,85,255
 
 [Colors:View]
 BackgroundAlternate=5,5,27
-BackgroundNormal=4,2,18
+BackgroundNormal=0,0,0
 DecorationFocus=0,65,98
 DecorationHover=0,65,98
 ForegroundActive=0,255,127
@@ -95,7 +95,7 @@ ForegroundVisited=170,85,255
 
 [Colors:Window]
 BackgroundAlternate=5,5,27
-BackgroundNormal=4,2,18
+BackgroundNormal=0,0,0
 DecorationFocus=0,65,98
 DecorationHover=0,65,98
 ForegroundActive=0,255,127
@@ -113,7 +113,7 @@ History Items[$e]=file:$HOME/Downloads/Carl,file:$HOME/Downloads/Carl,file:$HOME
 
 [General]
 BrowserApplication[$e]=!firefox-developer-edition
-ColorScheme=NecroLightBg
+ColorScheme=NecroDarkBg2
 Name=necro-light-bg
 TerminalApplication=tilix
 XftHintStyle=hintslight
@@ -197,12 +197,12 @@ ToolButtonStyle=TextUnderIcon
 ToolButtonStyleOtherToolbars=TextUnderIcon
 
 [WM]
-activeBackground=4,2,18
-activeBlend=4,2,18
+activeBackground=0,0,0
+activeBlend=0,0,0
 activeFont=SF Compact Text,11,-1,5,50,0,0,0,0,0,Regular
-activeForeground=4,2,18
+activeForeground=0,0,0
 frame=0,0,0
-inactiveBackground=4,2,18
-inactiveBlend=4,2,18
-inactiveForeground=4,2,18
+inactiveBackground=0,0,0
+inactiveBlend=0,0,0
+inactiveForeground=0,0,0
 inactiveFrame=0,0,0

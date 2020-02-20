@@ -223,7 +223,6 @@ alias mux="tmuxinator start launch launch ~/.tmuxinator/launch.yml"
 alias github="cd /home/joe/Github"
 alias vim="nvim"
 
-
 #  ____                        _                _ _  ___  _
 # |  _ \ _____      _____ _ __| | _____   _____| / |/ _ \| | __
 # | |_) / _ \ \ /\ / / _ \ '__| |/ _ \ \ / / _ \ | | | | | |/ /

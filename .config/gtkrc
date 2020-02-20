@@ -1,4 +1,4 @@
-# created by KDE Plasma, Wed Feb 19 23:10:20 2020
+# created by KDE Plasma, Thu Feb 20 01:25:44 2020
 #
 # If you do not want Plasma to override your GTK settings, select
 # Colors in the System Settings and disable the checkbox
@@ -7,27 +7,27 @@
 #
 style "default"
 {
-  bg[NORMAL] = { 0.016, 0.008, 0.071 }
-  bg[SELECTED] = { 0.000, 0.000, 0.263 }
-  bg[INSENSITIVE] = { 0.016, 0.008, 0.071 }
-  bg[ACTIVE] = { 0.247, 0.169, 0.961 }
-  bg[PRELIGHT] = { 0.016, 0.008, 0.071 }
+  bg[NORMAL] = { 0.000, 0.000, 0.000 }
+  bg[SELECTED] = { 0.000, 0.000, 0.157 }
+  bg[INSENSITIVE] = { 0.000, 0.000, 0.000 }
+  bg[ACTIVE] = { 0.333, 0.333, 0.333 }
+  bg[PRELIGHT] = { 0.000, 0.000, 0.000 }
 
-  base[NORMAL] = { 0.016, 0.008, 0.071 }
-  base[SELECTED] = { 0.000, 0.000, 0.263 }
-  base[INSENSITIVE] = { 0.016, 0.008, 0.071 }
-  base[ACTIVE] = { 0.000, 0.000, 0.263 }
-  base[PRELIGHT] = { 0.000, 0.000, 0.263 }
+  base[NORMAL] = { 0.000, 0.000, 0.000 }
+  base[SELECTED] = { 0.000, 0.000, 0.157 }
+  base[INSENSITIVE] = { 0.000, 0.000, 0.000 }
+  base[ACTIVE] = { 0.000, 0.000, 0.157 }
+  base[PRELIGHT] = { 0.000, 0.000, 0.157 }
 
   text[NORMAL] = { 0.631, 0.706, 0.729 }
   text[SELECTED] = { 0.000, 1.000, 0.624 }
-  text[INSENSITIVE] = { 0.247, 0.169, 0.961 }
+  text[INSENSITIVE] = { 0.333, 0.333, 0.333 }
   text[ACTIVE] = { 0.000, 1.000, 0.624 }
   text[PRELIGHT] = { 0.000, 1.000, 0.624 }
 
   fg[NORMAL] = { 0.631, 0.706, 0.729 }
   fg[SELECTED] = { 0.000, 1.000, 0.624 }
-  fg[INSENSITIVE] = { 0.247, 0.169, 0.961 }
+  fg[INSENSITIVE] = { 0.333, 0.333, 0.333 }
   fg[ACTIVE] = { 0.631, 0.706, 0.729 }
   fg[PRELIGHT] = { 0.631, 0.706, 0.729 }
 }
@@ -36,8 +36,8 @@ class "*" style "default"
 
 style "ToolTip"
 {
-  bg[NORMAL] = { 0.016, 0.008, 0.071 }
-  base[NORMAL] = { 0.016, 0.008, 0.071 }
+  bg[NORMAL] = { 0.000, 0.000, 0.000 }
+  base[NORMAL] = { 0.000, 0.000, 0.000 }
   text[NORMAL] = { 0.631, 0.706, 0.729 }
   fg[NORMAL] = { 0.631, 0.706, 0.729 }
 }
@@ -48,7 +48,7 @@ widget "gtk-tooltip*" style "ToolTip"
 
 style "MenuItem"
 {
-  bg[PRELIGHT] = { 0.000, 0.000, 0.263 }
+  bg[PRELIGHT] = { 0.000, 0.000, 0.157 }
   fg[PRELIGHT] = { 0.000, 1.000, 0.624 }
 }
 
