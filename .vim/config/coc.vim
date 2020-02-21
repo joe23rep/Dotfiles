@@ -7,12 +7,6 @@
 "   \____|\___|_| |_|\___|_|  \__,_|_|  \____\___/|_| |_|_| |_|\__, |
 "                                                              |___/
 "
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
 
 
 " You will have bad experience for diagnostic messages when it's default 4000.
@@ -49,9 +43,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 
 " languageserver and extensions----------------------------------------------------------------------------
 "   _____      _                 _
@@ -72,20 +63,6 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ ]
 
-" Lightline integration-----------------------------------------------
-
-function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, 'E' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, 'W' . info['warning'])
-  endif
-  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
-endfunction
 
 " Key maps--------------------------------------------------------------------------------------------------
 "   _  __            __  __                   _
@@ -97,7 +74,7 @@ endfunction
 "
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -136,10 +113,6 @@ endfunction
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-xmap <leader>ac  <Plug>(coc-codeaction)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)

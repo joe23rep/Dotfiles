@@ -69,19 +69,19 @@ let g:NERDTreeIgnore = ['^node_modules$']
 
 
 "define NT Statusline
-let g:NERDTreeStatusline = '%#fzf1#  NT %#N2#%#fzf3#'
+let g:NERDTreeStatusline = '%#fzf1#   Nerdtree %#N2#%#fzf3#'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "open an empty vim document will start nerdtree automatically
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "dont open nerdtree if i open a vim session file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
 
-" sync open file with NERDTree
+" " sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
