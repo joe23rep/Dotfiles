@@ -32,6 +32,9 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'amix/open_file_under_cursor.vim' "gf to open file under cursor
 Plug 'maxbrunsfeld/vim-yankstack' "meta p to go backwards in paste history / meta Shift p to go forward
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
 " Plug 'mattn/emmet-vim'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -45,6 +48,7 @@ call plug#end()
 " :PlugClean		- confirms removal of unused plugins; append `!` to auto-approve removal
 "
 
+
 " General Config-----------------------------------------------------------------------------
 "   ____                           _    ____             __ _
 "  / ___| ___ _ __   ___ _ __ __ _| |  / ___|___  _ __  / _(_) __ _
@@ -55,9 +59,6 @@ call plug#end()
 
 " Set compatibility to Vim only. should be first, because it changes other options as a side effect
 set nocompatible
-
-" No grey left border
-" set signcolumn=no
 
 " Turn on syntax highlighting
 syntax on
@@ -214,6 +215,11 @@ set modifiable
 " Even better autoindent (e.g. add indent after '{')
 set smartindent
 
+" Set indentline character
+let g:indentLine_char = '⎟' "┊│┊
+
+" No signcolumn bg
+highlight clear signcolumn
 
 " Add cursorline when entering insert mode
 :autocmd InsertEnter * set cul
@@ -237,10 +243,6 @@ endif
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
-" Set indentline character
-let g:indentLine_char = '⎟' "┊│┊
-
-
 " Colors----------------------------------------------------------------------------
 "   ____      _
 "  / ___|___ | | ___  _ __ ___
@@ -249,9 +251,9 @@ let g:indentLine_char = '⎟' "┊│┊
 "  \____\___/|_|\___/|_|  |___/
 
 set termguicolors
-colorscheme necro-gre
-" colorscheme focusedpanic
-
+" colorscheme necro-gre
+colorscheme gruvbox-neon
+" colorscheme nord2
 
 " Keybinds--------------------------------------------------------------------------
 "  _  __            ____  _           _
@@ -318,8 +320,9 @@ nmap <C-f> /
 " On gvim and Linux console Vim, you can use Alt-Space.
 imap <M-Space> <Esc>
 
-" Ctrl o/O to go one line up/ down while staying in insert mode
+" Ctrl o to go one line up/ down while staying in insert mode
 imap <C-o> <Esc>o
+imap öö <esc>o
 
 " Map Ctrl S to safe
 imap <C-s> <esc>:w<CR>
@@ -351,10 +354,12 @@ imap <C-p> <esc>"+P
 
 
 " Escape mappings----------------------------------------------
-vmap öö <esc>
-imap öö <esc>
 imap jk <esc>
 
+" Toggle Boolean Values----------------------------------------
+" imap <C-T> <C-O>:call Toggle()<CR>
+" nmap + :call Toggle()<CR>
+" vmap + <ESC>:call Toggle()<CR>
 
 " Ultisnips----------------------------------------------------
 
@@ -366,9 +371,9 @@ let g:UltiSnipsExpandTrigger="<C-Space>"
 " Nerdtree-----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
-nmap <C-n> :NERDTreeToggle %<CR>
-vmap <C-n> <esc>:NERDTreeToggle %<CR>
-imap <C-n> <esc>:NERDTreeToggle %<CR>
+nmap <C-n> :NERDTreeToggle <CR>
+vmap <C-n> <esc>:NERDTreeToggle <CR>
+imap <C-n> <esc>:NERDTreeToggle <CR>
 
 
 " Auto Close Tag-----------------------------------------------
@@ -463,6 +468,7 @@ nmap <leader>mk :!mkdir<Space>
 
 " Cheatsheet
 nmap <unique> <leader>? :<c-u>Cheat40<cr>
+
 
 " Lightline -------------------------------------------------------------------------------------
 "       _       _     _   _ _
@@ -657,5 +663,5 @@ command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 
 source ~/.vim/config/coc.vim
 source ~/.vim/config/nerdtree.vim
+source ~/.vim/config/toggle.vim
 
-"test
