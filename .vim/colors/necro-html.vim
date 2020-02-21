@@ -13,7 +13,7 @@ hi IncSearch         guifg=#000000     guibg=#00c1e5
 hi Search            guifg=#000000     guibg=#80a0ff
 hi MoreMsg           guifg=#292c33     guibg=#000000
 hi ModeMsg           guifg=#d6f4fd     guibg=#000000
-hi LineNr            guifg=#4c4e52     guibg=#000000
+hi LineNr            guifg=#292c33     guibg=#000000
 hi CursorLineNr      guifg=#00eeff     guibg=#000000
 hi Question          guifg=#292c33     guibg=#000000
 hi StatusLine        guifg=#292c33     guibg=#abb2bf
@@ -23,15 +23,15 @@ hi Title             NONE
 hi Visual            guifg=#000000     guibg=#91e9ff
 hi VisualNos         guifg=#000000     guibg=#91e9ff
 hi WarningMsg        guifg=#8400ff     guibg=#000000
-hi WildMenu          guifg=#d6f4fd     guibg=#292c33
+hi WildMenu          guifg=#000000     guibg=#292c33
 hi Folded            guifg=#d6f4fd     guibg=#292c33      gui=underline
 hi FoldColumn        guifg=#000000     guibg=#292c33
 hi DiffAdd           guifg=#000000     guibg=#c890ff
 hi DiffChange        guifg=#000000     guibg=#aaaaff
 hi DiffDelete        guifg=#000000     guibg=#7cffb7
 hi DiffText          guifg=#000000     guibg=#00eeff
-hi SignColumn        guifg=#000000     guibg=#000000
-hi Conceal           guifg=#abb2bf     guibg=#000000
+hi SignColumn        guifg=#000000     guibg=#292c33
+hi Conceal           guifg=#00eeff     guibg=#000000
 hi SpellBad          NONE                                 gui=underline
 hi SpellCap          NONE
 hi SpellRare         NONE
@@ -46,28 +46,28 @@ hi TabLineFill       guifg=#19d3da
 hi CursorColumn      guifg=#19d3da
 hi CursorLine        NONE              guibg=#000000      gui=underline
 hi ColorColumn       guifg=#19d3da     guibg=#000000
-hi MatchParen        guifg=#8fffb5     guibg=#000000
+hi MatchParen        guifg=#ff00f4     guibg=#000000
 hi Normal            guifg=#d6f4fd     guibg=#000000
-hi Comment           guifg=#616E88     guibg=#000000
+hi Comment           guifg=#545454     guibg=#000000
 hi Constant          guifg=#00eeff     guibg=#000000
 hi Special           guifg=#9eddff     guibg=#000000
 hi Identifier        guifg=#9eddff     guibg=#000000
-hi Statement         guifg=#8400ff     guibg=#000000      gui=italic
+hi Statement         guifg=#8400ff     guibg=#000000
 hi PreProc           guifg=#3daee9     guibg=#000000
-hi Type              guifg=#00ff9b     guibg=#000000
+hi Type              guifg=#8fffb5     guibg=#000000
 hi Underlined        guifg=#9c9c9c     guibg=#000000
 hi Ignore            guifg=#ffffff     guibg=#000000
 hi Error             guifg=#ff00f4     guibg=#000000
 hi Todo              guifg=#19d3da     guibg=#000000
 hi Macro             guifg=#19d3da     guibg=#000000
-hi Number            guifg=#00ff9b     guibg=#000000
-hi Function          guifg=#ffffff     guibg=#000000      gui=bold
+hi Number            guifg=#f28fff     guibg=#000000
+hi Function          guifg=#d6f4fd     guibg=#000000
 hi Delimiter         guifg=#aaaaff     guibg=#000000
 hi Operator          guifg=#77ffd7     guibg=#000000
 hi Boolean           guifg=#aaaaff     guibg=#000000
-hi Keyword           guifg=#8400ff     guibg=#000000
-hi SpecialChar       guifg=#77ffd7     guibg=#000000
-hi Conditional       guifg=#b166fc     guibg=#000000
+hi Keyword           guifg=#e29eff     guibg=#000000
+hi SpecialChar       guifg=#3daee9     guibg=#000000
+hi Conditional       guifg=#ae00ff     guibg=#000000
 hi Structure         guifg=#8400ff     guibg=#000000
 hi Float             guifg=#ffffff     guibg=#000000
 hi Repeat            guifg=#00ff5f     guibg=#000000
@@ -94,6 +94,4 @@ hi StorageClass      guifg=#3daee9     guibg=#000000
 "#538BE0
 "#3daee9
 
-"#00FF9B
-"#4C4E52 #4c4e52
-
+"
