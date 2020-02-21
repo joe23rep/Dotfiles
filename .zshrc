@@ -29,12 +29,14 @@ ZSH_THEME="$(choose_theme)"
 
 
 
-#  ____  _             _
-# |  _ \| |_   _  __ _(_)_ __  ___
-# | |_) | | | | |/ _` | | '_ \/ __|
-# |  __/| | |_| | (_| | | | | \__ \
-# |_|   |_|\__,_|\__, |_|_| |_|___/
-#                |___/
+#
+#   ____  _             _
+#  |  _ \| |_   _  __ _(_)_ __  ___
+#  | |_) | | | | |/ _` | | '_ \/ __|
+#  |  __/| | |_| | (_| | | | | \__ \
+#  |_|   |_|\__,_|\__, |_|_| |_|___/
+#                 |___/
+#
 
 plugins=(
 git
@@ -222,6 +224,8 @@ alias killtmux="tmux kill-session"
 alias mux="tmuxinator start launch launch ~/.tmuxinator/launch.yml"
 alias github="cd /home/joe/Github"
 alias vim="nvim"
+alias timelist="sudo timeshift --list"
+alias time="sudo timeshift --snapshot --restore"
 
 #  ____                        _                _ _  ___  _
 # |  _ \ _____      _____ _ __| | _____   _____| / |/ _ \| | __
