@@ -9,7 +9,8 @@
       "html",
       "css",
       "elixir",
-      "go"
+      "go",
+      "vim"
       ],
 
   "suggest.noselect": false,
