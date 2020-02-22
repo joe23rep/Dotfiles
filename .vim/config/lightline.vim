@@ -45,14 +45,25 @@ endfunction
 " return WebDevIconsGetFileTypeSymbol() . ' '  . filetype_with_icon  . modified
 
 
+" Fugitive Integration
+function! Git_branch() abort
+  if fugitive#head() !=# ''
+    return  fugitive#head() . "  "
+  else
+    return "\uf468"
+  endif
+endfunction
+
 
 
 " Define lightline look-----------------------------------------------------------
 
 let g:lightline.active = {
-      \ 'left': [ ['mode'], ['gitbranch'], [ 'filetype_with_icon' ] ],
+      \ 'left': [ ['mode'],  [ 'filetype_with_icon' ] ],
       \ 'right': [ ['lineinfo'], [ 'percent' ], [ 'unix_logo' ] ],
       \ }
+
+" ['git_branch'],
 
 let g:lightline.separator = { 'left': " ", 'right': " " }
 let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
@@ -72,8 +83,8 @@ let g:lightline.tabline = {
 
 
 let g:lightline.tab = {
-        \ 'active': ['filename_with_parent'],
-        \ 'inactive': ['filename']
+        \ 'active': ['filename_with_icon'],
+        \ 'inactive': ['filename_with_icon']
         \ }
 
 
@@ -100,8 +111,9 @@ let g:lightline.component = {
         \ 'unix_logo': "  ",
         \ 'filename_with_parent': '%t',
         \ 'buffer': 'buffers %n',
-        \ 'gitbranch': 'fugitive#head',
+        \ 'git_branch': '%{Git_branch()}',
         \}
+
 
 
 " Custom Settings-------------------------------------------------------------------
@@ -120,5 +132,7 @@ let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, ] ]
 " let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, 'bold' ] ]
 
 unlet s:palette
+
+
 
 
