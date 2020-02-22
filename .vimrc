@@ -1,3 +1,17 @@
+
+
+"  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
+" | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+" | | ____   ____  | || |     _____    | || | ____    ____ | || |  _______     | || |     ______   | |
+" | ||_  _| |_  _| | || |    |_   _|   | || ||_   \  /   _|| || | |_   __ \    | || |   .' ___  |  | |
+" | |  \ \   / /   | || |      | |     | || |  |   \/   |  | || |   | |__) |   | || |  / .'   \_|  | |
+" | |   \ \ / /    | || |      | |     | || |  | |\  /| |  | || |   |  __ /    | || |  | |         | |
+" | |    \ ' /     | || |     _| |_    | || | _| |_\/_| |_ | || |  _| |  \ \_  | || |  \ `.___.'\  | |
+" | |     \_/      | || |    |_____|   | || ||_____||_____|| || | |____| |___| | || |   `._____.'  | |
+" | |              | || |              | || |              | || |              | || |              | |
+" | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+"  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
+
 " Plugins+ General----------------------------------------------------------------------
 "  ____  _             _
 " |  _ \| |_   _  __ _(_)_ __  ___
@@ -35,6 +49,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
+Plug 'majutsushi/tagbar'
+Plug 'terryma/vim-multiple-cursors'
 " Plug 'mattn/emmet-vim'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -47,7 +63,7 @@ call plug#end()
 " :PlugUpgrade		- upgrades vim-plug
 " :PlugClean		- confirms removal of unused plugins; append `!` to auto-approve removal
 "
-
+nmap <F8> :TagbarToggle<CR>
 
 " General Config-----------------------------------------------------------------------------
 "   ____                           _    ____             __ _
@@ -337,8 +353,10 @@ inoremap [ []<left>
 inoremap { {}<left>
 
 " Map Ctrl+ vim keys to go to end or beginning of a line
-imap <C-l> <Esc>A
-imap <C-h> <Esc>I
+imap <C-l> <right>
+imap <C-h> <left>
+imap <C-k> <up>
+imap <C-j> <down>
 
 " Copy and Paste-----------------------------------------------
 
@@ -355,9 +373,9 @@ imap <C-p> <esc>"+P
 
 " Escape mappings----------------------------------------------
 imap jk <esc>
+imap kj <esc>
 
 " Toggle Boolean Values----------------------------------------
-imap <C-t> <esc>:call Toggle()<CR>a
 nmap + :call Toggle()<CR>
 vmap + <esc>:call Toggle()<CR>
 
@@ -389,6 +407,18 @@ let g:closetag_close_shortcut = '<leader>>'
 " Override vim commands 'gf', '^Wf', '^W^F'
 nmap gf :call GotoFile("")<CR>
 
+" Multiple Cursors---------------------------------------------
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_select_all_word_key = '<A-m>'
+let g:multi_cursor_start_key           = 'g<C-m>'
+let g:multi_cursor_select_all_key      = 'g<A-m>'
+let g:multi_cursor_next_key            = '<C-m>'
+let g:multi_cursor_prev_key            = '<C-ö>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 " Leader Keys-------------------------------------------------------------------------------------
 "   _                   _             _  __
@@ -466,6 +496,10 @@ nmap <leader>mk :!mkdir<Space>
 " Cheatsheet
 nmap <unique> <leader>? :<c-u>Cheat40<cr>
 
+" Yankstack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
 
 " Vim Auto Closetag--------------------------------------------------------------------------
 "
@@ -502,6 +536,16 @@ let g:closetag_regions = {
     \ 'javascript.jsx': 'jsxRegion',
     \ }
 
+" Tagbar enable CSS---------------------------------------------------------------------------
+
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
 
 " Tmux----------------------------------------------------------------------------------------
 "   _____ __  __ _   ___  __
