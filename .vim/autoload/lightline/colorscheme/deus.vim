@@ -16,7 +16,7 @@ let s:term_grey = 236
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-let s:p.normal.left = [ [ '#2c323d', '#00eeff', s:term_black, s:term_green, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_green, s:term_black ], [ '#d6f4fd', '#5c6370', s:term_white, s:term_grey ]]
+let s:p.normal.left = [ [ '#2c323d', '#00eeff', s:term_black, s:term_green, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_green, s:term_black ], [ '#00eeff', '#2c323d', s:term_white, s:term_grey ]]
 let s:p.normal.right = [ [ '#2c323d', '#00eeff', s:term_black, s:term_green ], [ '#d6f4fd', '#3e4452', s:term_white, s:term_grey ], [ '#00eeff', '#2c323d', s:term_green, s:term_black ] ]
 let s:p.inactive.right = [ [ '#2c323d', '#00eeff', s:term_black, s:term_blue], [ '#d6f4fd', '#3e4452', s:term_white, s:term_grey ] ]
 let s:p.inactive.left = s:p.inactive.right[1:]
@@ -46,3 +46,4 @@ let g:lightline#colorscheme#deus#palette = lightline#colorscheme#fill(s:p)
   " let s:gray2 = [ '#2c323d', 235 ]
   " let s:gray3 = [ '#3e4452', 240 ]
   "
+
