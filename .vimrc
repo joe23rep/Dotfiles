@@ -50,7 +50,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Plug 'mattn/emmet-vim'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -445,6 +446,7 @@ map <leader>sc :setlocal spell! spelllang=en_us<CR>
 
 " Open FZF using leader fzf
 nmap <silent> <leader>f :FZF<CR>
+nmap <silent> <leader>ff :FZF ~<CR>
 nmap <silent> <leader>fb :Buffers<CR>
 nmap <silent> <leader>fv :Vim<CR>
 map <leader>m :History<CR>
@@ -494,11 +496,15 @@ nmap <leader>to :!touch<Space>
 nmap <leader>mk :!mkdir<Space>
 
 " Cheatsheet
-nmap <unique> <leader>? :<c-u>Cheat40<cr>
+nmap  <leader>vc :<c-u>Cheat40<cr>
+" <unique>
 
 " Yankstack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" source current buffer
+nmap <leader>sf :source %<cr>
 
 
 " Vim Auto Closetag--------------------------------------------------------------------------
@@ -599,4 +605,9 @@ source ~/.vim/config/coc.vim
 source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/toggle.vim
 source ~/.vim/config/lightline.vim
+
+
+
+
+
 

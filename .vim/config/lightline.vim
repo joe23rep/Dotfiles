@@ -47,11 +47,7 @@ endfunction
 
 " Fugitive Integration
 function! Git_branch() abort
-  if fugitive#head() !=# ''
-    return  fugitive#head() . "  "
-  else
-    return "\uf468"
-  endif
+    return  fugitive#head() "  ".
 endfunction
 
 
@@ -59,7 +55,7 @@ endfunction
 " Define lightline look-----------------------------------------------------------
 
 let g:lightline.active = {
-      \ 'left': [ ['mode'],  [ 'filetype_with_icon' ] ],
+      \ 'left': [ ['mode'],  [ 'filetype_with_icon' ], ['git_branch'] ],
       \ 'right': [ ['lineinfo'], [ 'percent' ], [ 'unix_logo' ] ],
       \ }
 
@@ -67,8 +63,9 @@ let g:lightline.active = {
 
 let g:lightline.separator = { 'left': " ", 'right': " " }
 let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
-let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
-let g:lightline.subseparator = { 'left': '\\', 'right': '\\ ' }
+let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
+let g:lightline.subseparator = { 'left': " ", 'right': " " }
+let g:lightline.subseparator = { 'left': " ", 'right': " " }
 
 
 
@@ -111,12 +108,11 @@ let g:lightline.component = {
         \ 'unix_logo': "  ",
         \ 'filename_with_parent': '%t',
         \ 'buffer': 'buffers %n',
-        \ 'git_branch': '%{Git_branch()}',
+        \ 'git_branch': '%{Git_branch()}'
         \}
 
 
-
-" Custom Settings-------------------------------------------------------------------
+" Tabline Settings-------------------------------------------------------------------
 
 " Enable bufferline
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
