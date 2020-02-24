@@ -12,7 +12,7 @@
 " | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
 "  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
 
-" Plugins+ General----------------------------------------------------------------------
+" Plugins------------------------------------------------------------------------------------
 "  ____  _             _
 " |  _ \| |_   _  __ _(_)_ __  ___
 " | |_) | | | | |/ _` | | '_ \/ __|
@@ -34,8 +34,8 @@ Plug 'tomtom/tcomment_vim' "gc to comment out multiple lines- cc to comment sing
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'lambdalisue/vim-manpager'
 Plug 'junegunn/goyo.vim'
+Plug 'lilydjwg/colorizer'
 Plug 'ryanoasis/vim-devicons'
-Plug 'c0r73x/colorizer'
 Plug 'SirVer/ultisnips' "Ctrl a to launch ultisnips
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
@@ -50,9 +50,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
@@ -64,7 +62,21 @@ call plug#end()
 " :PlugUpgrade		- upgrades vim-plug
 " :PlugClean		- confirms removal of unused plugins; append `!` to auto-approve removal
 "
-nmap <F8> :TagbarToggle<CR>
+
+
+" Sourcing-----------------------------------------------------------------------------------
+"  ____                       _
+" / ___|  ___  _   _ _ __ ___(_)_ __   __ _
+" \___ \ / _ \| | | | '__/ __| | '_ \ / _` |
+"  ___) | (_) | |_| | | | (__| | | | | (_| |
+" |____/ \___/ \__,_|_|  \___|_|_| |_|\__, |
+"                                     |___/
+
+source ~/.vim/config/coc.vim
+source ~/.vim/config/nerdtree.vim
+source ~/.vim/config/toggle.vim
+source ~/.vim/config/lightline.vim
+
 
 " General Config-----------------------------------------------------------------------------
 "   ____                           _    ____             __ _
@@ -232,6 +244,9 @@ set modifiable
 " Even better autoindent (e.g. add indent after '{')
 set smartindent
 
+" Enable Folding
+set foldmethod=manual
+
 " Set indentline character
 let g:indentLine_char = '⎟' "┊│┊
 
@@ -259,8 +274,14 @@ endif
 " Stops the auto-commenting new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Enable saving Folds
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
-" Colors----------------------------------------------------------------------------
+" Colors-------------------------------------------------------------------------------------
 "   ____      _
 "  / ___|___ | | ___  _ __ ___
 " | |   / _ \| |/ _ \| '__/ __|
@@ -268,11 +289,12 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "  \____\___/|_|\___/|_|  |___/
 
 set termguicolors
-" colorscheme necro-gre
 colorscheme gruvbox-neon
 " colorscheme nord2
 
-" Keybinds--------------------------------------------------------------------------
+
+" Keybindings--------------------------------------------------------------------------------
+" Normal Keybinds-----------------------------------------------------------------------------
 "  _  __            ____  _           _
 " | |/ /___ _   _  | __ )(_)_ __   __| |___
 " | ' // _ \ | | | |  _ \| | '_ \ / _` / __|
@@ -376,6 +398,8 @@ imap <C-p> <esc>"+P
 imap jk <esc>
 imap kj <esc>
 
+" Plugin Mappings----------------------------------------------
+
 " Toggle Boolean Values----------------------------------------
 nmap + :call Toggle()<CR>
 vmap + <esc>:call Toggle()<CR>
@@ -390,9 +414,9 @@ let g:UltiSnipsExpandTrigger="<C-Space>"
 " Nerdtree-----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
-nmap <C-n> :NERDTreeToggle <CR>
-vmap <C-n> <esc>:NERDTreeToggle <CR>
-imap <C-n> <esc>:NERDTreeToggle <CR>
+nmap <C-n> :NERDTreeToggle /home/joe/<CR>
+vmap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
+imap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
 
 
 " Auto Close Tag-----------------------------------------------
@@ -408,20 +432,12 @@ let g:closetag_close_shortcut = '<leader>>'
 " Override vim commands 'gf', '^Wf', '^W^F'
 nmap gf :call GotoFile("")<CR>
 
-" Multiple Cursors---------------------------------------------
-let g:multi_cursor_use_default_mapping=0
+" Tagbar-------------------------------------------------------
 
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-m>'
-let g:multi_cursor_select_all_word_key = '<A-m>'
-let g:multi_cursor_start_key           = 'g<C-m>'
-let g:multi_cursor_select_all_key      = 'g<A-m>'
-let g:multi_cursor_next_key            = '<C-m>'
-let g:multi_cursor_prev_key            = '<C-ö>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
+nmap <C-t> :TagbarToggle<CR>
+vmap <C-t> :TagbarToggle<CR>
 
-" Leader Keys-------------------------------------------------------------------------------------
+" Leader Key Mappings-----------------------------------------------------------------------
 "   _                   _             _  __
 "  | |    ___  __ _  __| | ___ _ __  | |/ /___ _   _ ___
 "  | |   / _ \/ _` |/ _` |/ _ \ '__| | ' // _ \ | | / __|
@@ -435,21 +451,11 @@ let mapleader = " "
 " Map , as local leader
 let maplocalleader = ','
 
-" Open nerdtree in cwd
-nmap <leader>nn :NERDTreeFind<CR>
-
 " Map leader q to quit without saving
 nmap <leader>q :q!<CR>
 
 " Spellcheck
 map <leader>sc :setlocal spell! spelllang=en_us<CR>
-
-" Open FZF using leader fzf
-nmap <silent> <leader>f :FZF<CR>
-nmap <silent> <leader>ff :FZF ~<CR>
-nmap <silent> <leader>fb :Buffers<CR>
-nmap <silent> <leader>fv :Vim<CR>
-map <leader>m :History<CR>
 
 " Switch buffers
 map <leader>b :bp<CR>
@@ -485,9 +491,6 @@ nmap <leader>nh :noh<cr>
 " Plug install shortcut
 nmap <leader>pi :PlugInstall<CR>
 
-" Toggle goyo
-nmap <leader>g :Goyo<CR>
-
 "Open new empty buffer
 nmap <leader>nb :enew<CR>
 
@@ -495,16 +498,36 @@ nmap <leader>nb :enew<CR>
 nmap <leader>to :!touch<Space>
 nmap <leader>mk :!mkdir<Space>
 
-" Cheatsheet
-nmap  <leader>vc :<c-u>Cheat40<cr>
-" <unique>
+" source current buffer
+nmap <leader>sf :source %<cr>
 
-" Yankstack
+" Plugin Mappings------------------------------------------------
+
+" Yankstack------------------------------------------------------
+
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
-" source current buffer
-nmap <leader>sf :source %<cr>
+
+" Cheatsheet-----------------------------------------------------
+
+nmap  <leader>? :<c-u>Cheat40<cr>
+
+" Goyo-----------------------------------------------------------
+
+nmap <leader>g :Goyo<CR>
+
+" FZF------------------------------------------------------------
+
+nmap <silent> <leader>ff :FZF<CR>
+nmap <silent> <leader>f :FZF ~<CR>
+nmap <silent> <leader>fb :Buffers<CR>
+nmap <silent> <leader>fv :Vim<CR>
+map <leader>m :History<CR>
+
+" Nerdtree-------------------------------------------------------
+
+nmap <leader>nn :NERDTreeFind<CR>
 
 
 " Vim Auto Closetag--------------------------------------------------------------------------
@@ -542,8 +565,9 @@ let g:closetag_regions = {
     \ 'javascript.jsx': 'jsxRegion',
     \ }
 
-" Tagbar enable CSS---------------------------------------------------------------------------
+" Tagbar -------------------------------------------------------------------------------------
 
+" Enable CSS
 let g:tagbar_type_css = {
 \ 'ctagstype' : 'Css',
     \ 'kinds'     : [
@@ -553,7 +577,7 @@ let g:tagbar_type_css = {
     \ ]
 \ }
 
-" Tmux----------------------------------------------------------------------------------------
+" Tmux---------------------------------------------------------------------------------------
 "   _____ __  __ _   ___  __
 "  |_   _|  \/  | | | \ \/ /
 "    | | | |\/| | | | |\  /
@@ -570,7 +594,7 @@ let g:tagbar_type_css = {
 " endif
 
 
-" FZF-----------------------------------------------------------------------------------------
+" FZF----------------------------------------------------------------------------------------
 "   _____ __________    ____             __ _
 "  |  ___|__  /  ___|  / ___|___  _ __  / _(_) __ _
 "  | |_    / /| |_    | |   / _ \| '_ \| |_| |/ _` |
@@ -592,19 +616,6 @@ hi fzf3 guifg=#00eeff  guibg=#292c33
 " Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 
-
-" Sourcing-------------------------------------------------------------------------------------
-"  ____                       _
-" / ___|  ___  _   _ _ __ ___(_)_ __   __ _
-" \___ \ / _ \| | | | '__/ __| | '_ \ / _` |
-"  ___) | (_) | |_| | | | (__| | | | | (_| |
-" |____/ \___/ \__,_|_|  \___|_|_| |_|\__, |
-"                                     |___/
-
-source ~/.vim/config/coc.vim
-source ~/.vim/config/nerdtree.vim
-source ~/.vim/config/toggle.vim
-source ~/.vim/config/lightline.vim
 
 
 
