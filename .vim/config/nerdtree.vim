@@ -69,7 +69,7 @@ let g:NERDTreeIgnore = ['^node_modules$']
 
 
 "define NT Statusline
-let g:NERDTreeStatusline = '%#fzf1#   Nerdtree %#N2#%#fzf3#'
+let g:NERDTreeStatusline = '%#fzf1#   Nerdtree %#N2#%#fzf3#'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -83,8 +83,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " " sync open file with NERDTree
 " " Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
+" function! IsNERDTreeOpen()
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
 
 
