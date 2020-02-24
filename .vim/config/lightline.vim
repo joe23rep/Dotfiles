@@ -47,7 +47,7 @@ endfunction
 
 " Fugitive Integration
 function! Git_branch() abort
-    return  fugitive#head() "  ".
+    return  fugitive#head()  "  ".
 endfunction
 
 
@@ -128,7 +128,3 @@ let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, ] ]
 " let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, 'bold' ] ]
 
 unlet s:palette
-
-
-
-
