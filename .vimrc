@@ -129,9 +129,6 @@ set scrolloff=5
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
-" Speed up scrolling in Vim
-set ttyfast
-
 " Allow switching between buffers without saving
 set hidden
 
@@ -256,6 +253,15 @@ set sessionoptions=folds
 " Set indentline character
 let g:indentLine_char = '⎟' "┊│┊
 
+" Set space as leader
+let mapleader = " "
+
+" Map , as local leader
+let maplocalleader = ','
+
+" Speed up scrolling in Vim
+set ttyfast
+
 " No signcolumn bg
 highlight clear signcolumn
 
@@ -365,7 +371,7 @@ nmap <C-f> /
 " On gvim and Linux console Vim, you can use Alt-Space.
 imap <M-Space> <Esc>
 
-" Ctrl o to go one line up/ down while staying in insert mode
+" Ctrl o to go one line down while staying in insert mode
 imap <C-o> <Esc>o
 imap öö <esc>o
 
@@ -476,12 +482,6 @@ map <leader>m :History<CR>
 "  | |__|  __/ (_| | (_| |  __/ |    | . \  __/ |_| \__ \
 "  |_____\___|\__,_|\__,_|\___|_|    |_|\_\___|\__, |___/
 "                                              |___/
-
-" Set space as leader
-let mapleader = " "
-
-" Map , as local leader
-let maplocalleader = ','
 
 " Map leader q to quit without saving
 nmap <leader>q :q!<CR>
