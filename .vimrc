@@ -1,5 +1,4 @@
 
-
 "  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
 " | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
 " | | ____   ____  | || |     _____    | || | ____    ____ | || |  _______     | || |     ______   | |
@@ -50,8 +49,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-repeat'
+Plug 'christoomey/vim-tmux-navigator'
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -247,6 +249,10 @@ set smartindent
 " Enable Folding
 set foldmethod=manual
 
+" make sure folds are automatically loaded
+set viewoptions=folds,cursor
+set sessionoptions=folds
+
 " Set indentline character
 let g:indentLine_char = '⎟' "┊│┊
 
@@ -275,11 +281,12 @@ endif
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Enable saving Folds
-augroup remember_folds
+augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
+
 
 " Colors-------------------------------------------------------------------------------------
 "   ____      _
@@ -294,7 +301,6 @@ colorscheme gruvbox-neon
 
 
 " Keybindings--------------------------------------------------------------------------------
-" Normal Keybinds-----------------------------------------------------------------------------
 "  _  __            ____  _           _
 " | |/ /___ _   _  | __ )(_)_ __   __| |___
 " | ' // _ \ | | | |  _ \| | '_ \ / _` / __|
@@ -417,6 +423,7 @@ let g:UltiSnipsExpandTrigger="<C-Space>"
 nmap <C-n> :NERDTreeToggle /home/joe/<CR>
 vmap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
 imap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
+nmap <leader>nn :NERDTreeFind<CR>
 
 
 " Auto Close Tag-----------------------------------------------
@@ -436,6 +443,31 @@ nmap gf :call GotoFile("")<CR>
 
 nmap <C-t> :TagbarToggle<CR>
 vmap <C-t> :TagbarToggle<CR>
+
+" Yankstack------------------------------------------------------
+
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+
+" Cheatsheet-----------------------------------------------------
+
+nmap  <leader>? :<c-u>Cheat40<cr>
+
+
+" Goyo-----------------------------------------------------------
+
+nmap <leader>g :Goyo<CR>
+
+
+" FZF------------------------------------------------------------
+
+nmap <silent> <leader>ff :FZF<CR>
+nmap <silent> <leader>f :FZF ~<CR>
+nmap <silent> <leader>fb :Buffers<CR>
+nmap <silent> <leader>fv :Vim<CR>
+map <leader>m :History<CR>
+
 
 " Leader Key Mappings-----------------------------------------------------------------------
 "   _                   _             _  __
@@ -500,34 +532,6 @@ nmap <leader>mk :!mkdir<Space>
 
 " source current buffer
 nmap <leader>sf :source %<cr>
-
-" Plugin Mappings------------------------------------------------
-
-" Yankstack------------------------------------------------------
-
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
-
-
-" Cheatsheet-----------------------------------------------------
-
-nmap  <leader>? :<c-u>Cheat40<cr>
-
-" Goyo-----------------------------------------------------------
-
-nmap <leader>g :Goyo<CR>
-
-" FZF------------------------------------------------------------
-
-nmap <silent> <leader>ff :FZF<CR>
-nmap <silent> <leader>f :FZF ~<CR>
-nmap <silent> <leader>fb :Buffers<CR>
-nmap <silent> <leader>fv :Vim<CR>
-map <leader>m :History<CR>
-
-" Nerdtree-------------------------------------------------------
-
-nmap <leader>nn :NERDTreeFind<CR>
 
 
 " Vim Auto Closetag--------------------------------------------------------------------------
@@ -615,6 +619,7 @@ hi fzf3 guifg=#00eeff  guibg=#292c33
 
 " Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
+
 
 
 
