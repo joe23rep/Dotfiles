@@ -1,4 +1,3 @@
-
 "-----------------------------------------------------------------------------------------------------
 "    ____                           _    ____             __ _
 "   / ___| ___ _ __   ___ _ __ __ _| |  / ___|___  _ __  / _(_) __ _
@@ -63,6 +62,10 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-html',
   \ 'coc-css',
+  \ 'coc-ultisnips',
+  \ 'coc-word',
+  \ 'coc-dictionary',
+  \ 'coc-syntax'
   \ ]
 
 
@@ -80,9 +83,9 @@ nmap <F2> <Plug>(coc-rename)
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
-inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -158,3 +161,18 @@ inoremap <silent><expr> <TAB>
 " nmap <leader>üö <Plug>(coc-format-selected)
 
 
+
+
+
+
+
+
+
+
+
+
+"-----------------------------------------------------------------
+"-----------------------------------------------------------------
+inoremap <expr> <tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"-----------------------------------------------------------------
+"-----------------------------------------------------------------
