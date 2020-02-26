@@ -51,6 +51,9 @@ Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rstacruz/sparkup'
+Plug 'roxma/vim-paste-easy'
+Plug 'haya14busa/incsearch.vim'
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
@@ -147,9 +150,6 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Show line numbers
 set number relativenumber
-
-" Set status line display
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 
 " Encoding
 set encoding=utf-8
@@ -250,6 +250,12 @@ set foldmethod=manual
 set viewoptions=folds,cursor
 set sessionoptions=folds
 
+" Keep the cursor on the same column
+set nostartofline
+
+" Speed up scrolling in Vim
+set ttyfast
+
 " Set indentline character
 let g:indentLine_char = '⎟' "┊│┊
 
@@ -259,8 +265,8 @@ let mapleader = " "
 " Map , as local leader
 let maplocalleader = ','
 
-" Speed up scrolling in Vim
-set ttyfast
+" :h g:incsearch#auto_nohlsearch
+let g:incsearch#auto_nohlsearch = 1
 
 " No signcolumn bg
 highlight clear signcolumn
@@ -293,6 +299,29 @@ augroup AutoSaveFolds
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
+" Visual select mode move lines
+function! s:Visual()
+    return visualmode() == 'V'
+endfunction
+
+function! Move_up() abort range
+    let l:at_top=a:firstline ==1
+    if s:Visual() && !l:at_top
+        '<,'>move '<-2
+        call feedkeys('gv=', 'n')
+    endif
+    call feedkeys('gv', 'n')
+endfunction
+
+function! Move_down() abort range
+    let l:at_bottom=a:lastline == line ('$')
+    if s:Visual() && !l:at_bottom
+        '<,'>move '>+1
+        call feedkeys('gv=', 'n')
+    endif
+    call feedkeys('gv', 'n')
+endfunction
+
 
 " Colors-------------------------------------------------------------------------------------
 "   ____      _
@@ -323,10 +352,7 @@ nmap k gk
 " Map cc to comment out current line
 nmap cc gcc
 
-" Center next search entry
-nmap n nzzzv
-nmap N Nzzzv
-
+" Ctrl + arrows to switchbuf
 nmap <C-Left> :bp<CR>
 nmap <C-Right> :bn<CR>
 
@@ -366,6 +392,15 @@ nmap K {
 " Ctrl f to search
 nmap <C-f> /
 
+" Move lines in and out
+nmap <silent> <C-h> <<
+nmap <silent> <C-l> >>
+nmap <silent> <C-k> :move-2<cr>
+nmap <silent> <C-j> :move+<cr>
+xmap <silent> <C-k> :call Move_up()<CR>
+xmap <silent> <C-j> :call Move_down()<CR>
+
+
 " Insert Mode--------------------------------------------------
 
 " On gvim and Linux console Vim, you can use Alt-Space.
@@ -393,7 +428,8 @@ imap <C-h> <left>
 imap <C-k> <up>
 imap <C-j> <down>
 
-" Copy and Paste-----------------------------------------------
+
+" Copy and Paste------------------------------------------------
 
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nmap <F2> :set invpaste paste?<CR>
@@ -404,26 +440,28 @@ set pastetoggle=<F2>
 vmap <C-y> "*y :let @+=@*<CR>
 nmap <C-p> "+P
 imap <C-p> <esc>"+P
+nmap Y y$
 
-
-" Escape mappings----------------------------------------------
+" Escape mappings-----------------------------------------------
 imap jk <esc>
+vmap jk <esc>
 imap kj <esc>
+vmap kj <esc>
 
-" Plugin Mappings----------------------------------------------
+" Plugin Mappings-----------------------------------------------
 
-" Toggle Boolean Values----------------------------------------
+" Toggle Boolean Values-----------------------------------------
 nmap + :call Toggle()<CR>
 vmap + <esc>:call Toggle()<CR>
 
-" Ultisnips----------------------------------------------------
+
+" Ultisnips-----------------------------------------------------
 
 " Change snippets trigger key
-" Let g:UltiSnipsExpandTrigger="<C-a>"
 let g:UltiSnipsExpandTrigger="<C-Space>"
 
 
-" Nerdtree-----------------------------------------------------
+" Nerdtree------------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
 nmap <C-n> :NERDTreeToggle /home/joe/<CR>
@@ -432,7 +470,7 @@ imap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
 nmap <leader>nn :NERDTreeFind<CR>
 
 
-" Auto Close Tag-----------------------------------------------
+" Auto Close Tag------------------------------------------------
 
 " Shortcut for closing tags, default is '>'
 let g:closetag_shortcut = '>'
@@ -440,39 +478,55 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 let g:closetag_close_shortcut = '<leader>>'
 
-" Open_file_under_cursor---------------------------------------
+
+" Open_file_under_cursor----------------------------------------
 
 " Override vim commands 'gf', '^Wf', '^W^F'
 nmap gf :call GotoFile("")<CR>
 
-" Tagbar-------------------------------------------------------
+
+" Tagbar--------------------------------------------------------
 
 nmap <C-t> :TagbarToggle<CR>
 vmap <C-t> :TagbarToggle<CR>
 
-" Yankstack------------------------------------------------------
+
+" Yankstack-----------------------------------------------------
 
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 
-" Cheatsheet-----------------------------------------------------
+" Cheatsheet----------------------------------------------------
 
 nmap  <leader>? :<c-u>Cheat40<cr>
 
 
-" Goyo-----------------------------------------------------------
+" Goyo----------------------------------------------------------
 
 nmap <leader>g :Goyo<CR>
 
 
-" FZF------------------------------------------------------------
+" FZF-----------------------------------------------------------
 
 nmap <silent> <leader>ff :FZF<CR>
 nmap <silent> <leader>f :FZF ~<CR>
 nmap <silent> <leader>fb :Buffers<CR>
 nmap <silent> <leader>fv :Vim<CR>
 map <leader>m :History<CR>
+
+
+" Incsearch------------------------------------------------------
+
+nmap /  <Plug>(incsearch-forward)
+nmap <C-f>  <Plug>(incsearch-forward)
+nmap ?  <Plug>(incsearch-backward)
+nmap n  <Plug>(incsearch-nohl-n)
+nmap N  <Plug>(incsearch-nohl-N)
+nmap *  <Plug>(incsearch-nohl-*)
+nmap #  <Plug>(incsearch-nohl-#)
+nmap g* <Plug>(incsearch-nohl-g*)
+nmap g# <Plug>(incsearch-nohl-g#)
 
 
 " Leader Key Mappings-----------------------------------------------------------------------
@@ -518,7 +572,7 @@ nmap <leader>sr :%s//g<left><left>
 nmap <leader>r :%s/<C-r><C-w>//g<Left><Left>
 
 " Stop showing Search highlights
-nmap <leader>nh :noh<cr>
+nmap <leader>nh :let @/=""<cr>
 
 " Plug install shortcut
 nmap <leader>pi :PlugInstall<CR>
@@ -532,7 +586,6 @@ nmap <leader>mk :!mkdir<Space>
 
 " source current buffer
 nmap <leader>sf :source %<cr>
-
 
 " Vim Auto Closetag--------------------------------------------------------------------------
 "
@@ -619,11 +672,5 @@ hi fzf3 guifg=#00eeff  guibg=#292c33
 
 " Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
-
-
-
-
-
-
 
 
