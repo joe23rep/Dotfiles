@@ -1,19 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-      "javascript",
-      "typescript",
-      "typescriptreact",
-      "json",
-      "javascriptreact",
-      "graphql",
-      "html",
-      "css",
-      "elixir",
-      "go",
-      "vim"
-      ],
-
-  "suggest.noselect": false,
+    "suggest.noselect": false,
   "codeLens.enable": true,
   "diagnostic.virtualText": true,
   "diagnostic.errorSign": "◉",
@@ -40,3 +26,4 @@
     }
   }
 }
+
