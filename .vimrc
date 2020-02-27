@@ -54,6 +54,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'rstacruz/sparkup'
 Plug 'roxma/vim-paste-easy'
 Plug 'haya14busa/incsearch.vim'
+Plug 'junegunn/gv.vim'
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
@@ -178,9 +179,6 @@ set splitbelow splitright
 
 " Automatically remove whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
-
-" Automatically switch vim to CWD
-autocmd BufEnter * lcd %:p:h
 
 " Visual autocomplete for command menu
 set wildmenu
@@ -343,7 +341,9 @@ colorscheme gruvbox-neon
 " |_|\_\___|\__, | |____/|_|_| |_|\__,_|___/
 "           |___/
 
-" Normal Mode-------------------------------------------------
+"---------------------------------------------------------------
+" Normal Mode
+"---------------------------------------------------------------
 
 " Move vertically by visual line
 nmap j gj
@@ -367,7 +367,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Map Space to toggle folds
-nmap ,, za
+" nmap ,, za
+nmap <tab> za
 
 " Map Ctrl S to safe
 nmap <C-s> :w<CR>
@@ -393,21 +394,21 @@ nmap K {
 nmap <C-f> /
 
 " Move lines in and out
-nmap <silent> <C-h> <<
-nmap <silent> <C-l> >>
-nmap <silent> <C-k> :move-2<cr>
-nmap <silent> <C-j> :move+<cr>
-xmap <silent> <C-k> :call Move_up()<CR>
-xmap <silent> <C-j> :call Move_down()<CR>
+nmap H <<
+nmap L >>
+nmap <C-k> :move-2<cr>
+nmap <C-j> :move+<cr>
 
 
-" Insert Mode--------------------------------------------------
+"---------------------------------------------------------------
+" Insert Mode
+"---------------------------------------------------------------
 
 " On gvim and Linux console Vim, you can use Alt-Space.
-imap <M-Space> <Esc>
+imap <M-Space> <esc>
 
 " Ctrl o to go one line down while staying in insert mode
-imap <C-o> <Esc>o
+imap <C-o> <esc>o
 imap öö <esc>o
 
 " Map Ctrl S to safe
@@ -429,6 +430,16 @@ imap <C-k> <up>
 imap <C-j> <down>
 
 
+"--------------------------------------------------------------
+" Visual Mode
+"--------------------------------------------------------------
+
+" Move lines
+xmap <silent> <C-k> :call Move_up()<CR>
+xmap <silent> <C-j> :call Move_down()<CR>
+xmap H <gv
+xmap L >gv
+
 " Copy and Paste------------------------------------------------
 
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
@@ -448,7 +459,9 @@ vmap jk <esc>
 imap kj <esc>
 vmap kj <esc>
 
-" Plugin Mappings-----------------------------------------------
+"---------------------------------------------------------------
+" Plugin Mappings
+"---------------------------------------------------------------
 
 " Toggle Boolean Values-----------------------------------------
 nmap + :call Toggle()<CR>
@@ -459,6 +472,8 @@ vmap + <esc>:call Toggle()<CR>
 
 " Change snippets trigger key
 let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 
 " Nerdtree------------------------------------------------------
@@ -527,6 +542,15 @@ nmap *  <Plug>(incsearch-nohl-*)
 nmap #  <Plug>(incsearch-nohl-#)
 nmap g* <Plug>(incsearch-nohl-g*)
 nmap g# <Plug>(incsearch-nohl-g#)
+
+
+" GV-------------------------------------------------------------
+
+" Open Commit Browser
+nmap <leader>gvv :GV<CR>
+
+" Open Commits of current file
+nmap <leader>gv :GV!<CR>
 
 
 " Leader Key Mappings-----------------------------------------------------------------------
@@ -672,5 +696,6 @@ hi fzf3 guifg=#00eeff  guibg=#292c33
 
 " Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
+
 
 
