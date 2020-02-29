@@ -21,12 +21,12 @@ let s:p.normal.right = [ [ '#2c323d', '#00eeff', s:term_black, s:term_green ], [
 let s:p.inactive.right = [ [ '#2c323d', '#00eeff', s:term_black, s:term_blue], [ '#d6f4fd', '#3e4452', s:term_white, s:term_grey ] ]
 let s:p.inactive.left = s:p.inactive.right[1:]
 " her
-let s:p.insert.left = [ [ '#2c323d', '#ce1cff', s:term_black, s:term_blue, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_blue, s:term_black ] ]
-let s:p.insert.right = [ [ '#2c323d', '#ce1cff', s:term_black, s:term_blue ], [ '#d6f4fd', '#3E4452', s:term_white, s:term_grey ], [ '#ce1cff', '#2c323d', s:term_blue, s:term_black ] ]
-let s:p.replace.left = [ [ '#2c323d', '#ce1cff', s:term_black, s:term_red, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_red, s:term_black ] ]
-let s:p.replace.right = [ [ '#2c323d', '#ce1cff', s:term_black, s:term_red, 'bold' ], s:p.normal.right[1], [ '#ce1cff', '#2c323d', s:term_red, s:term_black ] ]
-let s:p.visual.left = [ [ '#2c323d', '#00ff9b', s:term_black, s:term_purple, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_purple, s:term_black ] ]
-let s:p.visual.right = [ [ '#2c323d', '#00ff9b', s:term_black, s:term_purple, 'bold' ], s:p.normal.right[1], [ '#00ff9b', '#2c323d', s:term_purple, s:term_black ] ]
+let s:p.insert.left = [ [ '#2c323d', '#9500ff', s:term_black, s:term_blue, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_blue, s:term_black ] ]
+let s:p.insert.right = [ [ '#2c323d', '#9500ff', s:term_black, s:term_blue ], [ '#d6f4fd', '#3E4452', s:term_white, s:term_grey ], [ '#9500ff', '#2c323d', s:term_blue, s:term_black ] ]
+let s:p.replace.left = [ [ '#2c323d', '#9500ff', s:term_black, s:term_red, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_red, s:term_black ] ]
+let s:p.replace.right = [ [ '#2c323d', '#9500ff', s:term_black, s:term_red, 'bold' ], s:p.normal.right[1], [ '#9500ff', '#2c323d', s:term_red, s:term_black ] ]
+let s:p.visual.left = [ [ '#2c323d', '#ff00ff', s:term_black, s:term_purple, 'bold' ], [ '#d6f4fd', '#3e4452', s:term_purple, s:term_black ] ]
+let s:p.visual.right = [ [ '#2c323d', '#ff00ff', s:term_black, s:term_purple, 'bold' ], s:p.normal.right[1], [ '#ff00ff', '#2c323d', s:term_purple, s:term_black ] ]
 let s:p.normal.middle = [ [ '#d6f4fd', '#2c323d', s:term_white, s:term_black ] ]
 let s:p.insert.middle = s:p.normal.middle
 let s:p.replace.middle = s:p.normal.middle
@@ -34,7 +34,7 @@ let s:p.tabline.left = [ [ '#2c323d', '#00eeff' ], [ '#d6f4fd', '#2c323d' ], [ '
 let s:p.tabline.tabsel = [ s:p.normal.left[0] ]
 let s:p.tabline.middle = s:p.normal.middle
 let s:p.tabline.right = [ [ '#2c323d', '#00eeff', s:term_black, s:term_green ], [ '#d6f4fd', '#3e4452', s:term_white, s:term_grey ], [ '#00eeff', '#2c323d', s:term_green, s:term_black ] ]
-let s:p.normal.error = [ [ '#2c323d', '#ce1cff', s:term_black, s:term_red ] ]
+let s:p.normal.error = [ [ '#2c323d', '#9500ff', s:term_black, s:term_red ] ]
 let s:p.normal.warning = [ [ '#2c323d', '#00e6ff', s:term_black, s:term_yellow ] ]
 
 let g:lightline#colorscheme#deus#palette = lightline#colorscheme#fill(s:p)
