@@ -85,6 +85,20 @@ let s:is_dark=(&background == 'dark')
 " setup palette dictionary
 let s:gb = {}
 
+"-------------------------------------------------------------------------------------
+
+" #6c5dfd
+" #00eeff
+" #00d3d7
+" #23c2c9
+" #2cdaa9
+" #b032fe
+" #c176e2
+" #b032fe
+" #23c2c9
+"----------------------------------------------------------------------------------------
+
+
 " fill it with absolute colors
 let s:gb.dark0_hard  = ['#000000', 234]     " 29-32-33
 let s:gb.dark0       = ['#000000', 235]     " 40-40-40
@@ -107,12 +121,12 @@ let s:gb.light3      = ['#d4feff', 248]     " 189-174-147
 let s:gb.light4      = ['#d4fafd', 246]     " 168-153-132
 let s:gb.light4_256  = ['#d4f4fd', 246]     " 168-153-132
 
-let s:gb.bright_red     = ['#8400ff', 167]     " 251-73-52
+let s:gb.bright_red     = ['#9500ff', 167]     " 251-73-52
 let s:gb.bright_green   = ['#00eeff', 142]     " 184-187-38
-let s:gb.bright_yellow  = ['#00ff9b', 214]     " 250-189-47
-let s:gb.bright_blue    = ['#adffff', 109]     " 131-165-152
-let s:gb.bright_purple  = ['#aaaaff', 175]     " 211-134-155
-let s:gb.bright_aqua    = ['#3daee9', 108]     " 142-192-124
+let s:gb.bright_yellow  = ['#c2c2ff', 214]     " 250-189-47
+let s:gb.bright_blue    = ['#00d7be', 109]     " 131-165-152
+let s:gb.bright_purple  = ['#c567ff', 175]     " 211-134-155
+let s:gb.bright_aqua    = ['#00c1e5', 108]     " 142-192-124
 let s:gb.bright_orange  = ['#9eddff', 208]     " 254-128-25
 
 let s:gb.neutral_red    = ['#a040ff', 124]     " 204-36-29
@@ -640,7 +654,7 @@ if version >= 700
   " Popup menu: normal item
   call s:HL('Pmenu', s:fg1, s:bg2)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  call s:HL('PmenuSel', s:bg2, s:green, s:bold)
   " Popup menu: scrollbar
   call s:HL('PmenuSbar', s:none, s:bg2)
   " Popup menu: scrollbar thumb
@@ -733,12 +747,12 @@ endif
 if !exists('g:rbpt_colorpairs')
   let g:rbpt_colorpairs =
     \ [
-      \ ['blue', '#00eeff'], ['magenta', '#adffff'],
-      \ ['red',  '#8400ff'], ['166',     '#00ff9b']
+      \ ['blue', '#00eeff'], ['magenta', '#00d3d7'],
+      \ ['red',  '#b032fe'], ['166',     '#2cdaa9']
     \ ]
 endif
 
-let g:rainbow_guifgs = [ '#00ff9b', '#8400ff', '#adffff', '#00eeff' ]
+let g:rainbow_guifgs = [ '#2cdaa9', '#b032fe', '#00d3d7', '#00eeff' ]
 let g:rainbow_ctermfgs = [ '166', 'red', 'magenta', 'blue' ]
 
 if !exists('g:rainbow_conf')
