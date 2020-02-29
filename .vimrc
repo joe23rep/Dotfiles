@@ -43,7 +43,6 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lifepillar/vim-cheat40'
 Plug 'amix/open_file_under_cursor.vim' "gf to open file under cursor
-Plug 'maxbrunsfeld/vim-yankstack' "meta p to go backwards in paste history / meta Shift p to go forward
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -329,7 +328,7 @@ endfunction
 "  \____\___/|_|\___/|_|  |___/
 
 set termguicolors
-colorscheme gruvbox-neon
+colorscheme gruvbox-neon2
 " colorscheme nord2
 
 
@@ -353,21 +352,14 @@ nmap k gk
 nmap cc gcc
 
 " Ctrl + arrows to switchbuf
-nmap <C-Left> :bp<CR>
+nmap <C-Left>  :bp<CR>
 nmap <C-Right> :bn<CR>
 
 " Pressing enter now adds a line without going in insert mode
 nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
-
-" Shortcutting split navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nmap <CR>      o<Esc>
 
 " Map Space to toggle folds
-" nmap ,, za
 nmap <tab> za
 
 " Map Ctrl S to safe
@@ -408,8 +400,7 @@ nmap <C-j> :move+<cr>
 imap <M-Space> <esc>
 
 " Ctrl o to go one line down while staying in insert mode
-imap <C-o> <esc>o
-imap öö <esc>o
+imap öö    <esc>o
 
 " Map Ctrl S to safe
 imap <C-s> <esc>:w<CR>
@@ -437,8 +428,8 @@ imap <C-j> <down>
 " Move lines
 xmap <silent> <C-k> :call Move_up()<CR>
 xmap <silent> <C-j> :call Move_down()<CR>
-xmap H <gv
-xmap L >gv
+xmap <silent> <C-h> <gv
+xmap <silent> <C-l> >gv
 
 " Copy and Paste------------------------------------------------
 
@@ -456,15 +447,17 @@ nmap Y y$
 " Escape mappings-----------------------------------------------
 imap jk <esc>
 vmap jk <esc>
+cmap jk <C-c>
 imap kj <esc>
 vmap kj <esc>
+cmap kj <C-c>
 
 "---------------------------------------------------------------
 " Plugin Mappings
 "---------------------------------------------------------------
 
 " Toggle Boolean Values-----------------------------------------
-nmap + :call Toggle()<CR>
+nmap +      :call Toggle()<CR>
 vmap + <esc>:call Toggle()<CR>
 
 
@@ -479,7 +472,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 " Nerdtree------------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
-nmap <C-n> :NERDTreeToggle /home/joe/<CR>
+nmap <C-n>      :NERDTreeToggle /home/joe/<CR>
 vmap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
 imap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
 nmap <leader>nn :NERDTreeFind<CR>
@@ -506,15 +499,9 @@ nmap <C-t> :TagbarToggle<CR>
 vmap <C-t> :TagbarToggle<CR>
 
 
-" Yankstack-----------------------------------------------------
-
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
-
-
 " Cheatsheet----------------------------------------------------
 
-nmap  <leader>? :<c-u>Cheat40<cr>
+nmap <leader>cs :<c-u>Cheat40<cr>
 
 
 " Goyo----------------------------------------------------------
@@ -524,24 +511,27 @@ nmap <leader>g :Goyo<CR>
 
 " FZF-----------------------------------------------------------
 
-nmap <silent> <leader>ff :FZF<CR>
-nmap <silent> <leader>f :FZF ~<CR>
-nmap <silent> <leader>fb :Buffers<CR>
-nmap <silent> <leader>fv :Vim<CR>
-map <leader>m :History<CR>
-
+nmap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nmap <silent> <leader>fb    :Buffers<CR>
+nmap <silent> <leader>m     :History<CR>
+nmap <silent> <leader>mm    :History/<CR>
+nmap <silent> <leader>C     :Colors<CR>
+nmap <silent> <leader>s     :Lines<CR>
+nmap <silent> <leader>sb    :Lines<CR>
+nmap <silent> <leader>ma    :Marks<CR>
+nmap <silent> <leader>us    :Snippets<CR>
 
 " Incsearch------------------------------------------------------
 
-nmap /  <Plug>(incsearch-forward)
+nmap /      <Plug>(incsearch-forward)
 nmap <C-f>  <Plug>(incsearch-forward)
-nmap ?  <Plug>(incsearch-backward)
-nmap n  <Plug>(incsearch-nohl-n)
-nmap N  <Plug>(incsearch-nohl-N)
-nmap *  <Plug>(incsearch-nohl-*)
-nmap #  <Plug>(incsearch-nohl-#)
-nmap g* <Plug>(incsearch-nohl-g*)
-nmap g# <Plug>(incsearch-nohl-g#)
+nmap ?      <Plug>(incsearch-backward)
+nmap n      <Plug>(incsearch-nohl-n)
+nmap N      <Plug>(incsearch-nohl-N)
+nmap *      <Plug>(incsearch-nohl-*)
+nmap #      <Plug>(incsearch-nohl-#)
+nmap g*     <Plug>(incsearch-nohl-g*)
+nmap g#     <Plug>(incsearch-nohl-g#)
 
 
 " GV-------------------------------------------------------------
@@ -550,7 +540,7 @@ nmap g# <Plug>(incsearch-nohl-g#)
 nmap <leader>gvv :GV<CR>
 
 " Open Commits of current file
-nmap <leader>gv :GV!<CR>
+nmap <leader>gv  :GV!<CR>
 
 
 " Leader Key Mappings-----------------------------------------------------------------------
@@ -574,6 +564,9 @@ map <leader>n :bn<CR>
 " Close buffer
 map <leader>cb :bd<CR>
 
+" Open new line above current line
+nmap <leader>O O<esc>
+
 " Load files via shortcuts
 nmap <leader>v :tabedit ~/.vimrc<CR>
 nmap <leader>z :tabedit ~/.zshrc<CR>
@@ -583,13 +576,13 @@ nmap <leader>t :tabedit ~/.tmux.conf<CR>
 nmap <leader>ch :ColorHighlight<CR>
 
 " Map splits
-nmap <leader>vs :vs ene<CR>
-nmap <leader>hs :split ene<CR>
+nmap <leader>vs :vs<CR>
+nmap <leader>hs :split<CR>
 
 " Clean trailing whitespace
 nmap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
-" Map search and replace and move cursor between //
+" Map search and replace
 nmap <leader>sr :%s//g<left><left>
 
 " Map search word under cursor and replace it
@@ -604,12 +597,9 @@ nmap <leader>pi :PlugInstall<CR>
 "Open new empty buffer
 nmap <leader>nb :enew<CR>
 
-" Basic file system commands
-nmap <leader>to :!touch<Space>
-nmap <leader>mk :!mkdir<Space>
-
 " source current buffer
 nmap <leader>sf :source %<cr>
+
 
 " Vim Auto Closetag--------------------------------------------------------------------------
 "
@@ -694,8 +684,78 @@ hi fzf1 guifg=#292c33  guibg=#00eeff
 hi fzf2 guifg=#292c33  guibg=#00eeff
 hi fzf3 guifg=#00eeff  guibg=#292c33
 
-" Add vim directory for shortcutting
+
+" " Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 
+if has('nvim') || has('gui_running')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
+
+
+" All files
+command! -nargs=? -complete=dir AF
+  \ call fzf#run(fzf#wrap(fzf#vim#with_preview({
+  \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
+  \ })))
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Terminal buffer options for fzf
+autocmd! FileType fzf
+autocmd  FileType fzf set noshowmode noruler nonu
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+
+function! s:plug_help_sink(line)
+  let dir = g:plugs[a:line].dir
+  for pat in ['doc/*.txt', 'README.md']
+    let match = get(split(globpath(dir, pat), "\n"), 0, '')
+    if len(match)
+      execute 'tabedit' match
+      return
+    endif
+  endfor
+  tabnew
+  execute 'Explore' dir
+endfunction
+
+command! PlugHelp call fzf#run(fzf#wrap({
+  \ 'source': sort(keys(g:plugs)),
+  \ 'sink':   function('s:plug_help_sink')}))
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let options = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  if a:fullscreen
+    let options = fzf#vim#with_preview(options)
+  endif
+  call fzf#vim#grep(initial_command, 1, options, a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 
