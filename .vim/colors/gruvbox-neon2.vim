@@ -928,19 +928,19 @@ hi! link diffLine GruvboxBlue
 " }}}
 " Html: {{{
 
-hi! link htmlTag GruvboxBlue
-hi! link htmlEndTag GruvboxBlue
+hi! link htmlTag GruvboxYellow
+hi! link htmlEndTag GruvboxYellow
 
-hi! link htmlTagName GruvboxAquaBold
-hi! link htmlArg GruvboxAqua
+hi! link htmlTagName GruvboxRedBold
+hi! link htmlArg GruvboxBlue
 
-hi! link htmlScriptTag GruvboxPurple
+hi! link htmlScriptTag GruvboxAqua
 hi! link htmlTagN GruvboxFg1
-hi! link htmlSpecialTagName GruvboxAquaBold
+hi! link htmlSpecialTagName GruvboxFg0
 
 call s:HL('htmlLink', s:fg4, s:none, s:underline)
 
-hi! link htmlSpecialChar GruvboxOrange
+hi! link htmlSpecialChar GruvboxFg0
 
 call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
 call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
@@ -951,7 +951,7 @@ call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
 call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
 call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
 
-" }}}
+
 " Xml: {{{
 
 hi! link xmlTag GruvboxBlue
@@ -1050,7 +1050,7 @@ hi! link pythonDottedName GruvboxGreenBold
 
 hi! link cssBraces GruvboxBlue
 hi! link cssFunctionName GruvboxYellow
-hi! link cssIdentifier GruvboxOrange
+hi! link cssIdentifier GruvboxRed
 hi! link cssClassName GruvboxGreen
 hi! link cssColor GruvboxBlue
 hi! link cssSelectorOp GruvboxBlue
