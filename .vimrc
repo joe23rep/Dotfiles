@@ -11,7 +11,7 @@
 " | '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
 "  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
 
-" Plugins------------------------------------------------------------------------------------
+" Plugins -----------------------------------------------------------------------------------
 "  ____  _             _
 " |  _ \| |_   _  __ _(_)_ __  ___
 " | |_) | | | | |/ _` | | '_ \/ __|
@@ -54,6 +54,7 @@ Plug 'rstacruz/sparkup'
 Plug 'roxma/vim-paste-easy'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
+Plug '907th/vim-auto-save'
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
@@ -69,7 +70,7 @@ call plug#end()
 "
 
 
-" Sourcing-----------------------------------------------------------------------------------
+" Sourcing ----------------------------------------------------------------------------------
 "  ____                       _
 " / ___|  ___  _   _ _ __ ___(_)_ __   __ _
 " \___ \ / _ \| | | | '__/ __| | '_ \ / _` |
@@ -83,7 +84,7 @@ source ~/.vim/config/toggle.vim
 source ~/.vim/config/lightline.vim
 
 
-" General Config-----------------------------------------------------------------------------
+" General Config ----------------------------------------------------------------------------
 "   ____                           _    ____             __ _
 "  / ___| ___ _ __   ___ _ __ __ _| |  / ___|___  _ __  / _(_) __ _
 " | |  _ / _ \ '_ \ / _ \ '__/ _` | | | |   / _ \| '_ \| |_| |/ _` |
@@ -121,7 +122,7 @@ set background=dark
 " Automatically wrap text that extends beyond the screen length.
 set wrap
 
-" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
+" Set editor layout
 set textwidth=79
 set formatoptions=tcqrn1
 set noshiftround
@@ -138,7 +139,7 @@ set hidden
 " Always show Statusbar
 set laststatus=2
 
-"stops suggestion window being to wide
+" Stops suggestion window being to wide
 set linebreak
 
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
@@ -219,6 +220,9 @@ set autoread
 " Blink cursor on error, instead of beeping
 set visualbell
 
+" Keep the cursor on the same column
+set nostartofline
+
 " Width that a <TAB> character displays as
 set tabstop=4
 
@@ -286,15 +290,13 @@ if has("autocmd")
 endif
 
 
-" Stops the auto-commenting new line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " Enable saving Folds
 augroup AutoSaveFolds
   autocmd!
   autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
   autocmd BufWinEnter ?* silent! loadview
 augroup end
+
 
 " Visual select mode move lines
 function! s:Visual()
@@ -320,7 +322,27 @@ function! Move_down() abort range
 endfunction
 
 
-" Colors-------------------------------------------------------------------------------------
+" SaveMacro / LoadMacro
+function! s:save_macro(name, file)
+  let content = eval('@'.a:name)
+  if !empty(content)
+    call writefile(split(content, "\n"), a:file)
+    echom len(content) . " bytes save to ". a:file
+  endif
+endfunction
+command! -nargs=* SaveMacro call <SID>save_macro(<f-args>)
+
+function! s:load_macro(file, name)
+  let data = join(readfile(a:file), "\n")
+  call setreg(a:name, data, 'c')
+  echom "Macro loaded to @". a:name
+endfunction
+command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
+
+
+
+
+" Colors ------------------------------------------------------------------------------------
 "   ____      _
 "  / ___|___ | | ___  _ __ ___
 " | |   / _ \| |/ _ \| '__/ __|
@@ -332,7 +354,7 @@ colorscheme gruvbox-neon2
 " colorscheme nord2
 
 
-" Keybindings--------------------------------------------------------------------------------
+" Keybindings -------------------------------------------------------------------------------
 "  _  __            ____  _           _
 " | |/ /___ _   _  | __ )(_)_ __   __| |___
 " | ' // _ \ | | | |  _ \| | '_ \ / _` / __|
@@ -356,8 +378,7 @@ nmap <C-Left>  :bp<CR>
 nmap <C-Right> :bn<CR>
 
 " Pressing enter now adds a line without going in insert mode
-nmap <S-Enter> O<Esc>
-nmap <CR>      o<Esc>
+nmap <CR>  o<Esc>
 
 " Map Space to toggle folds
 nmap <tab> za
@@ -391,6 +412,9 @@ nmap L >>
 nmap <C-k> :move-2<cr>
 nmap <C-j> :move+<cr>
 
+" Ctrl A to select all
+nmap <C-a> ggVG
+
 
 "---------------------------------------------------------------
 " Insert Mode
@@ -400,7 +424,8 @@ nmap <C-j> :move+<cr>
 imap <M-Space> <esc>
 
 " Ctrl o to go one line down while staying in insert mode
-imap öö    <esc>o
+imap öö       <esc>o
+imap <C-o>    <esc>o
 
 " Map Ctrl S to safe
 imap <C-s> <esc>:w<CR>
@@ -431,7 +456,7 @@ xmap <silent> <C-j> :call Move_down()<CR>
 xmap <silent> <C-h> <gv
 xmap <silent> <C-l> >gv
 
-" Copy and Paste------------------------------------------------
+" Copy and Paste -----------------------------------------------
 
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nmap <F2> :set invpaste paste?<CR>
@@ -444,7 +469,7 @@ nmap <C-p> "+P
 imap <C-p> <esc>"+P
 nmap Y y$
 
-" Escape mappings-----------------------------------------------
+" Escape mappings ----------------------------------------------
 imap jk <esc>
 vmap jk <esc>
 cmap jk <C-c>
@@ -456,12 +481,12 @@ cmap kj <C-c>
 " Plugin Mappings
 "---------------------------------------------------------------
 
-" Toggle Boolean Values-----------------------------------------
+" Toggle Boolean Values ----------------------------------------
 nmap +      :call Toggle()<CR>
 vmap + <esc>:call Toggle()<CR>
 
 
-" Ultisnips-----------------------------------------------------
+" Ultisnips ----------------------------------------------------
 
 " Change snippets trigger key
 let g:UltiSnipsExpandTrigger="<C-Space>"
@@ -469,7 +494,7 @@ let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 
-" Nerdtree------------------------------------------------------
+" Nerdtree -----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
 nmap <C-n>      :NERDTreeToggle /home/joe/<CR>
@@ -478,7 +503,7 @@ imap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
 nmap <leader>nn :NERDTreeFind<CR>
 
 
-" Auto Close Tag------------------------------------------------
+" Auto Close Tag -----------------------------------------------
 
 " Shortcut for closing tags, default is '>'
 let g:closetag_shortcut = '>'
@@ -487,29 +512,29 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 
-" Open_file_under_cursor----------------------------------------
+" Open_file_under_cursor ---------------------------------------
 
 " Override vim commands 'gf', '^Wf', '^W^F'
 nmap gf :call GotoFile("")<CR>
 
 
-" Tagbar--------------------------------------------------------
+" Tagbar -------------------------------------------------------
 
 nmap <C-t> :TagbarToggle<CR>
 vmap <C-t> :TagbarToggle<CR>
 
 
-" Cheatsheet----------------------------------------------------
+" Cheatsheet ---------------------------------------------------
 
 nmap <leader>cs :<c-u>Cheat40<cr>
 
 
-" Goyo----------------------------------------------------------
+" Goyo ---------------------------------------------------------
 
 nmap <leader>g :Goyo<CR>
 
 
-" FZF-----------------------------------------------------------
+" FZF ----------------------------------------------------------
 
 nmap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nmap <silent> <leader>fb    :Buffers<CR>
@@ -521,7 +546,7 @@ nmap <silent> <leader>sb    :Lines<CR>
 nmap <silent> <leader>ma    :Marks<CR>
 nmap <silent> <leader>us    :Snippets<CR>
 
-" Incsearch------------------------------------------------------
+" Incsearch -----------------------------------------------------
 
 nmap /      <Plug>(incsearch-forward)
 nmap <C-f>  <Plug>(incsearch-forward)
@@ -534,7 +559,7 @@ nmap g*     <Plug>(incsearch-nohl-g*)
 nmap g#     <Plug>(incsearch-nohl-g#)
 
 
-" GV-------------------------------------------------------------
+" GV ------------------------------------------------------------
 
 " Open Commit Browser
 nmap <leader>gvv :GV<CR>
@@ -543,7 +568,13 @@ nmap <leader>gvv :GV<CR>
 nmap <leader>gv  :GV!<CR>
 
 
-" Leader Key Mappings-----------------------------------------------------------------------
+" Vim Auto Save -------------------------------------------------
+
+" Toggle Auto save
+nmap <leader>as :AutoSaveToggle<CR>
+
+
+" Leader Key Mappings ----------------------------------------------------------------------
 "   _                   _             _  __
 "  | |    ___  __ _  __| | ___ _ __  | |/ /___ _   _ ___
 "  | |   / _ \/ _` |/ _` |/ _ \ '__| | ' // _ \ | | / __|
@@ -601,7 +632,7 @@ nmap <leader>nb :enew<CR>
 nmap <leader>sf :source %<cr>
 
 
-" Vim Auto Closetag--------------------------------------------------------------------------
+" Vim Auto Closetag -------------------------------------------------------------------------
 "
 "      _         _           ____ _                  _____
 "     / \  _   _| |_ ___    / ___| | ___  ___  ___  |_   _|_ _  __ _
@@ -636,7 +667,7 @@ let g:closetag_regions = {
     \ 'javascript.jsx': 'jsxRegion',
     \ }
 
-" Tagbar -------------------------------------------------------------------------------------
+" Tagbar ------------------------------------------------------------------------------------
 
 " Enable CSS
 let g:tagbar_type_css = {
@@ -648,7 +679,16 @@ let g:tagbar_type_css = {
     \ ]
 \ }
 
-" Tmux---------------------------------------------------------------------------------------
+" Vim Auto Save -----------------------------------------------------------------------------
+
+" set to safe after changes in normal and insert mode
+let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI"]
+
+" This will run :TagsGenerate after each save
+let g:auto_save_postsave_hook = 'TagsGenerate'
+
+
+" Tmux --------------------------------------------------------------------------------------
 "   _____ __  __ _   ___  __
 "  |_   _|  \/  | | | \ \/ /
 "    | | | |\/| | | | |\  /
@@ -656,16 +696,16 @@ let g:tagbar_type_css = {
 "    |_| |_|  |_|\___//_/\_\
 
 " Allows cursor change in tmux mode
-" if exists('$TMUX')
-"     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-" else
-"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-" endif
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 
-" FZF----------------------------------------------------------------------------------------
+" FZF ---------------------------------------------------------------------------------------
 "   _____ __________    ____             __ _
 "  |  ___|__  /  ___|  / ___|___  _ __  / _(_) __ _
 "  | |_    / /| |_    | |   / _ \| '_ \| |_| |/ _` |
@@ -757,5 +797,17 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+
+" Important Stuff (needs to be loaded last) -----------------------------------------------
+"   ___                            _              _
+"  |_ _|_ __ ___  _ __   ___  _ __| |_ __ _ _ __ | |_
+"   | || '_ ` _ \| '_ \ / _ \| '__| __/ _` | '_ \| __|
+"   | || | | | | | |_) | (_) | |  | || (_| | | | | |_
+"  |___|_| |_| |_| .__/ \___/|_|   \__\__,_|_| |_|\__|
+"                |_|
+
+" Stop Auto Commenting new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
