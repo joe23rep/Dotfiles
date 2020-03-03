@@ -929,7 +929,7 @@ hi! link diffLine GruvboxBlue
 " Html: {{{
 
 hi! link htmlTag GruvboxYellow
-hi! link htmlEndTag GruvboxYellow
+hi! link htmlEndTag GruvboxRed
 
 hi! link htmlTagName GruvboxRedBold
 hi! link htmlArg GruvboxBlue
