@@ -39,7 +39,8 @@ ZSH_THEME="$(choose_theme)"
 
 
 
-#
+
+
 #------------------------------------------------------------------------------------------
 #   ____  _             _
 #  |  _ \| |_   _  __ _(_)_ __  ___
@@ -239,6 +240,9 @@ alias github="cd /home/joe/Github"
 alias vim="nvim"
 alias timelist="sudo timeshift --list"
 alias time="sudo timeshift --snapshot --restore"
+alias vim="vim -S ~/.vimrc"
+alias nvim="nvim -S ~/.vimrc"
+alias time="sudo timeshift --list"
 
 
 #------------------------------------------------------------------------------------------
