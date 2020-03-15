@@ -33,7 +33,6 @@ Plug 'tomtom/tcomment_vim' "gc to comment out multiple lines- cc to comment sing
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'lambdalisue/vim-manpager'
 Plug 'junegunn/goyo.vim'
-Plug 'lilydjwg/colorizer'
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips' "Ctrl a to launch ultisnips
 Plug 'honza/vim-snippets'
@@ -55,9 +54,12 @@ Plug 'roxma/vim-paste-easy'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
 Plug '907th/vim-auto-save'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
+" Plug 'lilydjwg/colorizer'
+
 
 call plug#end()
 
@@ -351,7 +353,6 @@ command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
 
 set termguicolors
 colorscheme gruvbox-neon2
-" colorscheme nord2
 
 
 " Keybindings -------------------------------------------------------------------------------
@@ -389,31 +390,31 @@ nmap <C-s> :w<CR>
 " Map Ctrl q to safe and quit
 nmap <C-q> :wq<CR>
 
+" Ctrl A to select all
+nmap <C-a> ggVG
+
 " Or just Space to enter insert mode.
 nmap <Space><Space> i
 
-" Map Ctrl+ vim keys to go to end or beginning of a line
-nmap <C-l> $
-nmap <C-h> ^
-
-" Map U to redo
-nmap U <C-R>
+" Map H+L to go to end or beginning of a line
+nmap L $
+nmap H ^
 
 " Map J/K to jump between paragraphs
 nmap J }
 nmap K {
 
+" Map U to redo
+nmap U <C-R>
+
 " Ctrl f to search
 nmap <C-f> /
 
-" Move lines in and out
-nmap H <<
-nmap L >>
+" Move lines in and out + up and down
+nmap <C-h> <<
+nmap <C-l> >>
 nmap <C-k> :move-2<cr>
 nmap <C-j> :move+<cr>
-
-" Ctrl A to select all
-nmap <C-a> ggVG
 
 
 "---------------------------------------------------------------
@@ -679,6 +680,19 @@ let g:tagbar_type_css = {
     \ ]
 \ }
 
+" Hexokinase Colors--------------------------------------------------------------------------
+
+" Neovim default
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
+" let g:Hexokinase_highlighters = [ 'virtual' ]
+
+" make hexokinase change colors as i type
+let g:Hexokinase_refreshEvents = [ 'TextChanged', 'InsertLeave']
+
+" Set which Colortypes should be considered
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'
+
+
 " Vim Auto Save -----------------------------------------------------------------------------
 
 " set to safe after changes in normal and insert mode
@@ -809,5 +823,6 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Stop Auto Commenting new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 
