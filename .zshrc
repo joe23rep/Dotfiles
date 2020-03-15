@@ -400,6 +400,9 @@ source /home/joe/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export FZF_DEFAULT_OPS0"extended"
 
+# source go
+export PATH=$PATH:/usr/local/go/bin
+
 
 
 

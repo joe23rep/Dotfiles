@@ -96,6 +96,7 @@ let s:gb = {}
 " #c176e2
 " #b032fe
 " #23c2c9
+" #00d7be
 "----------------------------------------------------------------------------------------
 
 
@@ -124,7 +125,7 @@ let s:gb.light4_256  = ['#d4f4fd', 246]     " 168-153-132
 let s:gb.bright_red     = ['#9500ff', 167]     " 251-73-52
 let s:gb.bright_green   = ['#00eeff', 142]     " 184-187-38
 let s:gb.bright_yellow  = ['#c2c2ff', 214]     " 250-189-47
-let s:gb.bright_blue    = ['#00d7be', 109]     " 131-165-152
+let s:gb.bright_blue    = ['#34ffbc', 109]     " 131-165-152
 let s:gb.bright_purple  = ['#c567ff', 175]     " 211-134-155
 let s:gb.bright_aqua    = ['#00c1e5', 108]     " 142-192-124
 let s:gb.bright_orange  = ['#9eddff', 208]     " 254-128-25
