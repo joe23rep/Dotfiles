@@ -1,7 +1,10 @@
+
 configuration {
     show-icons:                     true;
     font:                           "SF Compact Text Regular 12";
-
+    location: 5;
+    yoffset: -50;
+    xoffset: -20;
 
 
 }
@@ -27,7 +30,7 @@ window {
 
 prompt {
     enabled:                        true;
-    padding:                        55px 0px 0px 1399px;
+    padding:                        52px 0px 0px 1394px;
     font:                           "SF Compact Text Regular 16";
     color:                          #414141;
 }
@@ -100,3 +103,4 @@ element-text {
 }
 
 /*  */
+

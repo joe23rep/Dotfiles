@@ -54,11 +54,11 @@ Plug 'roxma/vim-paste-easy'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
 Plug '907th/vim-auto-save'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'lilydjwg/colorizer'
+" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
-" Plug 'lilydjwg/colorizer'
 
 
 call plug#end()
