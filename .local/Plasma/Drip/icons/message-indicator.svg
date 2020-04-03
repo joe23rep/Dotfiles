@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg3727" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="22" width="22" version="1.0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<defs id="defs3615">
+		<style id="current-color-scheme" type="text/css">
+			.ColorScheme-Text { color:#0000FF; }
+		</style>
+	</defs>
+	<metadata id="metadata7">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title/>
+				<dc:creator>
+					<cc:Agent>
+						<dc:title>obnosim</dc:title>
+					</cc:Agent>
+				</dc:creator>
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
+			</cc:Work>
+			<cc:License rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+			</cc:License>
+		</rdf:RDF>
+	</metadata>
+	<g id="mail-unread-new" transform="translate(-29,3)">
+		<rect style="fill:none" height="22" width="22" y="-3" x="29"/>
+		<path d="m40-2.75c-1.3608 0-2.7772.61425-4.5 1.75h9c-1.723-1.1358-3.139-1.75-4.5-1.75zm-9 2.75v2.4062 2.5938.3125l1.0312 1c.076-.1796.261-.3125.469-.3125h15c.20775 0 .39305.13292.46875.3125l1.031-1v-.3125-2.5938-2.4062h-3.062-11.876-3.062zm1.5 2h5c.277 0 .5.223.5.5s-.223.5-.5.5h-5c-.277 0-.5-.223-.5-.5s.223-.5.5-.5zm-2.5 1.1875c-.353.2878-.622.5034-1 .8125v13c0 .554.446 1 1 1h20c.554 0 1-.446 1-1v-13c-.378-.3091-.647-.5247-1-.8125v2.3125a.50005 .50005 0 0 1 -.156 .3438l-5.156 5.1562 4.6562 4.6562a.50005 .50005 0 1 1 -.6875 .6875l-4.844-4.844h-7.625l-4.8438 4.8438a.50005 .50005 0 1 1 -.6875 -.6875l4.656-4.656-5.156-5.1562a.50005 .50005 0 0 1 -.156 -.3438v-2.3125zm5.438.8125h12.124c.247 0 .438.1911.438.4375v.125c0 .2464-.191.4375-.438.4375h-12.124c-.247 0-.438-.1911-.438-.4375v-.125c0-.2464.191-.4375.438-.4375zm-2.75 3 1 1h12.625l1-1h-14.625zm2 2 1 1h8.625l1-1h-10.625z" style="fill:currentColor;opacity:.875" class="ColorScheme-Text"/>
+	</g>
+</svg>
