@@ -342,8 +342,6 @@ endfunction
 command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
 
 
-
-
 " Colors ------------------------------------------------------------------------------------
 "   ____      _
 "  / ___|___ | | ___  _ __ ___
@@ -811,7 +809,6 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
 
 " Important Stuff (needs to be loaded last) -----------------------------------------------
 "   ___                            _              _
