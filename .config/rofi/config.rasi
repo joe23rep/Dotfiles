@@ -33,6 +33,7 @@ prompt {
     padding:                        52px 0px 0px 1394px;
     font:                           "SF Compact Text Regular 16";
     color:                          #414141;
+
 }
 
 entry{
@@ -41,7 +42,7 @@ entry{
     margin:                         40px 90px 20px 483px;
     border-radius:                  120;
     padding:                        12px 12px 12px 17px;
-    background-color:               rgba(60, 60, 70, 30%);
+    background-color:               rgba(60, 60, 70, 40%);
     border:                         0px 0px solid 0px 0px;
     border-color:                   @text-color;
     font:                           "SF Compact Text Regular 16";
@@ -57,6 +58,7 @@ element {
     orientation:                    vertical;
     padding:                        1px;
     margin:                         18px;
+    border-radius:                  14px;
 }
 
 mainbox {
@@ -78,18 +80,23 @@ element normal.active, element alternate.active {
     color:                          @selected-text-color;
 }
 
-element selected {
+element.selected {
   background-color: rgba(60, 60, 70, 30%);
   text-color: #ffffff;
+  /* border-color: #d4f6fa; */
+  /* border-radius: 10px; */
+  /* border:  0px 5px 0px 5px; */
+
 }
+
 
 element selected.urgent {
     background-color:               @urgent;
 }
 
 element selected.active {
-    background-color:               @background-alt;
-    color:                          @selected-text-color;
+    background-color:               rgba(60, 60, 70, 30%);
+    color:                          #ffffff;
 }
 
 element-icon {
@@ -102,5 +109,8 @@ element-text {
     horizontal-align:               0.5;
 }
 
+
 /*  */
+
+
 
