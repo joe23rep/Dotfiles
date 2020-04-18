@@ -186,6 +186,7 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 bindkey "^r" history-incremental-search-backward
 
 
+
 #------------------------------------------------------------------------------------------
 #  __     _____      __  __           _
 #  \ \   / /_ _|    |  \/  | ___   __| | ___
@@ -241,6 +242,8 @@ alias time="sudo timeshift --snapshot --restore"
 alias vim="vim -S ~/.vimrc"
 alias nvim="nvim -S ~/.vimrc"
 alias time="sudo timeshift --list"
+alias ..="cd .."
+
 
 
 #------------------------------------------------------------------------------------------
