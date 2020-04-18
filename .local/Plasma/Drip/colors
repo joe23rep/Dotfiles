@@ -32,6 +32,20 @@ ForegroundNormal=212,253,246
 ForegroundPositive=108,252,180
 ForegroundVisited=90,222,255
 
+[Colors:Complementary]
+BackgroundAlternate=0,2,8
+BackgroundNormal=17,18,23
+DecorationFocus=55,211,231
+DecorationHover=139,246,255
+ForegroundActive=228,8,248
+ForegroundInactive=175,176,179
+ForegroundLink=90,222,255
+ForegroundNegative=217,3,255
+ForegroundNeutral=119,255,160
+ForegroundNormal=212,253,246
+ForegroundPositive=108,252,180
+ForegroundVisited=90,222,255
+
 [Colors:Selection]
 BackgroundAlternate=94,85,97
 BackgroundNormal=139,246,255
@@ -81,26 +95,12 @@ DecorationFocus=55,211,231
 DecorationHover=139,246,255
 ForegroundActive=228,8,248
 ForegroundInactive=175,176,179
-ForegroundLink=90,222,255
+ForegroundLink=167,23,204
 ForegroundNegative=217,3,255
 ForegroundNeutral=119,255,160
 ForegroundNormal=212,253,246
 ForegroundPositive=108,252,180
-ForegroundVisited=90,222,255
-
-[Colors:Complementary]
-BackgroundAlternate=0,2,8
-BackgroundNormal=17,18,23
-DecorationFocus=55,211,231
-DecorationHover=139,246,255
-ForegroundActive=228,8,248
-ForegroundInactive=175,176,179
-ForegroundLink=90,222,255
-ForegroundNegative=217,3,255
-ForegroundNeutral=119,255,160
-ForegroundNormal=212,253,246
-ForegroundPositive=108,252,180
-ForegroundVisited=90,222,255
+ForegroundVisited=121,11,248
 
 [General]
 ColorScheme=Breeze AlphaBlack
@@ -109,4 +109,3 @@ shadeSortColumn=true
 
 [KDE]
 contrast=1
-

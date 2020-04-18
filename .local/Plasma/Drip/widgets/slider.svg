@@ -38,9 +38,9 @@
      inkscape:window-height="1050"
      id="namedview81"
      showgrid="false"
-     inkscape:zoom="31.510594"
-     inkscape:cx="45.086028"
-     inkscape:cy="70.820514"
+     inkscape:zoom="47.606548"
+     inkscape:cx="32.752211"
+     inkscape:cy="78.303728"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
@@ -269,11 +269,11 @@
   </defs>
   <path
      id="groove-top"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 36,11 v 2 h 2 v -2 z" />
   <path
      id="groove-topleft"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 36,11 c -1.12144,0 -2,0.87856 -2,2 h 2 z" />
   <rect
      id="hint-tile-center"
@@ -286,31 +286,31 @@
      ry="2" />
   <path
      id="groove-topright"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 40,13 c 0,-1.12144 -0.87856,-2 -2,-2 v 2 z" />
   <path
      id="groove-bottom"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 36,17 v -2 h 2 v 2 z" />
   <path
      id="groove-bottomleft"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 36,17 c -1.12144,0 -2,-0.87856 -2,-2 h 2 z" />
   <path
      id="groove-bottomright"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 40,15 c 0,1.12144 -0.87856,2 -2,2 v -2 z" />
   <path
      id="groove-center"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 36,13 v 2 h 2 v -2 z" />
   <path
      id="groove-left"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 34,13 v 2 h 2 v -2 z" />
   <path
      id="groove-right"
-     style="opacity:0.2"
+     style="opacity:0.7;fill:#444c53;fill-opacity:1"
      d="m 38,13 v 2 h 2 v -2 z" />
   <path
      id="groove-highlight-top"
