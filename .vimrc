@@ -572,6 +572,12 @@ nmap <leader>gv  :GV!<CR>
 " Toggle Auto save
 nmap <leader>as :AutoSaveToggle<CR>
 
+" Gitgutter -----------------------------------------------------
+
+" Switch between last changed Parts
+nmap ) <Plug>(GitGutterNextHunk)
+nmap ( <Plug>(GitGutterPrevHunk)
+
 
 " Leader Key Mappings ----------------------------------------------------------------------
 "   _                   _             _  __
@@ -690,6 +696,10 @@ let g:Hexokinase_refreshEvents = [ 'TextChanged', 'InsertLeave']
 " Set which Colortypes should be considered
 let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'
 
+" Gitgutter----------------------------------------------------------------------------------
+
+let g:gitgutter_enabled = 1
+let g:gitgutter_map_keys = 0
 
 " Vim Auto Save -----------------------------------------------------------------------------
 
