@@ -11,8 +11,8 @@
    version="1.1"
    viewBox="0 0 48 48"
    id="svg22"
-   sodipodi:docname="cs-screensaver.svg"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+   sodipodi:docname="xscreensaver.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata26">
     <rdf:RDF>
@@ -37,9 +37,9 @@
      inkscape:window-height="1050"
      id="namedview24"
      showgrid="false"
-     inkscape:zoom="17.093099"
-     inkscape:cx="8.0578937"
-     inkscape:cy="24"
+     inkscape:zoom="6.4561097"
+     inkscape:cx="-3.9891059"
+     inkscape:cy="39.230849"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
@@ -50,15 +50,15 @@
      id="path2" />
   <path
      d="m43.833 5.902c1.922 0 3.479 1.558 3.479 3.479v28.225c0 1.921-1.557 3.479-3.479 3.479h-39.666c-1.922 0-3.479-1.558-3.479-3.479v-28.225c0-1.921 1.557-3.479 3.479-3.479h39.666z"
-     style="fill:#00ffff"
+     style="fill:#80ffe6;fill-opacity:1"
      id="path4" />
   <path
      d="m4.167 5.902h19.833v35.183h-19.833c-1.922 0-3.479-1.558-3.479-3.479v-28.225c0-1.921 1.557-3.479 3.479-3.479z"
-     style="fill:#000080"
+     style="fill:#7f2aff;fill-opacity:1"
      id="path6" />
   <path
      d="m24 28.21c0.94 0 1.714-0.768 1.714-1.716s-0.772-1.704-1.714-1.704c-0.94 0-1.714 0.768-1.714 1.704 0 0.948 0.774 1.716 1.714 1.716m5.142-7.716c0.941 0 1.715 0.78 1.715 1.716v8.58c0 0.936-0.774 1.704-1.715 1.704h-10.285c-0.941 0-1.715-0.768-1.715-1.704v-8.58c0-0.948 0.772-1.716 1.715-1.716h0.857v-1.704c0-2.352 1.934-4.296 4.286-4.296 2.351 0 4.286 1.944 4.286 4.296v1.704h0.856zm-5.142-4.284c-1.411 0-2.571 1.164-2.571 2.58v1.704h5.142v-1.704c0-1.416-1.161-2.58-2.571-2.58z"
-     style="fill-opacity:.85;fill-rule:nonzero;fill:#fff"
+     style="fill-opacity:0.85;fill-rule:nonzero;fill:#0b0b28;opacity:0.77"
      id="path8" />
   <defs
      id="defs20">
