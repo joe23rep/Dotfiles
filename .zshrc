@@ -243,6 +243,7 @@ alias time="sudo timeshift --snapshot --restore"
 alias vim="nvim"
 alias time="sudo timeshift --list"
 alias ..="cd .."
+alias ghosts="./.scripts/ghosts.sh"
 
 
 
