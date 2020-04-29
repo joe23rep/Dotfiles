@@ -1,4 +1,3 @@
-
 configuration {
     show-icons:                     true;
     font:                           "SF Compact Text Regular 12";
@@ -16,8 +15,8 @@ configuration {
     background-alt:                 #E5E9F047;
     text-color:                     #D8DEE9;
     selected-text-color:            #000000;
-    primary:                        #A3BE8C;
-    urgent:                         #BF616A;
+    primary:                        #790BF8;
+    urgent:                         #00E6FF;
 
 }
 
@@ -111,6 +110,4 @@ element-text {
 
 
 /*  */
-
-
 
