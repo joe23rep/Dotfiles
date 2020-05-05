@@ -1,13 +1,13 @@
 configuration {
     show-icons:                     true;
     font:                           "SF Compact Text Regular 12";
-    location: 5;
-    yoffset: -50;
-    xoffset: -20;
+    location:                       5;
+    yoffset:                        -50;
+    xoffset:                        -20;
+    scroll-method:                  0;
 
 
 }
-/*rgba (0, 0, 0, 90%);*/
 
 * {
     background-color:               transparent;
@@ -29,9 +29,10 @@ window {
 
 prompt {
     enabled:                        true;
-    padding:                        52px 0px 0px 1394px;
+    padding:                        52px 0px 0px 505px;
     font:                           "SF Compact Text Regular 16";
-    color:                          #414141;
+    color:                          #d1f4fd;
+
 
 }
 
@@ -40,12 +41,13 @@ entry{
     width:                          80em;
     margin:                         40px 90px 20px 483px;
     border-radius:                  120;
-    padding:                        12px 12px 12px 17px;
-    background-color:               rgba(60, 60, 70, 40%);
-    border:                         0px 0px solid 0px 0px;
-    border-color:                   @text-color;
+    padding:                        12px 12px 12px 226px;
+    background-color:               #00000090;
     font:                           "SF Compact Text Regular 16";
-    color:                          #414141;
+    color:                          #30303001;
+    /* color:                          #d1f4fd; */
+    border:                         2px;
+    border-color:                   rgba (60, 60, 70, 40%);
 }
 
 listview {
@@ -67,6 +69,7 @@ mainbox {
 
 element {
     padding:                        18px;
+    margin:                         23px;
 
 }
 
@@ -80,11 +83,12 @@ element normal.active, element alternate.active {
 }
 
 element.selected {
-  background-color: rgba(60, 60, 70, 30%);
-  text-color: #ffffff;
-  /* border-color: #d4f6fa; */
-  /* border-radius: 10px; */
-  /* border:  0px 5px 0px 5px; */
+
+  background-color:                 #00000090;
+  border-radius:                    10px;
+  text-color:                       #ffffff;
+  padding:                          18px;
+  margin:                           23px;
 
 }
 
@@ -110,4 +114,7 @@ element-text {
 
 
 /*  */
+
+/*  */
+
 
