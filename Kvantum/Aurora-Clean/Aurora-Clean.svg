@@ -38,13 +38,13 @@
      inkscape:window-height="1050"
      id="namedview984"
      showgrid="false"
-     inkscape:zoom="10.504563"
-     inkscape:cx="113.68656"
-     inkscape:cy="718.70057"
+     inkscape:zoom="3.2279221"
+     inkscape:cx="124.81266"
+     inkscape:cy="377.92407"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g191"
+     inkscape:current-layer="svg2"
      inkscape:lockguides="true"
      showguides="false">
     <inkscape:grid
@@ -2047,31 +2047,31 @@
        inkscape:connector-curvature="0" />
   </g>
   <path
-     style="color:#000000;opacity:0.25;fill:url(#linearGradient6752-2);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#linearGradient6752-2);fill-rule:evenodd;stroke:none"
      id="menu-shadow-left"
      d="m 12.5005,496 v 60 h 5 v -60 z" />
   <path
-     style="color:#000000;opacity:0.28000004;fill:url(#linearGradient6748-6);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#linearGradient6748-6);fill-rule:evenodd;stroke:none"
      id="menu-shadow-right"
      d="m 75.5003,496 v 60 h 5 v -60 z" />
   <path
-     style="color:#000000;opacity:0.28999999;fill:url(#linearGradient6750-7);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#linearGradient6750-7);fill-rule:evenodd;stroke:none"
      id="menu-shadow-bottom"
      d="m 17.5005,556 v 5 h 58 v -5 z" />
   <path
-     style="color:#000000;opacity:0.25;fill:url(#radialGradient6740-0);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#radialGradient6740-0);fill-rule:evenodd;stroke:none"
      id="menu-shadow-topleft"
      d="m 12.50035,491 1e-4,5 5,-10e-5 v -5 z" />
   <path
-     style="color:#000000;opacity:0.28000004;fill:url(#radialGradient6742-3);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#radialGradient6742-3);fill-rule:evenodd;stroke:none"
      id="menu-shadow-topright"
      d="m 75.5005,491 v 5 h 5 v -5 z" />
   <path
-     style="color:#000000;opacity:0.25;fill:url(#radialGradient6746-6);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#radialGradient6746-6);fill-rule:evenodd;stroke:none"
      id="menu-shadow-bottomleft"
      d="m 12.50045,556 v 5 h 5 l -5e-4,-5 z" />
   <path
-     style="color:#000000;opacity:0.28000004;fill:url(#radialGradient6744-9);fill-rule:evenodd;stroke:none"
+     style="color:#000000;opacity:0.001;fill:url(#radialGradient6744-9);fill-rule:evenodd;stroke:none"
      id="menu-shadow-bottomright"
      d="m 75.50045,556 3e-4,5 h 5 v -5 z" />
   <rect
@@ -2181,7 +2181,7 @@
   <g
      id="menu-shadow-top"
      transform="translate(0,-300)"
-     style="fill-rule:evenodd;stroke:none">
+     style="fill-rule:evenodd;stroke:none;opacity:0.001">
     <path
        id="menu-shadow-top0"
        d="m 17.5005,791 0,2.5 58,0 0,-2.5 z"

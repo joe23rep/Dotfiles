@@ -50,10 +50,27 @@ entry{
     border-color:                   rgba (60, 60, 70, 40%);
 }
 
+scrollbar {
+	background-color: 				@background-alt;
+	handle-width:					10px;
+	margin: 						0px 0px 5px 0px;
+	border-radius:  				9px;
+}
+
 listview {
+	spacing: 						0px;
+	dynamic:						true;
+	cycle:   						true;
+	scrollbar: 						true;
     columns:                        6;
     margin:                         20px 190px 80px 190px;
 }
+
+/* listview { */
+/*     columns:                        6; */
+/*     margin:                         20px 190px 80px 190px; */
+/* } */
+
 
 element {
     orientation:                    vertical;
