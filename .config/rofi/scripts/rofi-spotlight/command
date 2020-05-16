@@ -1,0 +1,2 @@
+rofi -theme .config/rofi/rofi-spotlight/rofi.rasi  -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -theme-str '#window { transparency: "/home/joe/.config/rofi/background.png"; }'  -modi "Global Search":".config/rofi/rofi-spotlight/rofi-spotlight.sh" -show "Global Search" \
+-config .config/rofi/rofi-spotlight/rofi.rasi

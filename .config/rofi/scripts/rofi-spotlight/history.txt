@@ -1,0 +1,9 @@
+mozilla
+wallpaper
+WALLPAPER
+/home/joe/.conky/Green Apple Desktop/wallpaper.jpg
+rofi.rasi
+websearch:rofi
+!rofi linux
+!rofi margins
+!rofi padding
