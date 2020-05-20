@@ -10,12 +10,12 @@
 @import "findbar/findbar.css";
 
 :root {
-  --initial-width     : 70px;     /* initial width of the sidebar */
+  --initial-width     : 65px;     /* initial width of the sidebar */
   --sidebar-width     : 250px;    /* expanded width of the sidebar */
   --toolbar-height    : 0;
   --menubar-height    : 0px;
   --toolmenubar-height: -40px;    /* sum of previous two */
-  --shadow-color      : #28282F;  /* shadow color. set to #00000000 for no shadow. same as folder color from hntp and tab-hover color from tst*/
+  --shadow-color      : #00000000;  /* shadow color. set to #00000000 for no shadow. same as folder color from hntp and tab-hover color from tst*/
 }
 
 /* show bookmarks toolbar on new tab only */
