@@ -1,29 +1,38 @@
 {
     "suggest.noselect": false,
-  "codeLens.enable": true,
-  "diagnostic.virtualText": true,
-  "diagnostic.errorSign": "◉",
-  "suggest.completionItemKindLabels": {
-    "module": " ",
-    "function": "ﬦ",
-    "variable": "ﮂ"
-  },
-  "suggest.snippetIndicator": "\u26a1 ",
-  "languageserver": {
-    "elixirLS": {
-      "command": "~/Development/elixir-ls/rel/language_server.sh",
-      "filetypes": ["elixir", "eelixir"],
-      "settings": {
-        "elixirLS": {
-          "dialyzerEnabled": false
-        }
-      }
+    "codeLens.enable": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.errorSign": "◉",
+    "suggest.completionItemKindLabels": {
+        "module": " ",
+        "function": "ﬦ",
+        "variable": "ﮂ"
     },
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "filetypes": ["go"]
-    }
-  }
+    "suggest.snippetIndicator": "\u26a1 ",
+    "languageserver": {
+        "elixirLS": {
+            "command": "~/Development/elixir-ls/rel/language_server.sh",
+            "filetypes": ["elixir", "eelixir"],
+            "settings": {
+                "elixirLS": {
+                    "dialyzerEnabled": false
+                }
+            }
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod"],
+            "filetypes": ["go"]
+        }
+    },
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "javascriptreact",
+        "typescript.tsx",
+        "graphql"
+    ]
 }
 
