@@ -240,6 +240,9 @@ set softtabstop=4
 " Copy indent from current line when starting a new line
 set autoindent
 
+" auto indent
+filetype plugin indent on
+
 " Allow changes to buffers
 set modifiable
 
@@ -287,16 +290,16 @@ let &t_EI.="\e[4 q" "SR = NORMAL mode // underline
 
 " Make sure vim returns to the line u closed the document on
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \| exe "normal! g'\"" | endif
 endif
 
 
 " Enable saving Folds
 augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
-  autocmd BufWinEnter ?* silent! loadview
+    autocmd!
+    autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+    autocmd BufWinEnter ?* silent! loadview
 augroup end
 
 
@@ -326,18 +329,18 @@ endfunction
 
 " SaveMacro / LoadMacro
 function! s:save_macro(name, file)
-  let content = eval('@'.a:name)
-  if !empty(content)
-    call writefile(split(content, "\n"), a:file)
-    echom len(content) . " bytes save to ". a:file
-  endif
+    let content = eval('@'.a:name)
+    if !empty(content)
+        call writefile(split(content, "\n"), a:file)
+        echom len(content) . " bytes save to ". a:file
+    endif
 endfunction
 command! -nargs=* SaveMacro call <SID>save_macro(<f-args>)
 
 function! s:load_macro(file, name)
-  let data = join(readfile(a:file), "\n")
-  call setreg(a:name, data, 'c')
-  echom "Macro loaded to @". a:name
+    let data = join(readfile(a:file), "\n")
+    call setreg(a:name, data, 'c')
+    echom "Macro loaded to @". a:name
 endfunction
 command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
 
@@ -668,21 +671,21 @@ let g:closetag_emptyTags_caseSensitive = 1
 
 " Disables auto-close if not in a "valid" region (based on filetype)
 let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
+            \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+            \ 'javascript.jsx': 'jsxRegion',
+            \ }
 
 " Tagbar ------------------------------------------------------------------------------------
 
 " Enable CSS
 let g:tagbar_type_css = {
-\ 'ctagstype' : 'Css',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 's:selectors',
-        \ 'i:identities'
-    \ ]
-\ }
+            \ 'ctagstype' : 'Css',
+            \ 'kinds'     : [
+            \ 'c:classes',
+            \ 's:selectors',
+            \ 'i:identities'
+            \ ]
+            \ }
 
 " Hexokinase Colors--------------------------------------------------------------------------
 
@@ -736,7 +739,7 @@ endif
 "                                             |___/
 " Fzf statusbar config (lightline style)
 function! s:fzf_statusline()
-  setlocal statusline=%#fzf1#\ \ %#fzf2#fzf%#fzf3#\
+    setlocal statusline=%#fzf1#\ \ %#fzf2#fzf%#fzf3#\
 endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
@@ -751,71 +754,71 @@ hi fzf3 guifg=#00eeff  guibg=#292c33
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 
 if has('nvim') || has('gui_running')
-  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+    let $FZF_DEFAULT_OPTS .= ' --inline-info'
 endif
 
 
 " All files
 command! -nargs=? -complete=dir AF
-  \ call fzf#run(fzf#wrap(fzf#vim#with_preview({
-  \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
-  \ })))
+            \ call fzf#run(fzf#wrap(fzf#vim#with_preview({
+            \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
+            \ })))
 
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 
 " Terminal buffer options for fzf
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
 
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+            \ call fzf#vim#ag(<q-args>,
+            \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+            \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+            \                 <bang>0)
 
 
 function! s:plug_help_sink(line)
-  let dir = g:plugs[a:line].dir
-  for pat in ['doc/*.txt', 'README.md']
-    let match = get(split(globpath(dir, pat), "\n"), 0, '')
-    if len(match)
-      execute 'tabedit' match
-      return
-    endif
-  endfor
-  tabnew
-  execute 'Explore' dir
+    let dir = g:plugs[a:line].dir
+    for pat in ['doc/*.txt', 'README.md']
+        let match = get(split(globpath(dir, pat), "\n"), 0, '')
+        if len(match)
+            execute 'tabedit' match
+            return
+        endif
+    endfor
+    tabnew
+    execute 'Explore' dir
 endfunction
 
 command! PlugHelp call fzf#run(fzf#wrap({
-  \ 'source': sort(keys(g:plugs)),
-  \ 'sink':   function('s:plug_help_sink')}))
+            \ 'source': sort(keys(g:plugs)),
+            \ 'sink':   function('s:plug_help_sink')}))
 
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let options = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  if a:fullscreen
-    let options = fzf#vim#with_preview(options)
-  endif
-  call fzf#vim#grep(initial_command, 1, options, a:fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let options = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    if a:fullscreen
+        let options = fzf#vim#with_preview(options)
+    endif
+    call fzf#vim#grep(initial_command, 1, options, a:fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
@@ -830,6 +833,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Stop Auto Commenting new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 
 
