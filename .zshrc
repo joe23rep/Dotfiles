@@ -30,7 +30,8 @@ current_terminal="$(ps -p$PPID -o cmd=)"
 function choose_theme {
     if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'alacritty' ]];
     then echo 'lena2';
-    else echo 'powerlevel10k/powerlevel10k';
+    # else echo 'powerlevel10k/powerlevel10k';
+    else echo 'spaceship';
     fi
 }
 
@@ -63,7 +64,7 @@ history
 colored-man-pages
 command-not-found
 pip
-vi-mode
+# vi-mode
 )
 
 
@@ -410,6 +411,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 
 
 
