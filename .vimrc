@@ -55,10 +55,12 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
 Plug '907th/vim-auto-save'
 Plug 'lilydjwg/colorizer'
+Plug 'vim-scripts/CSSMinister'
 " Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
+" Plug 'articicestudio/nord-vim'
 
 
 call plug#end()
@@ -354,6 +356,7 @@ command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
 
 set termguicolors
 colorscheme gruvbox-neon2
+" colorscheme nord
 
 
 " Keybindings -------------------------------------------------------------------------------
@@ -580,6 +583,18 @@ nmap <leader>as :AutoSaveToggle<CR>
 " Switch between last changed Parts
 nmap ) <Plug>(GitGutterNextHunk)
 nmap ( <Plug>(GitGutterPrevHunk)
+
+" CSS Minister----------------------------------------------------
+
+" Cycle threw Colortypes
+nmap <leader>tr :ToRGB<CR>
+nmap <leader>th :ToHex<CR>
+" :ToHexAll <format>
+" :ToRGBAll <format>
+" :ToRGBAAll <format>
+" :ToHSLAll <format>
+" :ToHSLAAll <format>
+" :ToHexAll rgba would change all rgba in the document to hex
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
@@ -833,7 +848,6 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Stop Auto Commenting new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 
 
 
