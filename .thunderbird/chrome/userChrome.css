@@ -247,9 +247,9 @@ tab.tabmail-tab {
 	)
 	left
 	bottom
-	#02060D
+	#00010601
 	no-repeat !important;
-  	background-size: 100% 1px!important;
+  	background-size: 100% 2px!important;
 	border: 0 !important;
 	border-image: none !important;
 
@@ -297,7 +297,20 @@ tab.tabmail-tab {
 
 
 #threadTree treechildren::-moz-tree-row(odd, selected) {
-	background-color: var(--tb-accent-bg) !important;
+	/* background-color: var(--tb-accent-bg) !important; */
+    background:
+	linear-gradient(
+	  to right,
+	  #8bf6ff,
+	  #970bf8
+	)
+	left
+	bottom
+	#00010601
+	no-repeat !important;
+  	background-size: 100% 2px!important;
+	border: 0 !important;
+	border-image: none !important;
 }
 
 #threadTree treechildren::-moz-tree-row {
@@ -524,7 +537,8 @@ toolbarbutton {
 #calendarContent #ltnSidebar {
 	background-color: var(--tb-base-bg) !important;
 	border: none !important;
-	color: var(--tb-base-fg) !important;
+	/* color: var(--tb-base-fg) !important; */
+	color: #970bf8 !important;
 	font-size: 11pt !important;
 	font-weight: normal !important;
 }
@@ -548,11 +562,11 @@ toolbarbutton {
 
 minimonth {
 	--mmMainBackground: none !important;
-	--mmBoxBackground: red !important;
+	--mmBoxBackground: none !important;
 	--mmBoxBorderColor: none !important;
 	--mmDayColor: WindowText !important;
 	--mmDayBorderColor: transparent !important;
-	--mmDayOtherColor: var(--tb-base-fg) !important;
+	--mmDayOtherColor: #a1b4ba !important;
 	--mmDayOtherBackground: var(--tb-base-bg) !important;
 	--mmDayOtherBorderColor: none !important;
 	--mmDayTodayBackground: var(--tb-accent-bg) !important;
@@ -562,6 +576,7 @@ minimonth {
 	--mmDaySelectedBorderColor: none !important;
 	--mmDaySelectedTodayBackground: var(--tb-base-bg) !important;
 	--mmDaySelectedTodayBorderColor: none !important;
+	--mmDaySelectedTodayBorderColor: #970bf8 !important;
 }
 
 minimonth-header {
@@ -762,7 +777,7 @@ calendar-header-container {
 
 
 calendar-header-container[weekend="true"]{
-	background-color: #EE4F8499 !important;
+	background-color: #970bf805 !important;
 	border: none !important;
 }
 
@@ -786,7 +801,21 @@ calendar-header-container[weekend="true"]{
 calendar-header-container[relation="today"],
 .calendar-event-column-linebox[relation="today"],
 calendar-day-label[orient][relation="today"] {
-	background-color: var(--tb-accent-bg) !important;
+    background:
+	linear-gradient(
+	  to right,
+	  #8bf6ff,
+	  #970bf8
+	)
+	left
+	bottom
+	#00010601
+	no-repeat !important;
+  	background-size: 100% 1px!important;
+	border: 0 !important;
+	border-image: none !important;
+
+	/* background-color: var(--tb-accent-bg) !important; */
 }
 
 .calendar-event-column-linebox[relation="today"] {
@@ -795,7 +824,21 @@ calendar-day-label[orient][relation="today"] {
 
 calendar-header-container[weekend="true"][relation="today"],
 .calendar-event-column-linebox[weekend="true"][relation="today"] {
-	background-color: var(--tb-accent-bg) !important;
+    background:
+	linear-gradient(
+	  to right,
+	  #8bf6ff,
+	  #970bf8
+	)
+	left
+	bottom
+	#00010601
+	no-repeat !important;
+  	background-size: 100% 1px!important;
+	border: 0 !important;
+	border-image: none !important;
+
+	/* background-color: var(--tb-accent-bg) !important; */
 
 }
 
@@ -824,7 +867,7 @@ calendar-header-container[weekend="true"][selected="true"],
 
 calendar-header-container[selected="true"][relation="today"],
 .calendar-event-column-linebox[selected="true"][relation="today"] {
-	background-color: #ff975999 !important;
+	background-color: #970bf805 !important;
 }
 
 calendar-header-container[selected="true"][weekend="true"][relation="today"],
@@ -836,29 +879,43 @@ calendar-header-container[selected="true"][weekend="true"][relation="today"],
 
 
 .calendar-event-column-linebox[off-time="true"][relation="today"] {
-	background-color: #b86239DD !important;
+	background-color: #790bf805 !important;
 }
 
 .calendar-event-column-linebox[off-time="true"][weekend="true"][relation="today"] {
-	background-color: #5b234eDD !important;
+	background-color: #aa55ff05 !important;
 }
 /**/
 
 .calendar-event-column-linebox[off-time="true"][selected="true"] {
-	background-color: var(--tb-accent-bg) !important;
+    background:
+	linear-gradient(
+	  to right,
+	  #8bf6ff,
+	  #970bf8
+	)
+	left
+	bottom
+	#00010601
+	no-repeat !important;
+  	background-size: 100% 1px!important;
+	border: 0 !important;
+	border-image: none !important;
+
+	/* background-color: var(--tb-accent-bg) !important; */
 }
 
 .calendar-event-column-linebox[off-time="true"][weekend="true"][selected="true"] {
-	background-color: #6c6c6cDD !important;
+	background-color: #8bf6ff05 !important;
 }
 /**/
 
 .calendar-event-column-linebox[off-time="true"][selected="true"][relation="today"] {
-	background-color: #dd7644DD !important;
+	background-color: #00e6ff05 !important;
 }
 
 .calendar-event-column-linebox[off-time="true"][weekend="true"][selected="true"][relation="today"] {
-	background-color: #6d2a5eDD !important;
+	background-color: #01e5ff05 !important;
 }
 /**/
 
@@ -1011,7 +1068,21 @@ calendar-editable-item[selected="true"] .calendar-color-box {
 	border: transparent !important;
 }
 .calendar-month-day-box-current-month[selected=true] {
-	background-color: var(--tb-accent-bg) !important;
+    background:
+	linear-gradient(
+	  to right,
+	  #8bf6ff20,
+	  #970bf820
+	)
+	left
+	bottom
+	#000106
+	no-repeat !important;
+  	background-size: 100% 1px!important;
+	border: 0 !important;
+	border-image: none !important;
+
+	/* background-color: var(--tb-accent-bg) !important; */
 	border: transparent !important;
 }
 
@@ -1068,7 +1139,7 @@ calendar-editable-item[selected="true"] .calendar-color-box {
 .calendar-month-day-box-day-off[relation="today"],
 .calendar-month-day-box-other-month[relation="today"],
 .calendar-month-day-box-other-month.calendar-month-day-box-day-off[relation="today"] {
-	background-color: #F47D43 !important;
+	background-color: #970bf805 !important;
 	border: transparent !important;
 	box-shadow: inset 1px 1px 1px 0px rgba(0,0,0,0.45) !important;
 	border-right: 3px solid !important;
@@ -1081,7 +1152,7 @@ calendar-editable-item[selected="true"] .calendar-color-box {
 }
 
 .calendar-month-day-box-other-month[relation="today"] {
-	background-color: #5e3420DD !important;
+	background-color: #aa55ff05 !important;
 }
 
 .calendar-month-day-box-other-month.calendar-month-day-box-day-off[relation="today"] {
@@ -1093,7 +1164,7 @@ calendar-editable-item[selected="true"] .calendar-color-box {
 .calendar-month-day-box-day-off .calendar-month-day-box-date-label[relation="today"],
 .calendar-month-day-box-other-month .calendar-month-day-box-date-label[relation="today"],
 .calendar-month-day-box-other-month.calendar-month-day-box-day-off .calendar-month-day-box-date-label[relation="today"] {
-	background-color: #F48853 !important;
+	background-color: #790bf805 !important;
 	text-shadow: rgba(0,0,0,0.65) 0px 1px 1px, rgba(0,0,0,0.40) 1px 1px 0px!important;
 	color: rgb(255,255,255) !important;
 	font-weight: bold !important;
@@ -1104,7 +1175,7 @@ calendar-editable-item[selected="true"] .calendar-color-box {
 }
 
 .calendar-month-day-box-other-month .calendar-month-day-box-date-label[relation="today"] {
-	background-color: #653822 !important;
+	background-color: #353535 !important;
 }
 
 .calendar-month-day-box-other-month.calendar-month-day-box-day-off .calendar-month-day-box-date-label[relation="today"] {
