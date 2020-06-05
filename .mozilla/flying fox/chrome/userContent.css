@@ -1,0 +1,20 @@
+:root{ scrollbar-width: none !important }
+
+/* /* in userContent for all the about:pages of firefox */ */
+/*  */
+/* @-moz-document url-prefix("about:"), */
+/* @-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html") { */
+/* 	window, */
+/* 	page, */
+/* 	html, */
+/* 	.main-content, */
+/* 	scrollbar { */
+/* 		scrollbar-color: #313638 #01040a !important; */
+/* 		scrollbar-width: 6px !important; */
+/* 	} */
+/* } */
+/* /* for anywhere internal pages FF */ */
+/* * { */
+/* 	scrollbar-color: #313638 #01040a !important; */
+/* 	scrollbar-width: 6px !important; */
+/* } */
