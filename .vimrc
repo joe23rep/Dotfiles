@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmux-plugins/vim-tmux'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'KabbAmine/vCoolor.vim'
@@ -32,7 +32,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tcomment_vim' "gc to comment out multiple lines- cc to comment single line
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'lambdalisue/vim-manpager'
-Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips' "Ctrl a to launch ultisnips
 Plug 'honza/vim-snippets'
@@ -40,7 +39,6 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'lifepillar/vim-cheat40'
 Plug 'amix/open_file_under_cursor.vim' "gf to open file under cursor
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'tpope/vim-fugitive'
@@ -49,13 +47,13 @@ Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'rstacruz/sparkup'
-Plug 'roxma/vim-paste-easy'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
 Plug '907th/vim-auto-save'
 Plug 'lilydjwg/colorizer'
 Plug 'vim-scripts/CSSMinister'
+Plug 'voldikss/vim-floaterm'
+Plug 'liuchengxu/vim-which-key'
 " Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Plug 'mattn/emmet-vim '
 " Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -71,7 +69,13 @@ call plug#end()
 " :PlugUpdate		- updates plugins
 " :PlugUpgrade		- upgrades vim-plug
 " :PlugClean		- confirms removal of unused plugins; append `!` to auto-approve removal
-"
+
+
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
 
 " Sourcing ----------------------------------------------------------------------------------
@@ -86,6 +90,12 @@ source ~/.vim/config/coc.vim
 source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/toggle.vim
 source ~/.vim/config/lightline.vim
+source ~/.vim/config/floaterm.vim
+source ~/.vim/config/closetags.vim
+source ~/.vim/config/gitgutter.vim
+source ~/.vim/config/quickscope.vim
+" source ~/.vim/config/which-key.vim
+source ~/.vim/config/keymaps.vim
 
 
 " General Config ----------------------------------------------------------------------------
@@ -261,6 +271,9 @@ set sessionoptions=folds
 " Keep the cursor on the same column
 set nostartofline
 
+" Which key requirement
+set notimeout
+
 " Speed up scrolling in Vim
 set ttyfast
 
@@ -420,6 +433,11 @@ nmap <C-l> >>
 nmap <C-k> :move-2<cr>
 nmap <C-j> :move+<cr>
 
+" Which key to space
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+nmap <Leader>w :WhichKey <CR>
+set timeoutlen=500
 
 "---------------------------------------------------------------
 " Insert Mode
@@ -438,17 +456,14 @@ imap <C-s> <esc>:w<CR>
 " Map Ctrl q to safe and quit
 imap <C-q> <esc>:wq<CR>
 
-" Auto close brackets --needs inoremap
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-
 " Map Ctrl+ vim keys to go to end or beginning of a line
 imap <C-l> <right>
 imap <C-h> <left>
 imap <C-k> <up>
 imap <C-j> <down>
+
+" <TAB>: completion.
+imap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 "--------------------------------------------------------------
@@ -481,6 +496,29 @@ cmap jk <C-c>
 imap kj <esc>
 vmap kj <esc>
 cmap kj <C-c>
+
+
+"---------------------------------------------------------------
+" Terminal Mappings
+"---------------------------------------------------------------
+
+" Terminal window navigation
+  tnoremap <C-h> <C-\><C-N><C-w>h
+  tnoremap <C-j> <C-\><C-N><C-w>j
+  tnoremap <C-k> <C-\><C-N><C-w>k
+  tnoremap <C-l> <C-\><C-N><C-w>l
+  inoremap <C-h> <C-\><C-N><C-w>h
+  inoremap <C-j> <C-\><C-N><C-w>j
+  inoremap <C-k> <C-\><C-N><C-w>k
+  inoremap <C-l> <C-\><C-N><C-w>l
+  tnoremap <Esc> <C-\><C-n>
+
+  " Use alt + hjkl to resize windows
+  nnoremap <silent> <M-j>    :resize -2<CR>
+  nnoremap <silent> <M-k>    :resize +2<CR>
+  nnoremap <silent> <M-h>    :vertical resize -2<CR>
+  nnoremap <silent> <M-l>    :vertical resize +2<CR>
+
 
 "---------------------------------------------------------------
 " Plugin Mappings
@@ -529,15 +567,6 @@ nmap <C-t> :TagbarToggle<CR>
 vmap <C-t> :TagbarToggle<CR>
 
 
-" Cheatsheet ---------------------------------------------------
-
-nmap <leader>cs :<c-u>Cheat40<cr>
-
-
-" Goyo ---------------------------------------------------------
-
-nmap <leader>g :Goyo<CR>
-
 
 " FZF ----------------------------------------------------------
 
@@ -584,6 +613,7 @@ nmap <leader>as :AutoSaveToggle<CR>
 nmap ) <Plug>(GitGutterNextHunk)
 nmap ( <Plug>(GitGutterPrevHunk)
 
+
 " CSS Minister----------------------------------------------------
 
 " Cycle threw Colortypes
@@ -595,7 +625,6 @@ nmap <leader>th :ToHex<CR>
 " :ToHSLAll <format>
 " :ToHSLAAll <format>
 " :ToHexAll rgba would change all rgba in the document to hex
-
 
 " Leader Key Mappings ----------------------------------------------------------------------
 "   _                   _             _  __
@@ -653,6 +682,8 @@ nmap <leader>nb :enew<CR>
 
 " source current buffer
 nmap <leader>sf :source %<cr>
+
+
 
 
 " Vim Auto Closetag -------------------------------------------------------------------------
