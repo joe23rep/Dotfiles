@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="36"
+   height="16"
+   version="1.1"
+   viewBox="0 0 36 16.000001"
+   id="svg18"
+   sodipodi:docname="checkmarks.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     id="namedview20"
+     showgrid="false"
+     inkscape:zoom="27.522932"
+     inkscape:cx="11.751"
+     inkscape:cy="8"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g16" />
+  <g
+     transform="translate(0,-1102.5197)"
+     id="g16">
+    <g
+       id="radiobutton">
+      <circle
+         cx="8"
+         cy="1110.5197"
+         r="8"
+         style="opacity:0;stroke-width:1.6"
+         id="circle2" />
+      <circle
+         cx="8"
+         cy="1110.5197"
+         r="7"
+         style="fill:#2ad4ff;fill-opacity:1"
+         id="circle4" />
+      <circle
+         cx="8"
+         cy="1110.5197"
+         r="6"
+         style="fill:#1e1e20"
+         id="circle6" />
+      <circle
+         cx="8"
+         cy="1110.5197"
+         r="4"
+         style="fill:#2ad4ff;fill-opacity:1"
+         id="circle8" />
+    </g>
+    <g
+       id="checkbox">
+      <rect
+         x="20"
+         y="1102.5197"
+         width="16"
+         height="16"
+         ry="1.0000468"
+         style="fill:#2ad4ff;fill-opacity:1"
+         id="rect11" />
+      <path
+         d="m32.783637 1105.8003c-0.337258 0.011-0.691713 0.1536-0.956726 0.4185l-5.740355 5.7404-1.913451-1.9134c-0.530026-0.5301-1.349982-0.5635-1.853655-0.06l-0.119591 0.1196c-0.503673 0.5036-0.470231 1.3235 0.05979 1.8536l2.660893 2.631c0.04659 0.072 0.08653 0.1165 0.149489 0.1794l0.11958 0.12c0.04791 0.044 0.09781 0.085 0.149489 0.1195 0.01272 0.011 0.01692 0.022 0.0299 0.03 0.06416 0.042 0.141106 0.06 0.209285 0.089 0.05967 0.024 0.116906 0.045 0.179385 0.059 0.02157 0.012 0.03807 0.025 0.05979 0.03 0.165282 0.031 0.340191 0.033 0.508261 0 0.03161-0.011 0.05857-0.022 0.0897-0.03 0.22706-0.061 0.446334-0.1773 0.627851-0.3587l0.05979-0.06c0.06296-0.063 0.102901-0.1075 0.149488-0.1794l6.487797-6.4579c0.530026-0.5299 0.563468-1.3499 0.05979-1.8537l-0.11959-0.1195c-0.251838-0.2518-0.559672-0.3674-0.89693-0.3589z"
+         style="fill:#1e1e20"
+         id="path13" />
+    </g>
+  </g>
+</svg>

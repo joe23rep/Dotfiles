@@ -1,0 +1,17 @@
+[ContrastEffect]
+contrast=0.2
+enabled=false
+intensity=0.4
+saturation=1.7
+
+[Desktop Entry]
+Name=Necro
+X-KDE-PluginInfo-Author=Joe23
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-Email=example@gmail.com
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Name=Necro
+X-KDE-PluginInfo-Version=.0.36
+X-KDE-PluginInfo-Website=

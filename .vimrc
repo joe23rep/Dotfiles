@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmux-plugins/vim-tmux'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'KabbAmine/vCoolor.vim'
@@ -32,8 +32,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tcomment_vim' "gc to comment out multiple lines- cc to comment single line
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'lambdalisue/vim-manpager'
+Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'SirVer/ultisnips' "Ctrl a to launch ultisnips
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
@@ -47,15 +47,15 @@ Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'roxma/vim-paste-easy'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
-Plug '907th/vim-auto-save'
-Plug 'lilydjwg/colorizer'
 Plug 'vim-scripts/CSSMinister'
-Plug 'voldikss/vim-floaterm'
-Plug 'liuchengxu/vim-which-key'
-" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-" Plug 'mattn/emmet-vim '
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'mattn/emmet-vim'
+" Plug 'lilydjwg/colorizer'
+" Plug 'rstacruz/sparkup'
+" Plug 'SirVer/ulisnips' "Ctrl <Space> to launch ultisnips
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'junegunn/vim-easy-align'
 " Plug 'articicestudio/nord-vim'
@@ -69,13 +69,7 @@ call plug#end()
 " :PlugUpdate		- updates plugins
 " :PlugUpgrade		- upgrades vim-plug
 " :PlugClean		- confirms removal of unused plugins; append `!` to auto-approve removal
-
-
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+"
 
 
 " Sourcing ----------------------------------------------------------------------------------
@@ -90,12 +84,8 @@ source ~/.vim/config/coc.vim
 source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/toggle.vim
 source ~/.vim/config/lightline.vim
-source ~/.vim/config/floaterm.vim
-source ~/.vim/config/closetags.vim
-source ~/.vim/config/gitgutter.vim
-source ~/.vim/config/quickscope.vim
-" source ~/.vim/config/which-key.vim
-source ~/.vim/config/keymaps.vim
+source ~/.vim/config/fzf.vim
+
 
 
 " General Config ----------------------------------------------------------------------------
@@ -271,9 +261,6 @@ set sessionoptions=folds
 " Keep the cursor on the same column
 set nostartofline
 
-" Which key requirement
-set notimeout
-
 " Speed up scrolling in Vim
 set ttyfast
 
@@ -392,14 +379,11 @@ nmap k gk
 nmap cc gcc
 
 " Ctrl + arrows to switchbuf
-nmap <C-Left>  :bp<CR>
-nmap <C-Right> :bn<CR>
+nmap <S-Tab>  :bp<CR>
+nmap <Tab> :bn<CR>
 
 " Pressing enter now adds a line without going in insert mode
 nmap <CR>  o<Esc>
-
-" Map Space to toggle folds
-nmap <tab> za
 
 " Map Ctrl S to safe
 nmap <C-s> :w<CR>
@@ -421,8 +405,9 @@ nmap H ^
 nmap J }
 nmap K {
 
-" Map U to redo
+" Map redo
 nmap U <C-R>
+nmap <C-z> <C-R>
 
 " Ctrl f to search
 nmap <C-f> /
@@ -433,11 +418,6 @@ nmap <C-l> >>
 nmap <C-k> :move-2<cr>
 nmap <C-j> :move+<cr>
 
-" Which key to space
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-
-nmap <Leader>w :WhichKey <CR>
-set timeoutlen=500
 
 "---------------------------------------------------------------
 " Insert Mode
@@ -456,14 +436,17 @@ imap <C-s> <esc>:w<CR>
 " Map Ctrl q to safe and quit
 imap <C-q> <esc>:wq<CR>
 
+" Auto close brackets --needs inoremap
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+
 " Map Ctrl+ vim keys to go to end or beginning of a line
 imap <C-l> <right>
 imap <C-h> <left>
 imap <C-k> <up>
 imap <C-j> <down>
-
-" <TAB>: completion.
-imap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 "--------------------------------------------------------------
@@ -473,8 +456,11 @@ imap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Move lines
 xmap <silent> <C-k> :call Move_up()<CR>
 xmap <silent> <C-j> :call Move_down()<CR>
-xmap <silent> <C-h> <gv
-xmap <silent> <C-l> >gv
+
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
+
 
 " Copy and Paste -----------------------------------------------
 
@@ -489,6 +475,7 @@ nmap <C-p> "+P
 imap <C-p> <esc>"+P
 nmap Y y$
 
+
 " Escape mappings ----------------------------------------------
 imap jk <esc>
 vmap jk <esc>
@@ -496,28 +483,6 @@ cmap jk <C-c>
 imap kj <esc>
 vmap kj <esc>
 cmap kj <C-c>
-
-
-"---------------------------------------------------------------
-" Terminal Mappings
-"---------------------------------------------------------------
-
-" Terminal window navigation
-  tnoremap <C-h> <C-\><C-N><C-w>h
-  tnoremap <C-j> <C-\><C-N><C-w>j
-  tnoremap <C-k> <C-\><C-N><C-w>k
-  tnoremap <C-l> <C-\><C-N><C-w>l
-  inoremap <C-h> <C-\><C-N><C-w>h
-  inoremap <C-j> <C-\><C-N><C-w>j
-  inoremap <C-k> <C-\><C-N><C-w>k
-  inoremap <C-l> <C-\><C-N><C-w>l
-  tnoremap <Esc> <C-\><C-n>
-
-  " Use alt + hjkl to resize windows
-  nnoremap <silent> <M-j>    :resize -2<CR>
-  nnoremap <silent> <M-k>    :resize +2<CR>
-  nnoremap <silent> <M-h>    :vertical resize -2<CR>
-  nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
 
 "---------------------------------------------------------------
@@ -532,9 +497,9 @@ vmap + <esc>:call Toggle()<CR>
 " Ultisnips ----------------------------------------------------
 
 " Change snippets trigger key
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+" let g:UltiSnipsExpandTrigger="<C-Space>"
+" let g:UltiSnipsJumpForwardTrigger="<TAB>"
+" let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 
 " Nerdtree -----------------------------------------------------
@@ -567,6 +532,10 @@ nmap <C-t> :TagbarToggle<CR>
 vmap <C-t> :TagbarToggle<CR>
 
 
+" Goyo ---------------------------------------------------------
+
+nmap <leader>g :Goyo<CR>
+
 
 " FZF ----------------------------------------------------------
 
@@ -579,6 +548,9 @@ nmap <silent> <leader>s     :Lines<CR>
 nmap <silent> <leader>sb    :Lines<CR>
 nmap <silent> <leader>ma    :Marks<CR>
 nmap <silent> <leader>us    :Snippets<CR>
+nmap <leader>rg :Rg<CR>
+" map <leader>f :Files<CR>
+
 
 " Incsearch -----------------------------------------------------
 
@@ -613,7 +585,6 @@ nmap <leader>as :AutoSaveToggle<CR>
 nmap ) <Plug>(GitGutterNextHunk)
 nmap ( <Plug>(GitGutterPrevHunk)
 
-
 " CSS Minister----------------------------------------------------
 
 " Cycle threw Colortypes
@@ -625,6 +596,7 @@ nmap <leader>th :ToHex<CR>
 " :ToHSLAll <format>
 " :ToHSLAAll <format>
 " :ToHexAll rgba would change all rgba in the document to hex
+
 
 " Leader Key Mappings ----------------------------------------------------------------------
 "   _                   _             _  __
@@ -684,8 +656,6 @@ nmap <leader>nb :enew<CR>
 nmap <leader>sf :source %<cr>
 
 
-
-
 " Vim Auto Closetag -------------------------------------------------------------------------
 "
 "      _         _           ____ _                  _____
@@ -733,22 +703,12 @@ let g:tagbar_type_css = {
             \ ]
             \ }
 
-" Hexokinase Colors--------------------------------------------------------------------------
-
-" Neovim default
-let g:Hexokinase_highlighters = [ 'backgroundfull' ]
-" let g:Hexokinase_highlighters = [ 'virtual' ]
-
-" make hexokinase change colors as i type
-let g:Hexokinase_refreshEvents = [ 'TextChanged', 'InsertLeave']
-
-" Set which Colortypes should be considered
-let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'
 
 " Gitgutter----------------------------------------------------------------------------------
 
 let g:gitgutter_enabled = 1
 let g:gitgutter_map_keys = 0
+
 
 " Vim Auto Save -----------------------------------------------------------------------------
 
@@ -757,6 +717,15 @@ let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI"]
 
 " This will run :TagsGenerate after each save
 let g:auto_save_postsave_hook = 'TagsGenerate'
+
+
+" Hexokinase---------------------------------------------------------------------------------
+
+" Set Color Highlight Style
+let g:Hexokinase_highlighters = ['backgroundfull']
+
+" Set Type to display colors
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
 
 
 " Tmux --------------------------------------------------------------------------------------
@@ -776,100 +745,7 @@ else
 endif
 
 
-" FZF ---------------------------------------------------------------------------------------
-"   _____ __________    ____             __ _
-"  |  ___|__  /  ___|  / ___|___  _ __  / _(_) __ _
-"  | |_    / /| |_    | |   / _ \| '_ \| |_| |/ _` |
-"  |  _|  / /_|  _|   | |__| (_) | | | |  _| | (_| |
-"  |_|   /____|_|      \____\___/|_| |_|_| |_|\__, |
-"                                             |___/
-" Fzf statusbar config (lightline style)
-function! s:fzf_statusline()
-    setlocal statusline=%#fzf1#\ \ %#fzf2#fzf%#fzf3#\
-endfunction
-
-autocmd! User FzfStatusLine call <SID>fzf_statusline()
-
-" Colors for fzf statusbar
-hi fzf1 guifg=#292c33  guibg=#00eeff
-hi fzf2 guifg=#292c33  guibg=#00eeff
-hi fzf3 guifg=#00eeff  guibg=#292c33
-
-
-" " Add vim directory for shortcutting
-command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
-
-if has('nvim') || has('gui_running')
-    let $FZF_DEFAULT_OPTS .= ' --inline-info'
-endif
-
-
-" All files
-command! -nargs=? -complete=dir AF
-            \ call fzf#run(fzf#wrap(fzf#vim#with_preview({
-            \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
-            \ })))
-
-let g:fzf_colors =
-            \ { 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Ignore'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
-
-" Terminal buffer options for fzf
-autocmd! FileType fzf
-autocmd  FileType fzf set noshowmode noruler nonu
-
-command! -bang -nargs=? -complete=dir Files
-            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-command! -bang -nargs=* Ag
-            \ call fzf#vim#ag(<q-args>,
-            \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-            \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-            \                 <bang>0)
-
-
-function! s:plug_help_sink(line)
-    let dir = g:plugs[a:line].dir
-    for pat in ['doc/*.txt', 'README.md']
-        let match = get(split(globpath(dir, pat), "\n"), 0, '')
-        if len(match)
-            execute 'tabedit' match
-            return
-        endif
-    endfor
-    tabnew
-    execute 'Explore' dir
-endfunction
-
-command! PlugHelp call fzf#run(fzf#wrap({
-            \ 'source': sort(keys(g:plugs)),
-            \ 'sink':   function('s:plug_help_sink')}))
-
-function! RipgrepFzf(query, fullscreen)
-    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
-    let initial_command = printf(command_fmt, shellescape(a:query))
-    let reload_command = printf(command_fmt, '{q}')
-    let options = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-    if a:fullscreen
-        let options = fzf#vim#with_preview(options)
-    endif
-    call fzf#vim#grep(initial_command, 1, options, a:fullscreen)
-endfunction
-
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
-" Important Stuff (needs to be loaded last) -----------------------------------------------
+" Important Stuff (needs to be loaded last) -------------------------------------------------
 "   ___                            _              _
 "  |_ _|_ __ ___  _ __   ___  _ __| |_ __ _ _ __ | |_
 "   | || '_ ` _ \| '_ \ / _ \| '__| __/ _` | '_ \| __|
@@ -879,6 +755,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Stop Auto Commenting new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 
 
