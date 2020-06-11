@@ -1,13 +1,14 @@
 {
   "autoAttach": false,
   "autoAttachOnDuplicated": 2,
+  "autoAttachOnNewTabCommand": 0,
   "autoCollapseExpandSubtreeOnAttach": false,
   "autoCollapseExpandSubtreeOnSelect": false,
-  "autoGroupNewTabs": false,
   "closeParentBehaviorMode": 1,
   "collapseExpandSubtreeByDblClick": false,
-  "configsVersion": 9,
+  "configsVersion": 10,
   "defaultBookmarkParentId": "menu________",
+  "guessNewOrphanTabAsOpenedByNewTabCommandUrl": "https://joe23rep.github.io/newtabpage/",
   "incognitoAllowedExternalAddons": [
     "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}"
   ],
@@ -32,9 +33,7 @@
   ],
   "notifiedFeaturesVersion": 4,
   "optionsExpandedSections": [
-    "section-appearance",
     "section-advanced",
-    "section-contextMenu",
     "section-newTab",
     "section-treeBehavior",
     "section-drag",
