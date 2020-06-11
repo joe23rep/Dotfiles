@@ -6,9 +6,6 @@
     "text": "t",
     "method": "m",
     "function": ""
-    "diagnostic.virtualText": true,
-    "suggest.snippetIndicator": "\u26a1 ",
-
   },
 
   // diagnostics
