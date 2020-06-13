@@ -1,0 +1,11 @@
+#tabs-newtab-button,
+#new-tab-button
+{
+	list-style-image: url(new-tab.svg) !important;
+}
+
+#home-button
+{
+	list-style-image: url(home-1x.svg) !important;
+}
+
