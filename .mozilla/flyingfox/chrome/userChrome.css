@@ -118,3 +118,36 @@ toolbar{
     opacity: 0.68 !important;
 }
 
+.tabbrowser-tab .tab-label {
+	display:none !important;
+}
+/* Resizes tabs to minimum width */
+.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: 47px !important;
+	min-width: 41px !important;
+}
+.tab-content:not([pinned]) {
+  padding-left: 9px !important;
+  padding-right: 0px !important;
+ }
+ .tabbrowser-tab:not([pinned="true"]):not(:hover) .tab-close-button {
+  display: none !important;
+}
+/* Hide the uglygrey border */
+#PanelUI-button {
+  border-left: none !important;
+}
+
+/* Reorder the buttons before the tabs */
+#urlbar-container,
+#forward-button,
+#back-button,
+#nav-bar-overflow-button,
+#PanelUI-button {
+  -moz-box-ordinal-group: 0 !important;
+}
+#bookmarks-menu-button {
+  -moz-box-ordinal-group: 1 !important;
+}
+
+

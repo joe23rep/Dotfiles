@@ -360,8 +360,14 @@ _z() {
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
+
+
 # export FZF_DEFAULT_COMMAND="find -L"
-export FZF_DEFAULT_COMMAND="find -L * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"
+# export FZF_DEFAULT_COMMAND="find  -L * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"
+
+# export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+export FZF_DEFAULT_COMMAND="find . -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+
 
 # Set fzf colorscheme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'

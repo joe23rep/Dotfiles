@@ -48,12 +48,12 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'roxma/vim-paste-easy'
-Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/CSSMinister'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'mattn/emmet-vim'
 " Plug 'lilydjwg/colorizer'
+" Plug 'haya14busa/incsearch.vim'
 " Plug 'rstacruz/sparkup'
 " Plug 'SirVer/ulisnips' "Ctrl <Space> to launch ultisnips
 " Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -355,7 +355,7 @@ command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
 "  \____\___/|_|\___/|_|  |___/
 
 set termguicolors
-colorscheme gruvbox-neon2
+colorscheme gruvbox-neon3
 " colorscheme nord
 
 
@@ -539,30 +539,14 @@ nmap <leader>g :Goyo<CR>
 
 " FZF ----------------------------------------------------------
 
-nmap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+" nmap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nmap <silent> <leader>fb    :Buffers<CR>
 nmap <silent> <leader>m     :History<CR>
 nmap <silent> <leader>mm    :History/<CR>
 nmap <silent> <leader>C     :Colors<CR>
 nmap <silent> <leader>s     :Lines<CR>
-nmap <silent> <leader>sb    :Lines<CR>
-nmap <silent> <leader>ma    :Marks<CR>
-nmap <silent> <leader>us    :Snippets<CR>
 nmap <leader>rg :Rg<CR>
-" map <leader>f :Files<CR>
-
-
-" Incsearch -----------------------------------------------------
-
-nmap /      <Plug>(incsearch-forward)
-nmap <C-f>  <Plug>(incsearch-forward)
-nmap ?      <Plug>(incsearch-backward)
-nmap n      <Plug>(incsearch-nohl-n)
-nmap N      <Plug>(incsearch-nohl-N)
-nmap *      <Plug>(incsearch-nohl-*)
-nmap #      <Plug>(incsearch-nohl-#)
-nmap g*     <Plug>(incsearch-nohl-g*)
-nmap g#     <Plug>(incsearch-nohl-g#)
+map <leader>f :Files<CR>
 
 
 " GV ------------------------------------------------------------
