@@ -69,7 +69,7 @@ let g:NERDTreeIgnore = ['^node_modules$']
 
 
 "define NT Statusline
-let g:NERDTreeStatusline = '%#fzf1#   Nerdtree %#N2#%#fzf3#'
+" let g:NERDTreeStatusline = '%#fzf1#   Nerdtree %#N2#%#fzf3#'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
