@@ -28,9 +28,9 @@ export ZSH=$HOME/.oh-my-zsh
 current_terminal="$(ps -p$PPID -o cmd=)"
 
 function choose_theme {
-    if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'alacritty' ]];
+    # if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'alacritty' ]];
+    if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'floaterm' ]];
     then echo 'lena2';
-    # else echo 'powerlevel10k/powerlevel10k';
     else echo 'spaceship';
     fi
 }
@@ -80,6 +80,7 @@ RANGER_LOAD_DEFAULT_RC="true"
 
 # Auto complete aliases
 setopt completealiases
+
 
 # Colored prompt
 autoload -U promptinit
