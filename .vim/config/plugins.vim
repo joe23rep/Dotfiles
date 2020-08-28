@@ -39,6 +39,7 @@ Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/CSSMinister'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'mattn/emmet-vim'
+Plug 'voldikss/vim-floaterm'
 " Plug 'lilydjwg/colorizer'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'rstacruz/sparkup'
