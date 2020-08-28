@@ -17,7 +17,7 @@ nmap k gk
 " Map cc to comment out current line
 nmap cc gcc
 
-" Ctrl + arrows to switchbuf
+" Tab / Shift Tab to switch buffers
 nmap <S-Tab>  :bp<CR>
 nmap <Tab> :bn<CR>
 
@@ -33,7 +33,7 @@ nmap <C-q> :wq<CR>
 " Ctrl A to select all
 nmap <C-a> ggVG
 
-" Or just Space to enter insert mode.
+" Press Space twice to enter insert mode.
 nmap <Space><Space> i
 
 " Map H+L to go to end or beginning of a line
@@ -52,10 +52,10 @@ nmap <C-z> <C-R>
 nmap <C-f> /
 
 " Move lines in and out + up and down
-nmap <C-h> <<
-nmap <C-l> >>
-nmap <C-k> :move-2<cr>
-nmap <C-j> :move+<cr>
+" nmap <C-h> <<
+" nmap <C-l> >>
+" nmap <C-k> :move-2<cr>
+" nmap <C-j> :move+<cr>
 
 
 "---------------------------------------------------------------
@@ -65,9 +65,11 @@ nmap <C-j> :move+<cr>
 " On gvim and Linux console Vim, you can use Alt-Space.
 imap <M-Space> <esc>
 
-" Ctrl o to go one line down while staying in insert mode
-imap öö       <esc>o
-imap <C-o>    <esc>o
+" Ctrl o to add one line down while staying in insert mode
+imap <C-o> <esc>o
+
+" double öö to add one line down while staying in insert mode
+imap öö <esc>o
 
 " Map Ctrl S to safe
 imap <C-s> <esc>:w<CR>
@@ -81,7 +83,7 @@ inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 
-" Map Ctrl+ vim keys to go to end or beginning of a line
+" Map Ctrl+ vim keys to move normal in insert mode
 imap <C-l> <right>
 imap <C-h> <left>
 imap <C-k> <up>
@@ -144,9 +146,10 @@ vmap + <esc>:call Toggle()<CR>
 " Nerdtree -----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
-nmap <C-n>      :NERDTreeToggle /home/joe/<CR>
-vmap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
-imap <C-n> <esc>:NERDTreeToggle /home/joe/<CR>
+" nmap <C-n>      :NERDTreeToggle /home/joe/<CR>
+nmap <C-n>      :NERDTreeFind<CR>
+vmap <C-n> <esc>:NERDTreeFind<CR>
+imap <C-n> <esc>:NERDTreeFind<CR>
 nmap <leader>nn :NERDTreeFind<CR>
 
 
@@ -185,8 +188,8 @@ nmap <silent> <leader>mm    :History/<CR>
 nmap <silent> <leader>C     :Colors<CR>
 nmap <silent> <leader>s     :Lines<CR>
 nmap <leader>rg :Rg<CR>
-map <leader>f :Files<CR>
-
+nmap <leader>ff :Files<CR>
+nmap <leader>f :FloatermNew fzf<CR>
 
 " GV ------------------------------------------------------------
 
@@ -278,4 +281,5 @@ nmap <leader>nb :enew<CR>
 " source current buffer
 nmap <leader>sf :source %<cr>
 
-
+" Open Ranger inside Floaterm
+nmap <leader>tt :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
