@@ -104,7 +104,7 @@ set lazyredraw
 set showmatch
 
 " Remove the pause when leaving insert mode
-set ttimeoutlen=10
+set timeoutlen=500
 
 " Search down into subfolders
 set path+=**
@@ -257,17 +257,6 @@ endfunction
 command! -nargs=* LoadMacro call <SID>load_macro(<f-args>)
 
 
-" Colors ------------------------------------------------------------------------------------
-"   ____      _
-"  / ___|___ | | ___  _ __ ___
-" | |   / _ \| |/ _ \| '__/ __|
-" | |__| (_) | | (_) | |  \__ \
-"  \____\___/|_|\___/|_|  |___/
-
-set termguicolors
-colorscheme gruvbox-neon3
-
-
 " Vim Auto Closetag -------------------------------------------------------------------------
 "
 "      _         _           ____ _                  _____
@@ -357,3 +346,5 @@ else
 endif
 
 
+" Stop autocommenting new lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
