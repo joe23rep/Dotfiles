@@ -216,12 +216,22 @@ nmap ( <Plug>(GitGutterPrevHunk)
 " Cycle threw Colortypes
 nmap <leader>tr :ToRGB<CR>
 nmap <leader>th :ToHex<CR>
+nmap <leader>ts :ToHSLA<CR>
+nmap <leader>tha :ToHexAll<CR>
+nmap <leader>tra :ToRGBAll<CR>
+nmap <leader>trb :ToTGBAAll<CR>
+nmap <leader>ths :ToHSLAAll<CR>
+
 " :ToHexAll <format>
 " :ToRGBAll <format>
 " :ToRGBAAll <format>
 " :ToHSLAll <format>
 " :ToHSLAAll <format>
 " :ToHexAll rgba would change all rgba in the document to hex
+
+" Which Key-------------------------------------------------------
+
+nnoremap <silent> <leader>wc :WhichKey '<Space>'<CR>
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
@@ -245,9 +255,6 @@ map <leader>n :bn<CR>
 " Close buffer
 map <leader>cb :bd<CR>
 
-" Open new line above current line
-nmap <leader>O O<esc>
-
 " Load files via shortcuts
 nmap <leader>v :tabedit ~/.vimrc<CR>
 nmap <leader>z :tabedit ~/.zshrc<CR>
@@ -261,7 +268,7 @@ nmap <leader>vs :vs<CR>
 nmap <leader>hs :split<CR>
 
 " Clean trailing whitespace
-nmap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+nmap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " Map search and replace
 nmap <leader>sr :%s//g<left><left>
@@ -282,4 +289,5 @@ nmap <leader>nb :enew<CR>
 nmap <leader>sf :source %<cr>
 
 " Open Ranger inside Floaterm
-nmap <leader>tt :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
+nmap <leader>ra :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
+
