@@ -1,8 +1,12 @@
   let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-actions',
+    \ 'coc-sh',
+    \ 'coc-java-debug',
+    \ 'coc-java',
     \ 'coc-lists',
     \ 'coc-emmet',
+    \ 'coc-tasks',
     \ 'coc-pairs',
     \ 'coc-tsserver',
     \ 'coc-floaterm',
@@ -12,6 +16,7 @@
     \ 'coc-cssmodules',
     \ 'coc-yaml',
     \ 'coc-python',
+    \ 'coc-pyright',
     \ 'coc-explorer',
     \ 'coc-svg',
     \ 'coc-prettier',
@@ -21,6 +26,8 @@
     \ 'coc-json',
     \ 'coc-marketplace',
     \ ]
+    " \ 'coc-tabnine',
+    " \ 'coc-highlight',
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -144,8 +151,8 @@ let g:coc_explorer_global_presets = {
 \   },
 \   'floatingRightside': {
 \      'position': 'floating',
-\      'floating-position': 'right-center',
-\      'floating-width': 30,
+\      'floating-position': 'center',
+\      'floating-width': 120,
 \   },
 \   'simplify': {
 \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
@@ -153,7 +160,9 @@ let g:coc_explorer_global_presets = {
 \ }
 "nmap <silent> <space>e :CocCommand explorer<CR>
 " nnoremap <silent> <leader>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
+nmap <space>e :CocCommand explorer --preset floatingRightside<CR>
+
+
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " Snippets
@@ -164,10 +173,11 @@ imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-l>'
+let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-h>'
+let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
