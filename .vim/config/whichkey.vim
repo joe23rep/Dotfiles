@@ -216,7 +216,7 @@ let g:which_key_map.p = {
 let g:which_key_map.l = {
       \ 'name' : '+Terminal' ,
       \ 'g' : [':FloatermNew lazygit '        , 'Lazygit']   ,
-      \ 'rr' : [':FloatermNew ranger'        , 'Ranger']   ,
+      \ 'r' : [':FloatermNew ranger'        , 'Ranger']   ,
       \ }
 
 
