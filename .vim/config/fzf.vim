@@ -6,6 +6,10 @@
 "  |_|   /____|_|      \____\___/|_| |_|_| |_|\__, |
 "                                             |___/
 
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
+
+
 " Fzf statusbar config (lightline style)
 " function! s:fzf_statusline()
 "     " setlocal statusline=%#fzf1#\ \ %#fzf2#fzf%#fzf3#

@@ -20,15 +20,16 @@
 " |____/ \___/ \__,_|_|  \___|_|_| |_|\__, |
 "                                     |___/
 
-source ~/.vim/config/general.vim
-source ~/.vim/config/plugins.vim
-source ~/.vim/config/keybindings.vim
-source ~/.vim/config/coc.vim
-source ~/.vim/config/nerdtree.vim
-source ~/.vim/config/toggle.vim
-source ~/.vim/config/lightline.vim
-source ~/.vim/config/fzf.vim
-source ~/.vim/config/floaterm.vim
+source ~/Dots/.vim/config/general.vim
+source ~/Dots/.vim/config/plugins.vim
+source ~/Dots/.vim/config/coc.vim
+source ~/Dots/.vim/config/whichkey.vim
+source ~/Dots/.vim/config/keybindings.vim
+source ~/Dots/.vim/config/nerdtree.vim
+source ~/Dots/.vim/config/toggle.vim
+source ~/Dots/.vim/config/lightline.vim
+source ~/Dots/.vim/config/fzf.vim
+source ~/Dots/.vim/config/floaterm.vim
 
 
 
@@ -45,3 +46,10 @@ colorscheme gruvbox-neon3
 
 " Floaterm Colors
 hi FloatermBorder guibg=black guifg=#c2c2ff
+
+" Gitgutter Colors
+highlight GitGutterAdd    guifg=#c473fa
+highlight GitGutterChange guifg=#00c1e5
+highlight GitGutterDelete guifg=#34ffbc
+
+

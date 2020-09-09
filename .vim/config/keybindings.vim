@@ -51,12 +51,6 @@ nmap <C-z> <C-R>
 " Ctrl f to search
 nmap <C-f> /
 
-" Move lines in and out + up and down
-" nmap <C-h> <<
-" nmap <C-l> >>
-" nmap <C-k> :move-2<cr>
-" nmap <C-j> :move+<cr>
-
 
 "---------------------------------------------------------------
 " Insert Mode
@@ -89,6 +83,8 @@ imap <C-h> <left>
 imap <C-k> <up>
 imap <C-j> <down>
 
+ " <TAB>: completion.
+ imap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "--------------------------------------------------------------
 " Visual Mode
@@ -143,6 +139,11 @@ vmap + <esc>:call Toggle()<CR>
 " let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 
+" Bracey--------------------------------------------------------
+
+nmap <leader>br      :Bracey<CR>
+nmap <leader>Br      :BraceyStop<CR>
+
 " Nerdtree -----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
@@ -193,9 +194,6 @@ nmap <leader>f :FloatermNew fzf<CR>
 
 " GV ------------------------------------------------------------
 
-" Open Commit Browser
-nmap <leader>gvv :GV<CR>
-
 " Open Commits of current file
 nmap <leader>gv  :GV!<CR>
 
@@ -203,7 +201,7 @@ nmap <leader>gv  :GV!<CR>
 " Vim Auto Save -------------------------------------------------
 
 " Toggle Auto save
-nmap <leader>as :AutoSaveToggle<CR>
+" nmap <leader>as :AutoSaveToggle<CR>
 
 " Gitgutter -----------------------------------------------------
 
@@ -222,16 +220,14 @@ nmap <leader>tra :ToRGBAll<CR>
 nmap <leader>trb :ToTGBAAll<CR>
 nmap <leader>ths :ToHSLAAll<CR>
 
-" :ToHexAll <format>
-" :ToRGBAll <format>
-" :ToRGBAAll <format>
-" :ToHSLAll <format>
-" :ToHSLAAll <format>
-" :ToHexAll rgba would change all rgba in the document to hex
 
 " Which Key-------------------------------------------------------
 
 nnoremap <silent> <leader>wc :WhichKey '<Space>'<CR>
+
+" Floaterm--------------------------------------------------------
+
+nmap <leader>lg :FloatermNew lazygit<CR>
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
@@ -246,38 +242,38 @@ nnoremap <silent> <leader>wc :WhichKey '<Space>'<CR>
 nmap <leader>q :q!<CR>
 
 " Spellcheck
-map <leader>sc :setlocal spell! spelllang=en_us<CR>
+" map <leader>sc :setlocal spell! spelllang=en_us<CR>
 
 " Switch buffers
 map <leader>b :bp<CR>
 map <leader>n :bn<CR>
+map <leader>bb :b#<CR>
 
 " Close buffer
 map <leader>cb :bd<CR>
 
 " Load files via shortcuts
-nmap <leader>v :tabedit ~/.vimrc<CR>
-nmap <leader>z :tabedit ~/.zshrc<CR>
-nmap <leader>t :tabedit ~/.tmux.conf<CR>
+nmap <leader>v :tabedit ~/Dots/.vimrc<CR>
+nmap <leader>z :tabedit ~/Dots/.zshrc<CR>
+nmap <leader>t :tabedit ~/Dots/.tmux.conf<CR>
+nmap <leader>g :tabedit ~/Dots/.vim/colors/gruvbox-neon3.vim<CR>
 
-" Map color Highlighting
-nmap <leader>ch :ColorHighlight<CR>
 
 " Map splits
-nmap <leader>vs :vs<CR>
+" nmap <leader>vs :vs<CR>
 nmap <leader>hs :split<CR>
 
 " Clean trailing whitespace
 nmap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " Map search and replace
-nmap <leader>sr :%s//g<left><left>
+nmap <leader>s :%s//g<left><left>
 
 " Map search word under cursor and replace it
 nmap <leader>r :%s/<C-r><C-w>//g<Left><Left>
 
 " Stop showing Search highlights
-nmap <leader>nh :let @/=""<cr>
+nmap <leader>c :let @/=""<cr>
 
 " Plug install shortcut
 nmap <leader>pi :PlugInstall<CR>
@@ -289,5 +285,24 @@ nmap <leader>nb :enew<CR>
 nmap <leader>sf :source %<cr>
 
 " Open Ranger inside Floaterm
-nmap <leader>ra :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
+nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
 
+" Switch to certain Buffer
+nmap <leader>1 :b1<CR>
+nmap <leader>2 :b2<CR>
+nmap <leader>3 :b3<CR>
+nmap <leader>4 :b4<CR>
+nmap <leader>5 :b5<CR>
+nmap <leader>6 :b6<CR>
+nmap <leader>7 :b7<CR>
+nmap <leader>8 :b8<CR>
+
+
+" Github----------------------------------------------------------------
+
+
+nmap <leader>ga :Git add<cr>
+nmap <leader>gc :Git commit<cr>
+nmap <leader>gp :Git push<cr>
+nmap <leader>gd :Git diff<cr>
+nmap <leader>gr :Git remove<cr>

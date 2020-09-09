@@ -55,19 +55,22 @@ endfunction
 " Define lightline look-----------------------------------------------------------
 
 let g:lightline.active = {
-      \ 'left': [ ['mode'],  [ 'filetype_with_icon' ], ['git_branch'] ],
-      \ 'right': [ ['lineinfo'], [ 'percent' ], [ 'unix_logo' ] ],
+      \ 'left': [ ['mode'], [ 'filetype_with_icon' ], ['git_branch'] ],
+      \ 'right': [ ['lineinfo'],[ 'percent' ], [ 'unix_logo' ] ],
       \ }
 
 " ['git_branch'],
 
 let g:lightline.separator = { 'left': " ", 'right': " " }
+let g:lightline.subseparator = { 'left': " ", 'right': " " }
 let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
 let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
-let g:lightline.subseparator = { 'left': " ", 'right': " " }
-let g:lightline.subseparator = { 'left': " ", 'right': " " }
 
-
+" let g:lightline.separator = { 'left': " ", 'right': " " }
+" let g:lightline.subseparator = { 'left': " ", 'right': " " }
+" let g:lightline.tabline_separator = { 'left': " ", 'right': " " }
+" let g:lightline.tabline_subseparator = { 'left': " ", 'right': " " }
+"
 
 
 " Tabline-------------------------------------------------------------------------

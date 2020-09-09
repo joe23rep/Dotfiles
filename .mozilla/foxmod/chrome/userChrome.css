@@ -5,66 +5,6 @@
 /* MIN MAX CLOSE Remove */
 #TabsToolbar > .titlebar-buttonbox-container{ visibility: collapse !important; }
 
-/* Avoids white flash? */
-#tabbrowser-tabpanels{
-  background-color: var(--uc-light-bkgnd-color, #191B28) !important;
-  /* background-color: var(--uc-light-bkgnd-color, #000106) !important; */
-}
-/* Left ?
-.titlebar-buttonbox-container{ -moz-box-ordinal-group: 0 !important; }
-*/
-/*
-#PlacesToolbarItems {
-  display: flex !important;
-  justify-content: center !important;
-}*/
-
-
-/* Non active tabs have darker text */
-	.tabbrowser-tab:not([visuallyselected="true"]):not([multiselected]):not(:hover) {
-		color: #ffffff5e !important;
-	}
-
-
-/*
-if the -moz-appearance: none; still gives you fullscreen issues
-change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
--moz-appearance: -moz-window-titlebar-maximized !important; And remove the padding-top
-*/
-	:root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox {
-		-moz-appearance: none !important;
-		padding-top: 8px !important;
-	}
-	#navigator-toolbox {
-		padding-top: 3px !important;
-	}
-
-/* Fix the FUllscreen changing padding on other bars. */
-	:root[tabsintitlebar][sizemode="maximized"] #titlebar {
-		-moz-appearance: none !important;
-	}
-
-/* Remove the main window top border */
-	#main-window:root[sizemode="normal"][tabsintitlebar]  {
-		border-top: 0px !important;
-
-	}
-
-/*  Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true */
-	.urlbarView {
-		background-image: url(image/noise-512x512.png) !important;
-		/* background-color: #191B2833 !important; */
-		background-color: #00010666 !important;
-		-webkit-backdrop-filter: blur(8px) !important;
-		backdrop-filter: blur(8px) !important;
-		-moz-backdrop-filter: blur(8px) !important;
-	}
-	#urlbar-background {
-		display: none !important;
-
-	}
-
-
 
 /* Bookmarks bar with BLUR need layout.css.backdrop-filter.enabled = true */
 	#PersonalToolbar {
@@ -132,14 +72,6 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 		background-color: var(--toolbarbutton-hover-background) !important;
 	}
 
-/* Hide Tab Bar with ALT*/
-/* #titlebar { -moz-appearance: none !important; } */
-/* :root[tabsintitlebar][sizemode="maximized"]{ padding-top: 8px !important; } */
-/* #titlebar:not(:hover) > #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar { visibility: collapse; } */
-/* #toolbar-menubar[autohide]:not([inactive]), */
-/* #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container{ visibility: collapse !important; } */
-
-/* Remove or comment out transition if you want synchronization with the autohide bookmarks bar and tab bar*/
 /* BOOKMARK MENU AUTOHIDE */
 	#PersonalToolbar{
 	  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
@@ -187,31 +119,14 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 		background-color: transparent !important;
 	}
 
-/* Search Bar */
-/* Search Bar */
-/* Search Bar */
-/* Hide some buttons for hover
-*/
+
 	#nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #urlbar-container:not(:hover) > #urlbar:not([focused]) > #urlbar-input-container > #page-action-buttons {
 		opacity: 0;
 	}
 	#page-action-buttons {
 		transition: opacity 0.15s ease;
 	}
-	 /* #nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #urlbar-container:not(:hover) > #urlbar:not([focused]) > #urlbar-input-container > #identity-box { */
-	 /* 	opacity: 0;  */
-	 	/*visibility: collapse;*/
-	 }
-	 #identity-box {
-	 	/*transition: visibility 0.30s ease-in-out, opacity 0.30s ease-in-out;*/
-	 	transition: opacity 0.15s ease;
-	 }
-	 /* #nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #urlbar-container:not(:hover) > #urlbar:not([focused]) > #urlbar-input-container > #tracking-protection-icon-container {  */
-	/* 	opacity: 0; */
-	/* } */
-	/* #tracking-protection-icon-container { */
-	/* 	transition: opacity 0.15s ease; */
-	/* } */
+
 
 /* Search Bar #2b2b2bd1 262626ed #1E1E1EBF*/
 	#urlbar{
@@ -220,24 +135,27 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 	}
 	#urlbar-container {
 		border-radius: 8px 8px 8px 8px !important;
-		/* padding-top: 0px !important;
-		padding-bottom: 0px !important;*/
-
+		/* padding-top: 0px !important; */
+		padding-bottom: 8px !important;
 	}
-	#urlbar-input-container, #searchbar {
-		border-radius: 8px !important;
-	}
+	/* #urlbar-input-container, #searchbar { */
+	/* 	border-radius: 8px !important; */
+	/* } */
 	#urlbar[breakout]{
 		height: var(--urlbar-height) + 1 !important;
 
 	}
-	#urlbar[breakout][breakout-extend] {
-		background-image: url(image/noise-512x512.png) !important;
-		/* background-color: #191B28; */
-		background-color: #01040A;
-		backdrop-filter: blur(32px) !important;
 
+	#tracking-protection-icon-container {
+		border-inline-end: none !important;
+		border-image: none !important;
 	}
+
+
+
+
+
+
 
 	#urlbar[breakout][breakout-extend] > #urlbar-input-container, #urlbar-input-container {
 		height: var(--urlbar-height) !important;
@@ -266,25 +184,40 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 		--toolbar-field-focus-border-color: #6263714d!important;
 		}
 
-	#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme, #urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme:hover {
-		border-color: transparent;
+
+
+/* /* ---------------------------------------------------------------------- */ change padding in inner box somehow */
+/* ----------------------------------------------------------------------- */
+
+
+
+/*  Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true */
+	.urlbarView {
+	/* 	background-image: url(image/noise-512x512.png) !important; */
+		background-color: #191B2888 !important;
+		/* background-color: #00010666 !important; */
+		-webkit-backdrop-filter: blur(32px) !important;
+		backdrop-filter: blur(32px) !important;
 	}
-	#urlbar {
-		border: 0 !important;
-		border-bottom: 1px solid #ffffff30 !important;
-		/* border-radius: 8px 8px 8px 8px !important; */
-		border-radius: 16px !important;
-		background-color:#191B28;
+	#urlbar-background {
+		display: none !important;
 	}
 
-	#urlbar {
-		box-shadow: none !important;
-		/* text-align: center !important; */
+#urlbar-background{ display: none !important; }
+/* .urlbarView{ backdrop-filter: blur(32px); background-color: #191B2888 !important; } */
+.urlbarView{ backdrop-filter: blur(32px);
+             background-color: #191B2800!important;
+             border-radius: 16px !important;
+}
+
+#urlbar {
+		border: 0 !important;
+		border-bottom: 1px solid #ffffff30 !important;
+		border-radius: 16px !important;
+		background-color:#191B2899;
+        backdrop-filter: blur(32px);
 	}
-	#tracking-protection-icon-container {
-		border-inline-end: none !important;
-		border-image: none !important;
-	}
+
 
 
 
@@ -505,4 +438,10 @@ visibility: collapse !important;
   opacity: 1;
   visibility: visible !important;
 }
+
+#tabs-newtab-button {
+    opacity: 0.5 !important;
+}
+
+
 

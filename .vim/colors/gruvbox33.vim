@@ -124,13 +124,12 @@ let s:gb.light4      = ['#d4fafd', 246]     " 168-153-132
 let s:gb.light4_256  = ['#d4f4fd', 246]     " 168-153-132
 
 let s:gb.bright_red     = ['#9500ff', 167]     " 251-73-52
-let s:gb.bright_green   = ['#00eeff', 142]     " 184-187-38
+let s:gb.bright_green   = ['#66d9ef', 142]     " 184-187-38
 let s:gb.bright_yellow  = ['#c2c2ff', 214]     " 250-189-47
-" let s:gb.bright_blue    = ['#34ffbc', 109]     " 131-165-152
 let s:gb.bright_blue    = ['#fcf9c7', 109]     " 131-165-152
-let s:gb.bright_purple  = ['#c567ff', 175]     " 211-134-155
-let s:gb.bright_aqua    = ['#00c1e5', 108]     " 142-192-124
-let s:gb.bright_orange  = ['#9eddff', 208]     " 254-128-25
+let s:gb.bright_purple  = ['#c473fa', 175]     " 211-134-155
+let s:gb.bright_aqua    = ['#a8ff60', 108]     " 142-192-124
+let s:gb.bright_orange  = ['#92c5f7', 208]     " 254-128-25
 
 let s:gb.neutral_red    = ['#a040ff', 124]     " 204-36-29
 let s:gb.neutral_green  = ['#0bffef', 106]     " 152-151-26
@@ -514,7 +513,8 @@ if version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:green, s:bg1)
+  " call s:HL('CursorLineNr', s:green, s:bg1)
+  call s:HL('CursorLineNr', s:yellow, s:bg1)
 endif
 
 hi! link NonText GruvboxBg2
@@ -1424,6 +1424,8 @@ endfunction
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+
+
 
 
 

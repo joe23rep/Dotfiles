@@ -41,6 +41,8 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'mattn/emmet-vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'liuchengxu/vim-which-key'
+Plug 'tpope/vim-rhubarb'
+Plug 'turbio/bracey.vim'
 " Plug 'lilydjwg/colorizer'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'rstacruz/sparkup'

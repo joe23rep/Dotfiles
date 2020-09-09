@@ -246,6 +246,7 @@ alias vim="nvim"
 alias time="sudo timeshift --list"
 alias ..="cd .."
 alias ghosts="./.scripts/ghosts.sh"
+alias sudo="sudo -E"
 
 
 
@@ -377,6 +378,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#af87ff,prompt:#00eeff,pointer:#cd1bfc,marker:#cd1bfc,spinner:#cd1bfc
 '
 
+# Preview Window Syntax Highlight
+export BAT_THEME="Aura"
 
 #------------------------------------------------------------------------------------------
 #  ____                       _

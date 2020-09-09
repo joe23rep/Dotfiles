@@ -210,17 +210,7 @@ let g:which_key_map.p = {
       \ 'c' : [':PlugClean'        , 'Plug clean']   ,
       \ }
 
-" Terminal Mappings------------------------------------------------------
 
-
-let g:which_key_map.l = {
-      \ 'name' : '+Terminal' ,
-      \ 'g' : [':FloatermNew lazygit '        , 'Lazygit']   ,
-      \ 'rr' : [':FloatermNew ranger'        , 'Ranger']   ,
-      \ }
-
-
-nmap <leader>lg :FloatermNew lazygit<CR>
 
 
 "  _____  _                _        ___  ___                      _

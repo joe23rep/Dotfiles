@@ -210,17 +210,7 @@ let g:which_key_map.p = {
       \ 'c' : [':PlugClean'        , 'Plug clean']   ,
       \ }
 
-" Terminal Mappings------------------------------------------------------
 
-
-let g:which_key_map.l = {
-      \ 'name' : '+Terminal' ,
-      \ 'g' : [':FloatermNew lazygit '        , 'Lazygit']   ,
-      \ 'rr' : [':FloatermNew ranger'        , 'Ranger']   ,
-      \ }
-
-
-nmap <leader>lg :FloatermNew lazygit<CR>
 
 
 "  _____  _                _        ___  ___                      _
@@ -236,57 +226,62 @@ nmap <leader>lg :FloatermNew lazygit<CR>
 " let g:which_key_map.f = { 'name' : '+file' }
 "
 
-
-
-nnoremap <leader>a :AutoSaveToggle<CR>
-let g:which_key_map.a = 'Toggle autosave'
-
-nnoremap <silent> <leader>vs :vs<CR>
-let g:which_key_map.vs = 'open vert split'
-
-
+"
+"
+" nnoremap <leader>a :AutoSaveToggle<CR>
+" let g:which_key_map.a = 'Toggle autosave'
+"
+" nnoremap <silent> <leader>vs :vs<CR>
+" let g:which_key_map.vs = 'open vert split'
+"
+"
 " nnoremap <silent> <leader>hs :split<CR>
 " let g:which_key_map.hs = 'open horizontal split'
-
-
-nnoremap <silent> <leader>nn :NERDTreeFind<CR>
-let g:which_key_map.nn = 'open Nerdtree'
-
-
-nnoremap <leader>r :%s/<C-r><C-w>//g<Left><Left>
-let g:which_key_map.r = 'replace word under cursor /global'
-
-
-nnoremap <silent> <leader>s :%s//g<left><left>
-let g:which_key_map.s = 'search and replace /global'
+"
+"
+" nnoremap <silent> <leader>nn :NERDTreeFind<CR>
+" let g:which_key_map.nn = 'open Nerdtree'
+"
+"
+" nnoremap <silent> <leader>q :q!<CR>
+" let g:which_key_map.q = 'quit w/o saving'
+"
+"
+" nnoremap <leader>r :%s/<C-r><C-w>//g<Left><Left>
+" let g:which_key_map.r = 'replace word u/ cursor global'
+"
+"
+" nnoremap <silent> <leader>sr :%s//g<left><left>
+" let g:which_key_map.sr = 'search and replace global'
 "
 "
 " nnoremap <silent> <leader>nb :enew<CR>
 " let g:which_key_map.nb = 'new buffer'
 "
 "
+" nnoremap <silent> <leader>nh :let @/=""<CR>
+" let g:which_key_map.nh = 'remove Highlights'
+"
+"
+" nnoremap <silent> <leader>sf :source %<CR>
+" let g:which_key_map.sf = 'source current buffer'
+"
+"
+" nnoremap <silent> <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+" let g:which_key_map.w = 'clean whitespace'
+"
+"
 " nnoremap <silent> <leader>n :bn<CR>
 " let g:which_key_map.bn = 'next buffer'
+"
+"
+" nnoremap <silent> <leader>pi :PlugInstall<CR>
+" let g:which_key_map.pi = 'install plugins'
+"
+"
+" nnoremap <silent> <leader>gv :GV!<CR>
+" let g:which_key_map.gv = 'open commit browser'
 
-nnoremap <silent> <leader>c :let @/=""<CR>
-let g:which_key_map.c = 'remove search Highlights'
-
-
-nnoremap <silent> <leader>sf :source %<CR>
-let g:which_key_map.sf = 'source current buffer'
-
-
-nnoremap <silent> <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-let g:which_key_map.w = 'clean trailing whitespace'
-
-
-
-nnoremap <silent> <leader>br :Bracey<CR>
-let g:which_key_map.br = 'open Live Server'
-
-
-nnoremap <silent> <leader>gv :GV!<CR>
-let g:which_key_map.gv = 'open Github commit browser'
 
 
 
@@ -328,6 +323,9 @@ let g:which_key_map.bn = 'which_key_ignore'
 
 nnoremap <leader>n :bn<CR>
 let g:which_key_map.n = 'which_key_ignore'
+
+nnoremap <C-s> :w<CR>
+let g:which_key_map.s = 'which_key_ignore'
 
 nnoremap <leader>bp :bp<CR>
 let g:which_key_map.bp = 'which_key_ignore'
@@ -371,9 +369,12 @@ let g:which_key_map.ts = 'which_key_ignore'
 nnoremap <leader>ths :ToHSLAAll<CR>
 let g:which_key_map.ths = 'which_key_ignore'
 
+nnoremap <leader>c öö<CR>
+let g:which_key_map.c = 'which_key_ignore'
+
 nnoremap <leader>cb :bd<CR>
 let g:which_key_map.cb = 'which_key_ignore'
-
+"
 nnoremap <leader>1 :b1<CR>
 let g:which_key_map.1 = 'which_key_ignore'
 
@@ -433,14 +434,7 @@ let g:which_key_map.rr = 'which_key_ignore'
 
 nnoremap <leader>as :AutoSaveToggle<CR>
 let g:which_key_map.as = 'which_key_ignore'
-
-nnoremap <silent> <leader>sr :%s//g<left><left>
-let g:which_key_map.sr = 'which_key_ignore'
-
-" nnoremap <silent> <leader>nh :let @/=""<CR>
-" let g:which_key_map.nh = 'remove search Highlights'
-
-
+"
 " nnoremap <leader>_a :echom '_a'<CR>
 nnoremap <leader>_B :echom '_B'<CR>
 nnoremap <leader>_h :echom '_h'<CR>
