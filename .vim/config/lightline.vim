@@ -18,16 +18,6 @@ let g:lightline = {
 
 " Custom Functions-----------------------------------------------------------------
 
-" Show filename with parent directory
-function! FileNameWithParent(f) abort
-  if expand('%:t') ==# ''
-    return expand('%:p:h:t')
-  else
-    return expand('%:p:h:t') . "/" . expand("%:t")
-  endif
-endfunction
-
-
 " Show icon and change the /+ for unsaved changes to be within the same block with diff icon
 function! FileNameWithIcon() abort
   let filename_with_icon = expand('%:t') !=# '' ? expand('%:t') : 'Txt'
@@ -47,7 +37,13 @@ endfunction
 
 " Fugitive Integration
 function! Git_branch() abort
-    return  fugitive#head()  "  ".
+  if fugitive#head() !=# ''
+    " return  fugitive#head() . "  "
+    " return  fugitive#head() . "  "
+    return  fugitive#head() . "  "
+  else
+    return " "
+  endif
 endfunction
 
 
@@ -59,7 +55,7 @@ let g:lightline.active = {
       \ 'right': [ ['lineinfo'],[ 'percent' ], [ 'unix_logo' ] ],
       \ }
 
-" ['git_branch'],
+
 
 let g:lightline.separator = { 'left': " ", 'right': " " }
 let g:lightline.subseparator = { 'left': " ", 'right': " " }
@@ -81,14 +77,10 @@ let g:lightline.tabline = {
             \ }
 
 
-
 let g:lightline.tab = {
         \ 'active': ['filename_with_icon'],
         \ 'inactive': ['filename_with_icon']
         \ }
-
-
-
 
 
 " Custom lightline components-----------------------------------------------------
@@ -111,7 +103,7 @@ let g:lightline.component = {
         \ 'unix_logo': "  ",
         \ 'filename_with_parent': '%t',
         \ 'buffer': 'buffers %n',
-        \ 'git_branch': '%{Git_branch()}'
+        \ 'git_branch': '%{Git_branch()}',
         \}
 
 
