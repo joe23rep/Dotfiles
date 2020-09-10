@@ -227,7 +227,7 @@ nnoremap <silent> <leader>wc :WhichKey '<Space>'<CR>
 
 " Floaterm--------------------------------------------------------
 
-nmap <leader>lg :FloatermNew lazygit<CR>
+nmap <leader>lg :FloatermNew  cd ~/Dots && lazygit<CR>
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
@@ -284,8 +284,13 @@ nmap <leader>nb :enew<CR>
 " source current buffer
 nmap <leader>sf :source %<cr>
 
+" open Jumplist
+nmap <Leader>j :call GotoJump()<CR>
+
+
 " Open Ranger inside Floaterm
-nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
+nmap <leader>rr :FloatermNew ranger <cr>
+" nmap <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
 
 " Switch to certain Buffer
 nmap <leader>1 :b1<CR>
