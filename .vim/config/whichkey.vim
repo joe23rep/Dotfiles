@@ -422,3 +422,4 @@ let g:which_key_map._.h = 'which_key_ignore'
 let g:which_key_map._.p = 'which_key_ignore'
 let g:which_key_map._.b = 'which_key_ignore'
 let g:which_key_map._._ = 'which_key_ignore'
+
