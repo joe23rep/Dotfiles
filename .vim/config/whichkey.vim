@@ -80,14 +80,24 @@ let g:which_key_map.O = {
       \ 'v' : [':tabedit ~/.Dots/.vimrc'        , 'open vimrc']   ,
       \ 't' : [':tabedit ~/Dots/.tmux.conf'        , 'open tmux.conf']   ,
       \ 'z' : [':tabedit ~/Dots/.zshrc'        , 'open zshrc']   ,
-      \ 'g' : [':tabedit ~/Dots/.vim/colors/gruvbox-neon3.vim'        , 'open gruvbox-neon3']   ,
+      \ 'gg' : [':tabedit ~/Dots/.vim/colors/gruvbox-neon3.vim'        , 'open gruvbox-neon3']   ,
+      \ 'c' : [':tabedit ~/Dots/.vim/config/coc.vim'        , 'open coc.vim']   ,
+      \ 'w' : [':tabedit ~/Dots/.vim/config/whichkey.vim'        , 'open whichkey.vim']   ,
+      \ 'f' : [':tabedit ~/Dots/.vim/config/fzf.vim'        , 'open fzf.vim']   ,
+      \ 'g' : [':tabedit ~/Dots/.vim/config/general.vim'        , 'open general.vim']   ,
+      \ 'l' : [':tabedit ~/Dots/.vim/config/lightline.vim'        , 'open lightline.vim']   ,
+      \ 'p' : [':tabedit ~/Dots/.vim/config/plugins.vim'        , 'open plugins.vim']   ,
+      \ 'n' : [':tabedit ~/Dots/.vim/config/nerdtree.vim'        , 'open nerdtree.vim']   ,
+      \ 'tt' : [':tabedit ~/Dots/.vim/config/toggle.vim'        , 'open toggle.vim']   ,
+      \ 'ff' : [':tabedit ~/Dots/.vim/config/floaterm.vim'        , 'open floaterm.vim']   ,
+      \ 'k' : [':tabedit ~/Dots/.vim/config/keybindings.vim'        , 'open keybindings.vim']   ,
+      \ 'cc' : [':tabedit ~/Dots/.vim/coc-settings.json'        , 'open coc-settings.json']   ,
       \ }
-
 
 
 " Normal Mode Mappings--------------------------------------------------
 
-let g:which_key_map.n = {
+let g:which_key_map.N = {
       \ 'name' : '+NormalMode' ,
       \ 'e' : ['e'        , 'go to end of word']   ,
       \ 'f' : ['f'        , 'find char after cursor in line']   ,
@@ -95,7 +105,6 @@ let g:which_key_map.n = {
       \ 'o' : ['o'        , 'go line below /in Insert mode']   ,
       \ 'O' : ['O'        , 'go line above /in Insert mode']   ,
       \ 'M' : ['M'        , 'go to middle of screen']   ,
-      \ 'Ctrl U' : ['<C-U>'        , 'go to last changed line']   ,
       \ 'S' : ['S'        , 'deletes line and /in Insert mode']   ,
       \ 'n' : ['n'        , 'repeat last search']   ,
       \ 'C' : ['C'        , 'Change to end of line']   ,
@@ -109,9 +118,10 @@ let g:which_key_map.n = {
       \ 'K' : ['{'        , 'jump paragraph up']   ,
       \ 'U' : ['<C-R>'        , 'Redo']   ,
       \ 'Ctrl f' : ['/'        , 'search document']   ,
+      \ 'Ctrl o' : ['<C-o>'        , 'go to previous worked line']   ,
+      \ 'Ctrl i' : ['<C-i>'        , 'go back to last line']   ,
       \ 'Y' : ['y$'        , 'copy to end of line']   ,
       \ '+' : [':call Toggle'        , 'toggle Boolean values']   ,
-      \ 'Ctrl n' : [':NERDTreeFind'        , 'open Nerdtree']   ,
       \ }
 
 
@@ -173,7 +183,7 @@ let g:which_key_map.F = {
 
 " Change Colors Mappings------------------------------------------------
 
-let g:which_key_map.Z = {
+let g:which_key_map.M = {
       \ 'name' : '+CycleColors' ,
       \ 'tr' : [':ToRGB'        , 'convert to RGB']   ,
       \ 'th' : [':ToHex'        , 'convert to Hex']   ,
@@ -245,6 +255,9 @@ nnoremap <silent> <leader>vs :vs<CR>
 let g:which_key_map.vs = 'open vert split'
 
 
+nnoremap <Leader>j :call GotoJump()<CR>
+let g:which_key_map.j = 'open Jump List'
+
 " nnoremap <silent> <leader>hs :split<CR>
 " let g:which_key_map.hs = 'open horizontal split'
 
@@ -254,7 +267,7 @@ let g:which_key_map.nn = 'open Nerdtree'
 
 
 nnoremap <leader>r :%s/<C-r><C-w>//g<Left><Left>
-let g:which_key_map.r = 'replace word under cursor /global'
+let g:which_key_map.r = 'replace word u/ cursor global'
 
 
 nnoremap <silent> <leader>s :%s//g<left><left>
@@ -286,7 +299,7 @@ let g:which_key_map.br = 'open Live Server'
 
 
 nnoremap <silent> <leader>gv :GV!<CR>
-let g:which_key_map.gv = 'open Github commit browser'
+let g:which_key_map.gv = 'open commit browser'
 
 
 
@@ -299,152 +312,113 @@ let g:which_key_map.gv = 'open Github commit browser'
 "         __/ |
 "        |___/
 
-nnoremap <space>e :CocCommand explorer --preset floatingRightside<CR>
 let g:which_key_map.e = 'which_key_ignore'
 
-nnoremap <silent> <leader>gvv :GV<CR>
 let g:which_key_map.gvv = 'which_key_ignore'
 
-nnoremap <leader>th :ToHex<CR>
 let g:which_key_map.th = 'which_key_ignore'
 
-nnoremap <leader>tha :ToHSLA<CR>
 let g:which_key_map.tha = 'which_key_ignore'
 
-nnoremap <leader>tr :ToRGB<CR>
 let g:which_key_map.tr = 'which_key_ignore'
 
-nnoremap <leader>tra :ToRGBA<CR>
 let g:which_key_map.tra = 'which_key_ignore'
 
-nnoremap <leader>nb :enew<CR>
 let g:which_key_map.nb = 'which_key_ignore'
 
-nnoremap <leader>b :bp<CR>
 let g:which_key_map.b = 'which_key_ignore'
 
-nnoremap <leader>bn :bp<CR>
 let g:which_key_map.bn = 'which_key_ignore'
 
-nnoremap <leader>n :bn<CR>
 let g:which_key_map.n = 'which_key_ignore'
 
-nnoremap <leader>bp :bp<CR>
 let g:which_key_map.bp = 'which_key_ignore'
 
-nnoremap <leader>f :FloatermNew fzf<CR>
 let g:which_key_map.f = 'which_key_ignore'
 
-nnoremap <leader>fb :Buffers<CR>
 let g:which_key_map.fb = 'which_key_ignore'
 
-nnoremap <leader>ff :Files<CR>
 let g:which_key_map.ff = 'which_key_ignore'
 
-nnoremap <leader>m :History<CR>
 let g:which_key_map.m = 'which_key_ignore'
 
-nnoremap <leader>mm :History/<CR>
 let g:which_key_map.mm = 'which_key_ignore'
 
-nnoremap <leader>rg :Rg<CR>
 let g:which_key_map.rg = 'which_key_ignore'
 
-nnoremap <leader>z :tabedit ~/.zshrc<CR>
 let g:which_key_map.z = 'which_key_ignore'
 
-nnoremap <leader>g :tabedit ~/.vim/colors/gruvbox-neon3.vim<CR>
 let g:which_key_map.g = 'which_key_ignore'
 
-nnoremap <leader>v :tabedit ~/.vimrc<CR>
 let g:which_key_map.v = 'which_key_ignore'
 
-nnoremap <leader>t :tabline ~/.tmux.conf<CR>
 let g:which_key_map.t = 'which_key_ignore'
 
-nnoremap <leader>trb :ToRGBAAll<CR>
 let g:which_key_map.trb = 'which_key_ignore'
 
-nnoremap <leader>ts :ToHSLA<CR>
 let g:which_key_map.ts = 'which_key_ignore'
 
-nnoremap <leader>ths :ToHSLAAll<CR>
 let g:which_key_map.ths = 'which_key_ignore'
 
-nnoremap <leader>cb :bd<CR>
 let g:which_key_map.cb = 'which_key_ignore'
 
-nnoremap <leader>1 :b1<CR>
 let g:which_key_map.1 = 'which_key_ignore'
 
-nnoremap <leader>2 :b2<CR>
 let g:which_key_map.2 = 'which_key_ignore'
 
-nnoremap <leader>3 :b3<CR>
 let g:which_key_map.3 = 'which_key_ignore'
 
-nnoremap <leader>4 :b4<CR>
 let g:which_key_map.4 = 'which_key_ignore'
 
-nnoremap <leader>5 :b5<CR>
 let g:which_key_map.5 = 'which_key_ignore'
 
-nnoremap <leader>6 :b6<CR>
 let g:which_key_map.6 = 'which_key_ignore'
 
-nnoremap <leader>7 :b7<CR>
 let g:which_key_map.7 = 'which_key_ignore'
 
-nnoremap <leader>8 :b8<CR>
 let g:which_key_map.8 = 'which_key_ignore'
 
-nnoremap <leader>hs :split<CR>
 let g:which_key_map.hs = 'which_key_ignore'
 
-nnoremap <leader>bb :b#<CR>
 let g:which_key_map.bb = 'which_key_ignore'
 
-nnoremap <leader>ga :Git add<CR>
 let g:which_key_map.ga = 'which_key_ignore'
 
-nnoremap <leader>ga :Git add<CR>
 let g:which_key_map.ga = 'which_key_ignore'
 
-nnoremap <leader>gc :Git commit<CR>
 let g:which_key_map.gc = 'which_key_ignore'
 
-nnoremap <leader>gp :Git push<CR>
 let g:which_key_map.gp = 'which_key_ignore'
 
-nnoremap <leader>q :q!<CR>
 let g:which_key_map.q = 'which_key_ignore'
 
-nnoremap <leader>gd :Git diff<CR>
 let g:which_key_map.gd = 'which_key_ignore'
 
-nnoremap <leader>gr :Git remove<CR>
 let g:which_key_map.gr = 'which_key_ignore'
 
-nnoremap <leader>C :Colors<CR>
 let g:which_key_map.C = 'which_key_ignore'
 
-nnoremap <silent> <leader>rr :FloatermNew --height=0.7 --width=0.9 --wintype=floating --name=Ranger --position=center --autoclose=2 ranger --cmd="cd ~" <cr>
 let g:which_key_map.rr = 'which_key_ignore'
 
-nnoremap <leader>as :AutoSaveToggle<CR>
 let g:which_key_map.as = 'which_key_ignore'
 
-nnoremap <silent> <leader>sr :%s//g<left><left>
 let g:which_key_map.sr = 'which_key_ignore'
 
-" nnoremap <silent> <leader>nh :let @/=""<CR>
-" let g:which_key_map.nh = 'remove search Highlights'
+
+" nnoremap <leader>_B :echom '_B'<CR>
+" nnoremap <leader>_h :echom '_h'<CR>
+" nnoremap <leader>_p :echom '_p'<CR>
+" " nnoremap <leader>_n :echom '_b'<CR>
+" nnoremap <leader>__ :echom '__'<CR>
+" let g:which_key_map['_'] = { 'name': 'which_key_ignore' }
 
 
-" nnoremap <leader>_a :echom '_a'<CR>
-nnoremap <leader>_B :echom '_B'<CR>
-nnoremap <leader>_h :echom '_h'<CR>
-nnoremap <leader>_p :echom '_p'<CR>
-" nnoremap <leader>_n :echom '_b'<CR>
-nnoremap <leader>__ :echom '__'<CR>
-let g:which_key_map['_'] = { 'name': 'which_key_ignore' }
+"---------------------------------------------------------------------------
+" to delete prefix and prefix items:
+"
+let g:which_key_map._ = {'name' : 'which_key_ignore'}
+let g:which_key_map._.B = 'which_key_ignore'
+let g:which_key_map._.h = 'which_key_ignore'
+let g:which_key_map._.p = 'which_key_ignore'
+let g:which_key_map._.b = 'which_key_ignore'
+let g:which_key_map._._ = 'which_key_ignore'
