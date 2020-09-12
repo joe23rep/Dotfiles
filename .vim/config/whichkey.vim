@@ -75,7 +75,7 @@ let g:which_key_map.h = {
 
 " Open Files Mappings---------------------------------------------------
 
-let g:which_key_map.O = {
+let g:which_key_map.o = {
       \ 'name' : '+openFiles' ,
       \ 'v' : [':tabedit ~/.Dots/.vimrc'        , 'open vimrc']   ,
       \ 't' : [':tabedit ~/Dots/.tmux.conf'        , 'open tmux.conf']   ,
@@ -97,7 +97,7 @@ let g:which_key_map.O = {
 
 " Normal Mode Mappings--------------------------------------------------
 
-let g:which_key_map.N = {
+let g:which_key_map.d = {
       \ 'name' : '+NormalMode' ,
       \ 'e' : ['e'        , 'go to end of word']   ,
       \ 'f' : ['f'        , 'find char after cursor in line']   ,
@@ -127,7 +127,7 @@ let g:which_key_map.N = {
 
 " Coc Mappings----------------------------------------------------------
 
-let g:which_key_map.B = {
+let g:which_key_map.i = {
      \ 'name' : '+Coc' ,
      \ '.' : [':CocConfig'                          , 'config'],
       \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
@@ -168,7 +168,7 @@ let g:which_key_map.B = {
 
 " FZF Mappings----------------------------------------------------------
 
-let g:which_key_map.F = {
+let g:which_key_map.x = {
       \ 'name' : '+FZF' ,
       \ 'fb' : [':Buffers'        , 'show-buffer']   ,
       \ 'm' : [':History'        , 'show latest copies']   ,
@@ -183,7 +183,7 @@ let g:which_key_map.F = {
 
 " Change Colors Mappings------------------------------------------------
 
-let g:which_key_map.M = {
+let g:which_key_map.u = {
       \ 'name' : '+CycleColors' ,
       \ 'tr' : [':ToRGB'        , 'convert to RGB']   ,
       \ 'th' : [':ToHex'        , 'convert to Hex']   ,
@@ -197,7 +197,7 @@ let g:which_key_map.M = {
 
 " Git Mappings----------------------------------------------------------
 
-let g:which_key_map.G = {
+let g:which_key_map.y = {
       \ 'name' : '+Git' ,
       \ 'a' : [':Git add'        , 'add']   ,
       \ 'c' : [':Git commit'        , 'commit']   ,
@@ -230,7 +230,31 @@ let g:which_key_map.l = {
       \ }
 
 
-nmap <leader>lg :FloatermNew lazygit<CR>
+" Leader Mappings------------------------------------------------------
+
+
+let g:which_key_map.k = {
+      \ 'name' : '+Leader' ,
+      \ 'hs' : [':split'        , 'horizontal split']   ,
+      \ 'w' : ['mz:%s/\s\+$//<cr>:let @/=''<cr>`z'        , 'clean whitespace']   ,
+      \ 'sr' : [':%//g<left><left>'        , 'search and replace']   ,
+      \ 'r' : [':%s/<C-r><C-w>//g<Left><Left>'        , 'replace word under cursor /global']   ,
+      \ 'c' : [':let @/=""<cr>'        , 'remove search highlights']   ,
+      \ 'sf' : [':source %<cr>'        , 'source current buffer']   ,
+      \ 'j' : [':call GotoJump()'        , 'open Jumplist']   ,
+      \ '(' : ['<Plug>(GitGutterNextHunk)'        , 'next Hunk']   ,
+      \ ')' : ['<Plug>(GitGutterPrevHunk)'        , 'previous Hunk']   ,
+      \ 'as' : [':AutoSaveToggle<cr>'        , 'toggle Autosave']   ,
+      \ 'gv' : [':GV!'        , 'open commit browser']   ,
+      \ 'g' : [':Goyo'        , 'Goyo']   ,
+      \ 't' : [':TagbarToggle<cr>'        , 'toggle Tagbar']   ,
+      \ 'ls' : [':Bracey'        , 'open Live Server']   ,
+      \ 'Ls' : [':BraceyStop'        , 'stop Live Server']   ,
+      \ 'rr' : [':FloatermNew ranger'        , 'open ranger']   ,
+      \ 'lg' : [':FloatermNew cd ~/Dots && lazygit'        , 'open Lazygit']   ,
+      \ }
+
+
 
 
 "  _____  _                _        ___  ___                      _
@@ -244,62 +268,37 @@ nmap <leader>lg :FloatermNew lazygit<CR>
 
 
 " let g:which_key_map.f = { 'name' : '+file' }
-"
-
-
 
 nnoremap <leader>a :AutoSaveToggle<CR>
-let g:which_key_map.a = 'Toggle autosave'
 
 nnoremap <silent> <leader>vs :vs<CR>
-let g:which_key_map.vs = 'open vert split'
-
 
 nnoremap <Leader>j :call GotoJump()<CR>
-let g:which_key_map.j = 'open Jump List'
 
 " nnoremap <silent> <leader>hs :split<CR>
 " let g:which_key_map.hs = 'open horizontal split'
 
-
 nnoremap <silent> <leader>nn :NERDTreeFind<CR>
-let g:which_key_map.nn = 'open Nerdtree'
-
 
 nnoremap <leader>r :%s/<C-r><C-w>//g<Left><Left>
-let g:which_key_map.r = 'replace word u/ cursor global'
 
+nnoremap <silent> <leader>sr :%s//g<left><left>
 
-nnoremap <silent> <leader>s :%s//g<left><left>
-let g:which_key_map.s = 'search and replace /global'
-"
-"
 " nnoremap <silent> <leader>nb :enew<CR>
 " let g:which_key_map.nb = 'new buffer'
-"
 "
 " nnoremap <silent> <leader>n :bn<CR>
 " let g:which_key_map.bn = 'next buffer'
 
 nnoremap <silent> <leader>c :let @/=""<CR>
-let g:which_key_map.c = 'remove search Highlights'
-
 
 nnoremap <silent> <leader>sf :source %<CR>
-let g:which_key_map.sf = 'source current buffer'
-
 
 nnoremap <silent> <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-let g:which_key_map.w = 'clean trailing whitespace'
 
-
-
-nnoremap <silent> <leader>br :Bracey<CR>
-let g:which_key_map.br = 'open Live Server'
-
+nnoremap <silent> <leader>ls :Bracey<CR>
 
 nnoremap <silent> <leader>gv :GV!<CR>
-let g:which_key_map.gv = 'open commit browser'
 
 
 
@@ -311,6 +310,31 @@ let g:which_key_map.gv = 'open commit browser'
 "  \___/ \__, ||_| |_| \___/ |_|   \___| \_____/|_||___/ \__|
 "         __/ |
 "        |___/
+
+
+
+
+let g:which_key_map.a = 'which_key_ignore'
+
+let g:which_key_map.vs = 'which_key_ignore'
+
+let g:which_key_map.j = 'which_key_ignore'
+
+let g:which_key_map.nn = 'which_key_ignore'
+
+let g:which_key_map.r = 'which_key_ignore'
+
+let g:which_key_map.sr = 'which_key_ignore'
+
+let g:which_key_map.c = 'which_key_ignore'
+
+let g:which_key_map.sf = 'which_key_ignore'
+
+let g:which_key_map.w = 'which_key_ignore'
+
+let g:which_key_map.br = 'which_key_ignore'
+
+let g:which_key_map.gv = 'which_key_ignore'
 
 let g:which_key_map.e = 'which_key_ignore'
 
@@ -400,9 +424,11 @@ let g:which_key_map.C = 'which_key_ignore'
 
 let g:which_key_map.rr = 'which_key_ignore'
 
+let g:which_key_map.br = 'which_key_ignore'
+
 let g:which_key_map.as = 'which_key_ignore'
 
-let g:which_key_map.sr = 'which_key_ignore'
+let g:which_key_map.s = 'which_key_ignore'
 
 
 " nnoremap <leader>_B :echom '_B'<CR>
@@ -417,7 +443,7 @@ let g:which_key_map.sr = 'which_key_ignore'
 " to delete prefix and prefix items:
 "
 let g:which_key_map._ = {'name' : 'which_key_ignore'}
-let g:which_key_map._.B = 'which_key_ignore'
+" let g:which_key_map._.B = 'which_key_ignore'
 let g:which_key_map._.h = 'which_key_ignore'
 let g:which_key_map._.p = 'which_key_ignore'
 let g:which_key_map._.b = 'which_key_ignore'
