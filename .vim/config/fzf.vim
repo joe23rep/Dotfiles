@@ -10,20 +10,20 @@
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
 
 
-" Fzf statusbar config (lightline style)
+" " Fzf statusbar config (lightline style)
 " function! s:fzf_statusline()
 "     " setlocal statusline=%#fzf1#\ \ %#fzf2#fzf%#fzf3#
 " endfunction
 "
 " autocmd! User FzfStatusLine call <SID>fzf_statusline()
+"
+" " Colors for fzf statusbar
+" hi fzf1 guifg=#292c33  guibg=#00eeff
+" hi fzf2 guifg=#292c33  guibg=#00eeff
+" hi fzf3 guifg=#00eeff  guibg=#292c33
 
-" Colors for fzf statusbar
-hi fzf1 guifg=#292c33  guibg=#00eeff
-hi fzf2 guifg=#292c33  guibg=#00eeff
-hi fzf3 guifg=#00eeff  guibg=#292c33
 
-
-" " Add vim directory for shortcutting
+" Add vim directory for shortcutting
 command! -bang Vim call fzf#vim#files('~/.vim', <bang>0)
 
 
@@ -33,20 +33,20 @@ command! -nargs=? -complete=dir AF
             \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
             \ })))
 
-let g:fzf_colors =
-            \ { 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Conditional'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Comment'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exeption'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
+" let g:fzf_colors =
+"             \ { 'fg':      ['fg', 'Normal'],
+"             \ 'bg':      ['bg', 'Normal'],
+"             \ 'hl':      ['fg', 'Conditional'],
+"             \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"             \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"             \ 'hl+':     ['fg', 'Statement'],
+"             \ 'info':    ['fg', 'PreProc'],
+"             \ 'border':  ['fg', 'Comment'],
+"             \ 'prompt':  ['fg', 'Conditional'],
+"             \ 'pointer': ['fg', 'Exeption'],
+"             \ 'marker':  ['fg', 'Keyword'],
+"             \ 'spinner': ['fg', 'Label'],
+"             \ 'header':  ['fg', 'Comment'] }
 
 " Terminal buffer options for fzf
 autocmd! FileType fzf
