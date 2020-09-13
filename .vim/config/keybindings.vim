@@ -1,3 +1,4 @@
+
 " Keybindings -------------------------------------------------------------------------------
 "  _  __            ____  _           _
 " | |/ /___ _   _  | __ )(_)_ __   __| |___
@@ -142,13 +143,11 @@ vmap + <esc>:call Toggle()<CR>
 " Bracey--------------------------------------------------------
 
 nmap <leader>br      :Bracey<CR>
-nmap <leader>Br      :BraceyStop<CR>
 
 " Nerdtree -----------------------------------------------------
 
 " Bind Ctrl n to open nerdtree
-" nmap <C-n>      :NERDTreeToggle /home/joe/<CR>
-nmap <C-n>      :NERDTreeFind<CR>
+nmap <C-n>      :NERDTreeToggle /home/joe/<CR>
 vmap <C-n> <esc>:NERDTreeFind<CR>
 imap <C-n> <esc>:NERDTreeFind<CR>
 nmap <leader>nn :NERDTreeFind<CR>
@@ -225,9 +224,51 @@ nmap <leader>ths :ToHSLAAll<CR>
 
 nnoremap <silent> <leader>wc :WhichKey '<Space>'<CR>
 
+
 " Floaterm--------------------------------------------------------
 
 nmap <leader>lg :FloatermNew  cd ~/Dots && lazygit<CR>
+nmap <leader>rr :FloatermNew ranger <cr>
+
+
+" Coc Mappings----------------------------------------------------
+
+"Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+" Explorer
+nmap <space>e :CocCommand explorer --preset floatingRightside<CR>
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 
 " Leader Key Mappings ----------------------------------------------------------------------
@@ -247,6 +288,8 @@ nmap <leader>q :q!<CR>
 " Switch buffers
 map <leader>b :bp<CR>
 map <leader>n :bn<CR>
+
+" Switch to previous used buffer
 map <leader>bb :b#<CR>
 
 " Close buffer
@@ -311,3 +354,4 @@ nmap <leader>gc :Git commit<cr>
 nmap <leader>gp :Git push<cr>
 nmap <leader>gd :Git diff<cr>
 nmap <leader>gr :Git remove<cr>
+
