@@ -32,10 +32,12 @@ let g:which_key_sep = '→'
 let g:which_key_use_floating_win = 0
 
 " Change the colors if you want
-highlight default link WhichKey          Function
-highlight default link WhichKeySeperator Identifier
-highlight default link WhichKeyGroup     Number
-highlight default link WhichKeyDesc      Operator
+" highlight default link WhichKey          Function
+" highlight default link WhichKeySeperator Exeption
+" highlight default link WhichKeySeperator Float
+highlight default link WhichKeySeperator Todo
+" highlight default link WhichKeyGroup     Number
+" highlight default link WhichKeyDesc      Operator
 
 
 " " Register which key map
@@ -448,4 +450,5 @@ let g:which_key_map._.h = 'which_key_ignore'
 let g:which_key_map._.p = 'which_key_ignore'
 let g:which_key_map._.b = 'which_key_ignore'
 let g:which_key_map._._ = 'which_key_ignore'
+
 
