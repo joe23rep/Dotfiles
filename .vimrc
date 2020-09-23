@@ -1,4 +1,5 @@
 
+
 "  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
 " | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
 " | | ____   ____  | || |     _____    | || | ____    ____ | || |  _______     | || |     ______   | |
@@ -20,16 +21,20 @@
 " |____/ \___/ \__,_|_|  \___|_|_| |_|\__, |
 "                                     |___/
 
-source ~/Dots/.vim/config/general.vim
-source ~/Dots/.vim/config/plugins.vim
-source ~/Dots/.vim/config/coc.vim
-source ~/Dots/.vim/config/whichkey.vim
-source ~/Dots/.vim/config/keybindings.vim
-source ~/Dots/.vim/config/nerdtree.vim
-source ~/Dots/.vim/config/toggle.vim
-source ~/Dots/.vim/config/lightline.vim
-source ~/Dots/.vim/config/fzf.vim
-source ~/Dots/.vim/config/floaterm.vim
+" Config Files
+source ~/.config/nvim/config/general.vim
+source ~/.config/nvim/config/plugins.vim
+source ~/.config/nvim/config/coc.vim
+source ~/.config/nvim/config/whichkey.vim
+source ~/.config/nvim/config/keybindings.vim
+source ~/.config/nvim/config/toggle.vim
+source ~/.config/nvim/config/lightline.vim
+source ~/.config/nvim/config/fzf.vim
+source ~/.config/nvim/config/floaterm.vim
+source ~/.config/nvim/config/plugconfig.vim
+
+" Colorizer
+lua require'plug-colorizer'
 
 
 
