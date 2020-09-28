@@ -9,10 +9,6 @@
 
   /* If you are using SpotifyNoControl.exe, set this variable to 0 */
   --os-windows-icon-dodge: 0;
-
-  --s-g1: #8bf6ff;
-  --s-g2: #970bf8;
-  --s-custom: #282828;
 }
 
 div#popover-container::before {
@@ -100,7 +96,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 3px !important;
-  background: linear-gradient(45deg, var(--s-g1), var(--s-g2));
+  background: linear-gradient(
+    45deg,
+    var(--modspotify_g1),
+    var(--modspotify_g2)
+  );
 }
 
 /*Hide top and bottom buttons of scrollbar. Who uses those, lol*/
@@ -320,14 +320,18 @@ body {
   letter-spacing: 0;
 }
 
+.nav.navbar-nav :hover a {
+  color: var(--modspotify_g2);
+}
+
 .nav > li.active > a {
   color: var(--modspotify_secondary_fg);
 }
 
 .nav.navbar-nav a::after {
   bottom: 0px;
-  width: 12px;
-  height: 4px;
+  width: 22px;
+  height: 2px;
   border-radius: 4px;
   z-index: -1;
   background-color: transparent;
@@ -336,7 +340,11 @@ body {
 }
 
 .nav.navbar-nav li.active a::after {
-  background-color: var(--modspotify_main_fg);
+  background: linear-gradient(
+    45deg,
+    var(--modspotify_g1),
+    var(--modspotify_g2)
+  );
 }
 
 .nav.navbar-nav a:focus:not(.button):active::after {
@@ -412,9 +420,7 @@ body:not(.body-container--windows)
   display: none !important;
 }
 
-/* Home page */
-
-.tracklist-podcast .tl-progress .row-progress__bar {
+Home page .tracklist-podcast .tl-progress .row-progress__bar {
   background-color: var(--modspotify_main_fg);
 }
 
@@ -425,55 +431,6 @@ body:not(.body-container--windows)
 
 .Header__background-overlay {
   background: unset;
-}
-
-/* Button */
-
-.Button,
-.button {
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: 14px;
-  letter-spacing: 0;
-}
-
-.Button.Button--style-green,
-.Button.Button--style-stroke,
-.Button.Button--style-icon-stroke,
-.Button.Button--style-icon-background,
-.button.button-green,
-.button.button-white,
-.button.button-with-stroke,
-.button.button-icon-with-stroke {
-  border-radius: 20px;
-  border: 0;
-  background-color: var(--modspotify_indicator_fg_and_button_bg);
-  color: var(--modspotify_secondary_fg) !important;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.16) !important;
-}
-
-.Button.Button--style-icon-stroke,
-.Button.Button--style-icon-background {
-  border-radius: 50%;
-}
-.Button.Button--style-stroke::after,
-.Button.Button--style-icon-stroke::after,
-.Button.Button--style-icon-background::after,
-.button.button-with-stroke::after,
-.button.button-icon-with-stroke::after {
-  box-shadow: none !important;
-}
-
-.Button--style-green:hover,
-.Button--style-stroke:hover,
-.button.button-green:hover,
-.button.button-white:hover,
-.button.button-with-stroke:hover,
-.Button--style-icon-background:hover,
-.button.button-icon-with-stroke:hover {
-  transform: none !important;
-  background-color: var(--modspotify_indicator_fg_and_button_bg) !important;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.26) !important;
 }
 
 .glue-page-header__title-text,
@@ -741,18 +698,13 @@ body.remotebar .view-player .player-bar-wrapper {
 .tl-highlight,
 .TableCell:not(.tl-number),
 .TableCell a:link {
-  color: #6d6f88;
+  color: var(--modspotify_playlist_normal_fg);
 }
 
 .tl-row.selected .tl-cell,
 .tl-row.selected:hover .tl-cell,
 .TableRow.TableRow--is-selected .TableCell {
-  /* background-color: rgba( */
-  /*   var(--modspotify_rgb_sidebar_indicator_and_hover_button_bg), */
-  /*   0.2 */
-  /* ) !important; */
   background-color: var(--modspotfiy_main_bg);
-  /* color: var(--s-g1); */
 }
 
 .tl-row .tl-cell:first-child,
@@ -1072,8 +1024,11 @@ body.video-full-screen
 }
 
 .progress-container .inner {
-  /* background-color: var(--modspotify_main_fg) !important; */
-  background: linear-gradient(45deg, var(--s-custom), var(--s-custom));
+  background: linear-gradient(
+    45deg,
+    var(--modspotify_custom),
+    var(--modspotify_custom)
+  );
 }
 
 #player-text-elapsed,
@@ -1511,7 +1466,11 @@ button[data-button="add-recommendation"] {
 .progress-bar,
 .progress-bar .inner,
 .tracklist-podcast .tl-progress .row-progress {
-  background: linear-gradient(45deg, var(--s-custom), var(--s-custom));
+  background: linear-gradient(
+    45deg,
+    var(--modspotify_custom),
+    var(--modspotify_custom)
+  );
 }
 
 /* normal */
@@ -1525,79 +1484,9 @@ button[data-button="add-recommendation"] {
   .volumebar-container
   .progress-bar
   .inner {
-  background: linear-gradient(45deg, var(--s-g1), var(--s-g2));
+  background: linear-gradient(
+    45deg,
+    var(--modspotify_g1),
+    var(--modspotify_g2)
+  );
 }
-
-/* ------------------------------------------------------------------------------------------ */
-
-/* .Card__add-button { */
-/*   left: unset !important; */
-/*   top: unset !important; */
-/*   bottom: 10px; */
-/*   right: 60px; */
-/*   transform: none !important; */
-/* } */
-
-/* .card-button-add { */
-/*   left: unset !important; */
-/*   top: unset !important; */
-/*   bottom: 15px; */
-/*   right: 60px; */
-/*   transform: none !important; */
-/*   margin: 0; */
-/* } */
-/*  */
-/* .card-button-add::before { */
-/*   padding-left: 0; */
-/*   text-align: left; */
-/* } */
-/*  */
-/* .Card__play-button { */
-/*   left: unset !important; */
-/*   top: unset !important; */
-/*   right: 10px; */
-/*   bottom: 10px; */
-/*   transform: none !important; */
-/* } */
-
-/* .Card__play-button, */
-/* .card .card-button-play { */
-/*   left: unset !important; */
-/*   top: unset !important; */
-/*   right: 10px; */
-/*   bottom: 10px; */
-/*   width: 45px; */
-/*   height: 45px; */
-/*   border-radius: 50%; */
-/* } */
-/*  */
-/* .card .card-button-play.button-play::before, */
-/* .card .button-play.playing::before { */
-/*   line-height: 45px !important; */
-/*   font-size: 20px !important; */
-/*   padding-left: 13px !important; */
-/* } */
-/*  */
-/*  */
-/* .view-player .player-controls-container { */
-/*   text-align: left; */
-/*   flex: 1 1; */
-/*   order: 0; */
-/*   min-width: 220px; */
-/* } */
-/* .view-player .now-playing-container { */
-/*   flex: 2 1; */
-/*   order: 2; */
-/*   min-width: 0; */
-/* } */
-/* .view-player .now-playing-container .caption .text-container, */
-/* .view-player .now-playing .cover-image-link-wrapper { */
-/*   flex: unset; */
-/* } */
-/*  */
-/* .view-player .extra-controls-container { */
-/*   flex: 1 1; */
-/*   order: 3; */
-/*   padding-right: 0; */
-/*   min-width: 220px; */
-/* } */
