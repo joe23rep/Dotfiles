@@ -358,10 +358,10 @@ if you change --tab-min-height it doesnt work for fullcreen
   border: 0 !important;
   border-bottom: 1px solid #ffffff30 !important;
   /* border-radius: 8px 8px 8px 8px !important; */
-  /* border-radius: 44px !important; */
+  border-radius: 16px !important;
   background-image: none !important;
   /* background-color:#64646E4d !important; */
-  background: linear-gradient(to right, #970bf8, #8bf6ff) left bottom #00000000
+  background: linear-gradient(to right, #970bf8, #8bf6ff) left bottom #12151f
     no-repeat !important;
   background-size: 100% 3px !important;
   border: 0 !important;
@@ -444,17 +444,6 @@ toolbar
   position: absolute;
   margin-left: -120px;
   display: none;
-}
-
-/* Favicon icon when mouse over over inactive tab grayscale(15%) */
-.tabbrowser-tab:hover .tab-icon-image:not([selected="true"]):not([pinned]) {
-  visibility: initial;
-}
-
-/* Desaturate the favicon icon on the inactive tab */
-.tabbrowser-tab .tab-icon-image:not([selected="true"]):not([pinned]) {
-  filter: grayscale(100%) !important;
-  visibility: collapse;
 }
 
 /* --------------------------------------------------------------------------------------- */
