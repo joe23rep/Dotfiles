@@ -446,15 +446,16 @@ toolbar
   display: none;
 }
 
-/* Favicon icon when mouse over over inactive tab grayscale(15%) */
-.tabbrowser-tab:hover .tab-icon-image:not([selected="true"]):not([pinned]) {
-  visibility: initial;
+/* Hide the favicon icon on the inactive tab */
+.tabbrowser-tab .tab-icon-image:not([selected="true"]):not([pinned]) {
+  visibility: collapse;
 }
 
-/* Desaturate the favicon icon on the inactive tab */
-.tabbrowser-tab .tab-icon-image:not([selected="true"]):not([pinned]) {
+/* Desaturate the favicon icon on the active tab */
+.tabbrowser-tab .tab-icon-image:not([pinned]) {
   filter: grayscale(100%) !important;
-  visibility: collapse;
+  transform: scale(90%);
+  margin-bottom: 5px;
 }
 
 /* --------------------------------------------------------------------------------------- */
