@@ -352,3 +352,4 @@ endif
 
 " Stop autocommenting new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+

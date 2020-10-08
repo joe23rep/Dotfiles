@@ -54,24 +54,29 @@ let NERDTreeAutoDeleteBuffer = 1
 "enable minimal UI
 let NERDTreeMinimalUI = 1
 
-"igonre filetypes
-let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.git$']
+" Hide certain files and directories from NERDTree
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__', '^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '^node_modules$', '\.sass-cache$']
 
-"change dir arrows
+
+" Custom icons for expandable/expanded directories
 let NERDTreeDirArrowExpandable = ""
-let NERDTreeDirArrowCollapsible = ""
+" let NERDTreeDirArrowCollapsible = ""
+let g:NERDTreeDirArrowCollapsible = '⬎'
 
 "set window size
-:let g:NERDTreeWinSize=40
+:let g:NERDTreeWinSize=30
 
-"igonrelist
-let g:NERDTreeIgnore = ['^node_modules$']
-
-
-"define NT Statusline
-" let g:NERDTreeStatusline = '%#fzf1#   Nerdtree %#N2#%#fzf3#'
+"  Define Statusline look
+" let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Hide path above directories
+augroup nerdtreehidecwd
+	autocmd!
+	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeHideCWD #^[</].*$# conceal
+augroup end
+
 
 "open an empty vim document will start nerdtree automatically
 " autocmd StdinReadPre * let s:std_in=1

@@ -108,8 +108,8 @@ imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " Copy and paste to system clipboard (requires gvim installed)
-vmap <C-y> "*y :let @+=@*<CR>
-nmap <C-p> "+P
+" vmap <C-y> "*y<CR>
+nmap p "+P
 imap <C-p> <esc>"+P
 nmap Y y$
 
@@ -139,6 +139,10 @@ vmap + <esc>:call Toggle()<CR>
 " let g:UltiSnipsJumpForwardTrigger="<TAB>"
 " let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
+" Vim-Session---------------------------------------------------
+
+nmap <leader>ss :SaveSession
+nmap <leader>os :OpenSession
 
 " Bracey--------------------------------------------------------
 
@@ -200,7 +204,7 @@ nmap <leader>gv  :GV!<CR>
 " Vim Auto Save -------------------------------------------------
 
 " Toggle Auto save
-" nmap <leader>as :AutoSaveToggle<CR>
+nmap <leader>as :AutoSaveToggle<CR>
 
 " Gitgutter -----------------------------------------------------
 
@@ -303,8 +307,7 @@ nmap <leader>g :tabedit ~/Dots/.vim/colors/gruvbox-neon3.vim<CR>
 
 
 " Map splits
-" nmap <leader>vs :vs<CR>
-nmap <leader>hs :split<CR>
+nmap <leader>vs :vs<CR>
 
 " Clean trailing whitespace
 nmap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z

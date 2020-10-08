@@ -1,5 +1,4 @@
 
-
 #  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
 # | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
 # | |   ________   | || |    _______   | || |  ____  ____  | || |  _______     | || |     ______   | |
@@ -109,16 +108,6 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 
 
-# Colored man pages
-man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
-}
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -159,7 +148,7 @@ zle -N self-insert url-quote-magic
 cdls() { cd "$@" && colorls; }
 
 # Change ls to colorls
-ls() { colorls -A --sd;}
+# ls() { colorls -A --sd;}
 
 # Go back and forward one word
 bindkey "^[b" backward-word
@@ -223,7 +212,7 @@ alias up="sudo pacman -Syu && yay -Syu"
 alias update="sudo pacman -Syu && yay -Syu"
 alias install="sudo pacman -Syu"
 alias remove="sudo pacman -Rns"
-alias colorls="colorls -A --sd"
+alias ls="colorls -A --sd"
 alias class="xprop | grep CLASS"
 alias snapshot="sudo timeshift --create"
 alias cache="sudo pacman -Scc && sudo paccache -r"
@@ -240,13 +229,11 @@ alias scrot="scrot -e 'mv \$f /home/joe/Pictures/Screenshots'"
 alias cowsay="cowsay -f satanic"
 alias killtmux="tmux kill-session"
 alias github="cd /home/joe/Github"
-alias timelist="sudo timeshift --list"
-alias time="sudo timeshift --snapshot --restore"
 alias vim="nvim"
-alias time="sudo timeshift --list"
 alias ..="cd .."
 alias ghosts="./.scripts/ghosts.sh"
 alias sudo="sudo -E"
+alias restore="sudo timeshift --restore"
 
 
 
@@ -376,10 +363,11 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=dark
 --color=fg:-1,bg:-1,hl:#00eeff,fg+:-1,bg+:-1,hl+:#00ff5f
 --color=info:#af87ff,prompt:#00eeff,pointer:#cd1bfc,marker:#cd1bfc,spinner:#cd1bfc
+--layout=reverse
 '
 
 # Preview Window Syntax Highlight
-export BAT_THEME="Aura"
+export BAT_THEME="Necro"
 
 #------------------------------------------------------------------------------------------
 #  ____                       _
@@ -422,10 +410,4 @@ export PATH=$PATH:/usr/local/go/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-
-
-
-
-
 

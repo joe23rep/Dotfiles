@@ -123,3 +123,5 @@ let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, ] ]
 " let s:palette.tabline.tabsel = [ [ '#d6f4fd', '#3e4452', 252, 66, 'bold' ] ]
 
 unlet s:palette
+
+
