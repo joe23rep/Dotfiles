@@ -32,27 +32,14 @@
   border-top: 0px !important;
 }
 
-/*  Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true */
-.urlbarView {
-  background-image: url(image/noise-512x512.png) !important;
-  background-color: #99ffff !important;
-  -webkit-backdrop-filter: blur(32px) !important;
-  backdrop-filter: blur(32px) !important;
-  -moz-backdrop-filter: blur(32px) !important;
-}
-#urlbar-background {
-  display: none !important;
-}
-
 /* Bookmarks bar with BLUR need layout.css.backdrop-filter.enabled = true */
 #PersonalToolbar {
-  background-image: url(image/noise-512x512.png) !important;
-  /* background-color: #191B28C0 !important; */
-  background-color: #00010666 !important;
-  -webkit-backdrop-filter: blur(32px) !important;
-  backdrop-filter: blur(32px) !important;
-  -webkit-backdrop-filter: blur(32px) !important;
-  -moz-backdrop-filter: blur(32px) !important;
+  /* background-image: url(image/noise-512x512.png) !important; */
+  background-color: #51596599 !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  -moz-backdrop-filter: blur(20px) !important;
 }
 
 /* Remove the top tab line - TopBar */
@@ -191,24 +178,48 @@
   transition: opacity 0.15s ease;
 }
 
-/* Search Bar #2b2b2bd1 262626ed #1E1E1EBF*/
-#urlbar {
-  --autocomplete-popup-highlight-background: transparent !important;
-  --autocomplete-popup-highlight-background: #01040a;
-}
-#urlbar-container {
-  border-radius: 8px 8px 8px 8px !important;
-  /* padding-top: 0px !important; */
-  padding-bottom: 8px !important;
+#tracking-protection-icon-container {
+  border-inline-end: none !important;
+  border-image: none !important;
 }
 
-#urlbar[breakout] {
-  height: var(--urlbar-height) + 1 !important;
+#navigator-toolbox {
+  --lwt-toolbar-field-border-color: transparent !important;
+  --lwt-toolbar-field-focus: transparent !important;
+  --toolbar-field-focus-border-color: #6263714d !important;
 }
 
 #tracking-protection-icon-container {
   border-inline-end: none !important;
   border-image: none !important;
+}
+
+/* /* ---------------------------------------------------------------------- */
+/* Urlbar  */
+/* ----------------------------------------------------------------------- */
+
+#urlbar-background {
+  display: none !important;
+}
+
+#urlbar {
+  /* border-bottom: 1px solid #ffffff30 !important; */
+  border-radius: 13px !important;
+  background-color: #51596599;
+  backdrop-filter: blur(50px);
+  box-shadow: none !important;
+  text-align: center !important;
+}
+
+#urlbar-input-container {
+  /* Fixing icons right and left padding inside search bar for hovering  */
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme,
+#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme:hover {
+  border-color: transparent;
 }
 
 #urlbar[breakout][breakout-extend] > #urlbar-input-container,
@@ -226,75 +237,22 @@
   width: 100% !important;
 }
 
+/* Search Bar #2b2b2bd1 262626ed #1E1E1EBF*/
+#urlbar {
+  --autocomplete-popup-highlight-background: transparent !important;
+  --autocomplete-popup-highlight-background: #51596599;
+}
+#urlbar-container {
+  border-radius: 8px 8px 8px 8px !important;
+  padding-bottom: 8px !important;
+}
+
+#urlbar[breakout] {
+  height: var(--urlbar-height) + 1 !important;
+}
+
 .urlbarView.megabar .urlbarView-body-inner {
   border-top: 0px !important;
-}
-
-#urlbar-input-container {
-  /* Fixing icons right and left padding inside search bar for hovering  */
-  padding-left: 7px;
-  padding-right: 7px;
-}
-#navigator-toolbox {
-  --lwt-toolbar-field-border-color: transparent !important;
-  --lwt-toolbar-field-focus: transparent !important;
-  --toolbar-field-focus-border-color: #6263714d !important;
-}
-
-#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme,
-#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme:hover {
-  border-color: transparent;
-}
-#urlbar {
-  border: 0 !important;
-  border-bottom: 1px solid #ffffff30 !important;
-  border-radius: 8px 8px 8px 8px !important;
-  background-color: #191b28;
-}
-
-#urlbar {
-  box-shadow: none !important;
-  text-align: center !important;
-}
-#tracking-protection-icon-container {
-  border-inline-end: none !important;
-  border-image: none !important;
-}
-
-/* /* ---------------------------------------------------------------------- */
-change padding in inner box somehow */
-/* ----------------------------------------------------------------------- */
-
-
-
-/*  Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true */
-	.urlbarView {
-  /* 	background-image: url(image/noise-512x512.png) !important; */
-  background-color: #191b2888 !important;
-  /* background-color: #00010666 !important; */
-  -webkit-backdrop-filter: blur(32px) !important;
-  backdrop-filter: blur(32px) !important;
-}
-#urlbar-background {
-  display: none !important;
-}
-
-#urlbar-background {
-  display: none !important;
-}
-/* .urlbarView{ backdrop-filter: blur(32px); background-color: #191B2888 !important; } */
-.urlbarView {
-  backdrop-filter: blur(32px);
-  background-color: #191b2800 !important;
-  border-radius: 16px !important;
-}
-
-#urlbar {
-  border: 0 !important;
-  border-bottom: 1px solid #ffffff30 !important;
-  border-radius: 16px !important;
-  background-color: #191b2899;
-  backdrop-filter: blur(32px);
 }
 
 /* ========================================================= */
