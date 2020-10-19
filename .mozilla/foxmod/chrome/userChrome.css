@@ -1,12 +1,19 @@
-/* MIN MAX CLOSE Remove */
-#TabsToolbar > .titlebar-buttonbox-container {
-  visibility: collapse !important;
+/* ---------------------------------------------------------------------------------- */
+/* -----------------------uncomment to set theme color manually---------------------- */
+/* ---------------------------------------------------------------------------------- */
+#navigator-toolbox {
+  background-color: #000106 !important;
 }
 
-/* Avoids white flash? */
 #tabbrowser-tabpanels {
-  /* background-color: var(--uc-light-bkgnd-color, #191B28) !important; */
-  background-color: var(--uc-light-bkgnd-color, #000106) !important;
+  background-color: #000106 !important;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+
+#TabsToolbar > .titlebar-buttonbox-container {
+  visibility: collapse !important;
 }
 
 /* Non active tabs have darker text */
@@ -203,7 +210,7 @@
 }
 
 #urlbar {
-  /* border-bottom: 1px solid #ffffff30 !important; */
+  /* border-bottom: 1px solid #89969c !important; */
   border-radius: 13px !important;
   background-color: #51596599;
   backdrop-filter: blur(50px);
@@ -237,7 +244,6 @@
   width: 100% !important;
 }
 
-/* Search Bar #2b2b2bd1 262626ed #1E1E1EBF*/
 #urlbar {
   --autocomplete-popup-highlight-background: transparent !important;
   --autocomplete-popup-highlight-background: #51596599;
@@ -245,6 +251,7 @@
 #urlbar-container {
   border-radius: 8px 8px 8px 8px !important;
   padding-bottom: 8px !important;
+  text-align: center !important;
 }
 
 #urlbar[breakout] {
@@ -253,6 +260,10 @@
 
 .urlbarView.megabar .urlbarView-body-inner {
   border-top: 0px !important;
+}
+
+.urlbarView-favicon {
+  display: none !important;
 }
 
 /* ========================================================= */
@@ -266,8 +277,7 @@
 }
 /* Main BAR */
 #navigator-toolbox {
-  /* background-color: #1E2030 !important; */
-  background-color: #000106 !important;
+  /* background-color: #000106 !important; */
   --tabs-border-color: none !important;
   --my-tab-min-width: 100px !important; /* 36px */
   --tabs-navbar-shadow-size: 0px !important;
@@ -313,17 +323,10 @@ if you change --tab-min-height it doesnt work for fullcreen
 
 /* Selected tabs design */
 .tabbrowser-tab .tab-background[selected="true"]:-moz-lwtheme {
-  border: 0 !important;
-  border-bottom: 1px solid #ffffff30 !important;
-  /* border-radius: 8px 8px 8px 8px !important; */
-  /* border-radius: 44px !important; */
-  background-image: none !important;
-  /* background-color:#64646E4d !important; */
-  background: linear-gradient(to right, #970bf8, #8bf6ff) left bottom #00000000
-    no-repeat !important;
-  background-size: 100% 3px !important;
-  border: 0 !important;
-  border-image: none !important;
+  border-radius: 16px !important;
+  background: linear-gradient(to right, #000106, #9500ff, #8bf6ff, #000106) left
+    bottom #00000000 no-repeat !important;
+  background-size: 100% 2px !important;
 }
 
 /* Normal tabs design on hover */
@@ -417,3 +420,64 @@ toolbar
 }
 
 /* --------------------------------------------------------------------------------------- */
+
+menupopup {
+  -moz-appearance: none !important;
+  padding: 8px !important;
+  border-radius: 10px !important;
+  background-color: #000106 !important;
+  border: none !important;
+  min-width: 260px !important;
+}
+
+.panel-subview-footer,
+[class^="PanelUI-"] {
+  color: #ffffff !important;
+  background: #000106 !important;
+}
+
+.subviewbutton[shortcut]::after {
+  font-family: Fira Sans !important;
+  font-size: 14px !important;
+  color: #c2c2c2 !important;
+}
+/* Hamburger Menu Zoom Control */
+#appMenu-zoom-reduce {
+  background: transparent !important;
+  fill: #c2c2c2 !important;
+  border: 0px solid #c2c2c2 !important;
+  border-radius: 0px !important;
+}
+
+#appMenu-zoomReset-button label {
+  background: transparent !important;
+  color: #c2c2c2 !important;
+  border-radius: 0px !important;
+  font-family: "Fira Sans" !important;
+}
+
+#appMenu-zoomReset-button {
+  background: transparent !important;
+  color: #c2c2c2 !important;
+  border: 1px solid #515965 !important;
+  border-radius: 0px !important;
+}
+#appMenu-fullscreen-button {
+  background: transparent !important;
+  color: #c2c2c2 !important;
+  border: 0px solid #ffffff !important;
+  border-radius: 0px !important;
+}
+
+#appMenu-zoomEnlarge-button {
+  background: transparent !important;
+  color: #c2c2c2 !important;
+  border: 0px solid #ffffff !important;
+  border-radius: 0px !important;
+}
+
+#appMenu-cut-button,
+#appMenu-copy-button,
+#appMenu-paste-button {
+  color: #c2c2c2 !important;
+}
