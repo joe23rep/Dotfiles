@@ -407,9 +407,9 @@ export PATH=$PATH:/usr/local/go/bin
 export BAT_THEME="Necro"
 
 # Autojump
-# [[ -s /home/joe/.autojump/etc/profile.d/autojump.sh ]] && source /home/joe/.autojump/etc/profile.d/autojump.sh
-#
-# autoload -U compinit && compinit -u
+[[ -s /home/joe/.autojump/etc/profile.d/autojump.sh ]] && source /home/joe/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
 
 
 # Sorce syntax highlighting (needs to be sourced at the end of the file)
