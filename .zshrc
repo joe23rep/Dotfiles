@@ -81,14 +81,22 @@ RANGER_LOAD_DEFAULT_RC="true"
 # Auto complete aliases
 setopt completealiases
 
+# Enable colors
+export CLICOLOR=1
+
+# GPG key agent stuff
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # Colored prompt
 autoload -U promptinit
 promptinit
 
-# History stuff
+
+# Dont show Commands more than once
 setopt HIST_IGNORE_DUPS
 
+# History stuff
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
 
@@ -97,7 +105,9 @@ export SAVEHIST=500000
 
 
 # User configuration
-export EDITOR='nvim'
+export EDITOR=nvim
+export VISUAL=nvim
+export TERMINAL=alacritty
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
@@ -232,11 +242,9 @@ alias github="cd /home/joe/Github"
 alias vim="nvim"
 alias v="vim"
 alias ..="cd .."
-alias ghosts="./.scripts/ghosts.sh"
 alias sudo="sudo -E"
 alias restore="sudo timeshift --restore"
 alias zsh="source ~/.zshrc"
-
 
 #------------------------------------------------------------------------------------------
 #  ____                        _                _ _  ___  _
@@ -400,17 +408,16 @@ alias ls="colorls -A --sd"
 
 export FZF_DEFAULT_OPS0"extended"
 
-# source go
 export PATH=$PATH:/usr/local/go/bin
 
-# Syntax Highlight Theme (for example for Ranger, fzf etc)
 export BAT_THEME="Necro"
+
+export PATH=$PATH:/home/joe/.scripts/
 
 # Autojump
 [[ -s /home/joe/.autojump/etc/profile.d/autojump.sh ]] && source /home/joe/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
-
 
 # Sorce syntax highlighting (needs to be sourced at the end of the file)
 source /home/joe/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
