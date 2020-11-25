@@ -375,6 +375,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --layout=reverse
 '
 
+
+
 #------------------------------------------------------------------------------------------
 #  ____                       _
 # / ___|  ___  _   _ _ __ ___(_)_ __   __ _
@@ -414,6 +416,9 @@ export BAT_THEME="Necro"
 
 export PATH=$PATH:/home/joe/.scripts/
 
+export FZF_PREVIEW_PREVIEW_BAT_THEME="Necro"
+
+
 # Autojump
 [[ -s /home/joe/.autojump/etc/profile.d/autojump.sh ]] && source /home/joe/.autojump/etc/profile.d/autojump.sh
 
@@ -426,4 +431,5 @@ source /home/joe/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 
