@@ -30,9 +30,10 @@ current_terminal="$(ps -p$PPID -o cmd=)"
 
 function choose_theme {
     if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'alacritty' ]];
-    # if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'floaterm' ]];
     then echo 'lena2';
-    else echo 'spaceship';
+    # else echo 'spaceship';
+    else echo 'bubblified';
+    # else echo 'powerlevel10k/powerlevel10k';
     fi
 }
 
@@ -65,6 +66,7 @@ colored-man-pages
 command-not-found
 pip
 # vi-mode
+zshmarks
 )
 
 
@@ -245,6 +247,11 @@ alias ..="cd .."
 alias sudo="sudo -E"
 alias restore="sudo timeshift --restore"
 alias zsh="source ~/.zshrc"
+alias br="broot"
+alias b="jump"
+alias bm="showmarks"
+alias handy="scrcpy"
+
 
 #------------------------------------------------------------------------------------------
 #  ____                        _                _ _  ___  _
