@@ -1,0 +1,24 @@
+
+------------------------------------------------------------------
+fullscreen applauncher with blur script
+------------------------------------------------------------------
+
+rofi -theme .config/rofi/themes/applauncher.rasi  -display-drun  "  Type to search..."-show-icons -icon-theme korla -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -show drun | /home/joe/.scripts/rofiblur.sh
+
+------------------------------------------------------------------
+fullscreen applauncher with background picture
+------------------------------------------------------------------
+
+rofi -theme .config/rofi/themes/applauncher.rasi  -display-drun  "  Type to search..." -show-icons -icon-theme korla -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -theme-str '#window { transparency: "/home/joe/.config/rofi/background.png"; }' -show drun
+
+------------------------------------------------------------------
+sidebar with background picture
+------------------------------------------------------------------
+
+rofi -theme .config/rofi/themes/dd.rasi -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -theme-str '#window { transparency: "/home/joe/.config/rofi/background.png"; }' -show drun
+
+------------------------------------------------------------------
+sidebar with blur script
+------------------------------------------------------------------
+
+rofi -theme .config/rofi/themes/dd.rasi -display-drun "  Type to search..." -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -click-to-exit -disable-history -show drun | /home/joe/.scripts/rofiblur.sh
