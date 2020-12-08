@@ -16,6 +16,7 @@ configuration {
 	foreground: #F2F2F2EE;
 	foreground2: #F2F2F275;
 	foreground3: #fff000ff;
+    windowbg: #00010650;
 	background-selected: #F2F2F215;
 	background-active: #F2F2F230;
 	background-white: #F2F2F211;
@@ -26,7 +27,7 @@ configuration {
 
 window {
 	transparency: "real";
-	background-color: @transparent;
+	background-color: @windowbg;
     }
 
 prompt {
@@ -42,6 +43,7 @@ button {
 	background-color: @transparent;
 	vertical-align: 0.7;
 	horizontal-align: 0.5;
+    margin: 0px 0px 0px 5px;
 }
 
 entry {
@@ -77,36 +79,43 @@ inputbar {
 	text-color: @foreground;
 	expand: false;
 	border-radius: 24px;
-    margin: 70px 300px 0px 300px;
+    /* margin: 70px 300px 0px 300px; */
+    margin: 50px 300px 0px 300px;
 	padding: 10px 10px 10px 10px;
 	position: center;
 	children: [ entry-wrapper ];
+    /* border: 1px; */
+    /* border-color: @foreground2; */
 }
 
 listview {
 	background-color: @transparent;
 	columns: 6;
-	spacing: 15px;
+	spacing: 5px;
 	cycle: false;
 	dynamic: true;
 	layout: vertical;
     /* padding: 40px 0px 0px 0px; */
+    margin:                         20px 0px 34px 0px;
 }
 
 mainbox {
 	background-color: @background-black;
 	children: [ inputbar, listview ];
 	spacing: 25px;
-	padding: 0px 300px 0px 300px;
+	padding: 10px 300px 0px 300px;
 }
 
 element {
 	background-color: @transparent;
 	text-color: @foreground;
+	font: "Inter Regular 16";
 	orientation: vertical;
     border-radius: 14px;
-    margin: 40px 0px 40px 0px;
-    padding: 20px 0px 20px 0px;
+    /* margin: 60px 0px 20px 0px; */
+    /* padding: 20px 0px 20px 0px; */
+    padding:                        10px;
+    margin:                         23px;
 }
 
 element-icon {
@@ -118,7 +127,7 @@ element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         5px 10px 0px 10px;
+    margin:                         5px 0px 0px 0px;
 }
 
 element normal.urgent,
