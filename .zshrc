@@ -1,4 +1,5 @@
 
+
 #  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
 # | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
 # | |   ________   | || |    _______   | || |  ____  ____  | || |  _______     | || |     ______   | |
@@ -18,7 +19,6 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 
-
 #------------------------------------------------------------------------------------------
 #  _____ _                           ____       _           _   _
 # |_   _| |__   ___ _ __ ___   ___  / ___|  ___| | ___  ___| |_(_) ___  _ __
@@ -31,43 +31,13 @@ current_terminal="$(ps -p$PPID -o cmd=)"
 function choose_theme {
     if [[ $current_terminal =~ 'tilix' ||  $current_terminal =~ 'tmux' || $current_terminal =~ 'kitty' || $current_terminal =~ 'alacritty' ]];
     then echo 'lena2';
-    # else echo 'spaceship';
-    else echo 'bubblified';
+    else echo 'spaceship';
+    # else echo 'bubblified';
     # else echo 'powerlevel10k/powerlevel10k';
     fi
 }
 
 ZSH_THEME="$(choose_theme)"
-
-
-
-
-
-#------------------------------------------------------------------------------------------
-#   ____  _             _
-#  |  _ \| |_   _  __ _(_)_ __  ___
-#  | |_) | | | | |/ _` | | '_ \/ __|
-#  |  __/| | |_| | (_| | | | | \__ \
-#  |_|   |_|\__,_|\__, |_|_| |_|___/
-#                 |___/
-
-
-plugins=(
-git
-zsh-autosuggestions
-zsh-syntax-highlighting
-sudo
-#tmux
-vscode
-auto-color-ls
-zsh-256color
-history
-colored-man-pages
-command-not-found
-pip
-# vi-mode
-zshmarks
-)
 
 
 #------------------------------------------------------------------------------------------
@@ -94,6 +64,10 @@ export GPG_TTY
 autoload -U promptinit
 promptinit
 
+# Help to man page conversion
+autoload -Uz run-help
+unalias run-help
+alias help=run-help
 
 # Dont show Commands more than once
 setopt HIST_IGNORE_DUPS
@@ -119,7 +93,6 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-
 
 
 # Basic auto/tab complete:
@@ -190,6 +163,32 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 bindkey "^r" history-incremental-search-backward
 
 
+#------------------------------------------------------------------------------------------
+#   ____  _             _
+#  |  _ \| |_   _  __ _(_)_ __  ___
+#  | |_) | | | | |/ _` | | '_ \/ __|
+#  |  __/| | |_| | (_| | | | | \__ \
+#  |_|   |_|\__,_|\__, |_|_| |_|___/
+#                 |___/
+
+
+plugins=(
+vi-mode
+git
+zsh-autosuggestions
+zsh-syntax-highlighting
+sudo
+#tmux
+vscode
+auto-color-ls
+zsh-256color
+history
+colored-man-pages
+command-not-found
+pip
+zshmarks
+)
+
 
 #------------------------------------------------------------------------------------------
 #  __     _____      __  __           _
@@ -225,11 +224,12 @@ alias up="sudo pacman -Syu && yay -Syu"
 alias update="sudo pacman -Syu && yay -Syu"
 alias install="sudo pacman -Syu"
 alias remove="sudo pacman -Rns"
+alias delete="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 alias class="xprop | grep CLASS"
 alias snapshot="sudo timeshift --create"
 alias cache="sudo pacman -Scc && sudo paccache -r"
 alias yaycache="sudo rm -r ~/.cache/yay/*"
-alias search="pacman -Ss"
+alias search="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias yaysearch="yay -Ss"
 alias orphan="sudo pacman -Rns \$(pacman -Qtdq)"
 alias grep="grep --color=auto"
@@ -366,7 +366,6 @@ _z() {
 }
 
 
-
 # export FZF_DEFAULT_COMMAND="find -L"
 # export FZF_DEFAULT_COMMAND="find  -L * -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null"
 
@@ -381,7 +380,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#af87ff,prompt:#00eeff,pointer:#cd1bfc,marker:#cd1bfc,spinner:#cd1bfc
 --layout=reverse
 '
-
 
 
 #------------------------------------------------------------------------------------------
@@ -412,8 +410,13 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 # needs to be directly under sourcing to work
 alias ls="colorls -A --sd"
 
-# Source fzf
+# Source fzf stuff
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /usr/share/fzf/key-bindings.zsh
+
+source /usr/share/fzf/completion.zsh
+
 
 export FZF_DEFAULT_OPS0"extended"
 
@@ -431,12 +434,10 @@ export FZF_PREVIEW_PREVIEW_BAT_THEME="Necro"
 
 autoload -U compinit && compinit -u
 
+
 # Sorce syntax highlighting (needs to be sourced at the end of the file)
 source /home/joe/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
 
