@@ -95,8 +95,7 @@ listview {
 	cycle: false;
 	dynamic: true;
 	layout: vertical;
-    /* padding: 40px 0px 0px 0px; */
-    margin:                         20px 0px 34px 0px;
+    margin: 20px 0px 34px 0px;
 }
 
 mainbox {
@@ -112,10 +111,8 @@ element {
 	font: "Inter Regular 16";
 	orientation: vertical;
     border-radius: 14px;
-    /* margin: 60px 0px 20px 0px; */
-    /* padding: 20px 0px 20px 0px; */
-    padding:                        10px;
-    margin:                         23px;
+    padding: 30px;
+    margin: 23px;
 }
 
 element-icon {
