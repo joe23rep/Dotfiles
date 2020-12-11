@@ -79,13 +79,10 @@ inputbar {
 	text-color: @foreground;
 	expand: false;
 	border-radius: 24px;
-    /* margin: 70px 300px 0px 300px; */
-    margin: 50px 300px 0px 300px;
+    margin: 80px 300px 0px 300px;
 	padding: 10px 10px 10px 10px;
 	position: center;
 	children: [ entry-wrapper ];
-    /* border: 1px; */
-    /* border-color: @foreground2; */
 }
 
 listview {
