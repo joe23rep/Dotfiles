@@ -1,9 +1,0 @@
-rofi with blurred background picture 
-
-rofi -show-icons -icon-theme korla -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -theme-str '#window { transparency: "/home/joe/.config/rofi/background.png"; }' -show drun 
-
-
-
-rofi with blurring shell script (sometimes laggy)
-
-rofi -show-icons -icon-theme korla -drun-display-format {name} -me-select-entry '' -me-accept-entry 'MousePrimary' -show drun | /home/joe/.scripts/rofiblur.sh
