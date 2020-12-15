@@ -231,9 +231,9 @@ colors:
     green: "0x93DBFF"
     yellow: "0xE396F6"
     blue: "0xC2C2FF"
-    magenta: "0x93DBFF"
+    magenta: "0x00d7ff"
     cyan: "0x8706f2"
-    white: "0x8706f2"
+    white: "0x45f3d3"
 
   # Bright colors
   bright:
@@ -242,9 +242,9 @@ colors:
     green: "0x93DBFF"
     yellow: "0xE396F6"
     blue: "0xC2C2FF"
-    magenta: "0x00E7FF"
+    magenta: "0x00d7FF"
     cyan: "0x8706F2"
-    white: "0x8706f2"
+    white: "0x45f3d3"
 
 
   # Dim colors
