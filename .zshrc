@@ -18,7 +18,6 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
 #------------------------------------------------------------------------------------------
 #  _____ _                           ____       _           _   _
 # |_   _| |__   ___ _ __ ___   ___  / ___|  ___| | ___  ___| |_(_) ___  _ __
@@ -230,7 +229,7 @@ alias snapshot="sudo timeshift --create"
 alias cache="sudo pacman -Scc && sudo paccache -r"
 alias yaycache="sudo rm -r ~/.cache/yay/*"
 alias search="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-alias yaysearch="yay -Ss"
+alias yaysearch="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias orphan="sudo pacman -Rns \$(pacman -Qtdq)"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
@@ -440,4 +439,5 @@ source /home/joe/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 
