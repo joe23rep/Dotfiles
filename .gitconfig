@@ -1,0 +1,120 @@
+[user]
+	email = joe23reptiles@gmail.com
+	name = joe23rep
+
+ [color]
+	ui = true
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+  [color "branch"]
+    current = #00eeff
+    local = #790bf8
+    remote = #ff00ff
+  [color "diff"]
+    meta = #00eeff
+    frag = #790bf8
+    old = #b6aef4
+    new = #45f3d3
+  [color "status"]
+    added = #00eeff
+    changed = #790bf8
+    untracked = #ff00ff
+
+[credential]
+	helper = cache
+
+[core]
+    pager = delta
+
+# [delta]
+#     # features = side-by-side decoration unobtrusive-line-numberss
+#     features = side-by-side unobtrusive-line-numbers decorations
+#     whitespace-error-style = 22 reverse
+#  	  side-by-side = true
+#     syntax-theme = Necro
+#     minus-style = "#b6aef4" italic
+#     plus-style = "#9eddff" italic
+#     minus-empty-line-marker-style = reverse "#b6aef4"
+#     plus-empty-line-marker-style = reverse "#9eddff"
+#     minus-emph-style = "#46d9ff"
+#     plus-emph-style = "#8400ff"
+[delta]
+    # features = side-by-side unobtrusive-line-numbers decorations
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+	side-by-side = true
+    syntax-theme = Necro
+    minus-style = "#b6aef4" italic
+    plus-style = "#9eddff" italic
+    minus-empty-line-marker-style = reverse "#b6aef4"
+    plus-empty-line-marker-style = reverse "#9eddff"
+    minus-emph-style = "#8400ff" bold
+    plus-emph-style = "#46d9ff" bold
+    # line-numbers-minus-style = 129
+    line-numbers-minus-style = "#ce11f0"
+    line-numbers-plus-style = 85
+    line-numbers-zero-style =  "#616e88"
+
+
+
+# [delta "unobtrusive-line-numbers"]
+#     line-numbers = true
+#     # line-numbers-minus-style = "#bec8db"
+#     line-numbers-minus-style = "#ffffff"
+#     line-numbers-zero-style = "#616e88"
+#     # line-numbers-plus-style = "#bec8db"
+#     line-numbers-plus-style = "#ffffff"
+#     line-numbers-left-format = "{nm:>4}│"
+#     line-numbers-right-format = "{np:>4}│"
+
+[delta "decorations"]
+
+    commit-decoration-style = bold green box ul
+    file-style = bold white italic
+    file-decoration-style = none
+    hunk-header-decoration-style = magenta box
+
+[diff]
+    colorMoved = default
+
+#  commit-style                  = raw
+#     file-style                    = bold italic white
+#     hunk-header-style             = syntax
+#     minus-style                   = italic "#c2c2ff"
+#     minus-non-emph-style          = "#c2c2ff"
+#     minus-emph-style              = bold "#b300ff"
+#     minus-empty-line-marker-style = reverse "#b6aef4"
+#     zero-style                    = syntax
+#     plus-style                    = italic "#9eddff"
+#     plus-non-emph-style           = "#9eddff"
+#     plus-emph-style               = bold "#46d9ff"
+#     plus-empty-line-marker-style  = reverse "#9eddff"
+#     whitespace-error-style        = reverse 22
+#     24-bit-color                  = true
+#     file-added-label              = 'added:'
+#     file-modified-label           = ''
+#     file-removed-label            = 'removed:'
+#     file-renamed-label            = 'renamed:'
+#     hyperlinks                    = false
+#     inspect-raw-lines             = true
+#     keep-plus-minus-markers       = false
+#     line-numbers                  = true
+#     line-numbers-minus-style      = 88
+#     line-numbers-zero-style       = "#444444"
+#     line-numbers-plus-style       = 28
+#     line-numbers-left-style       = blue
+#     line-numbers-right-style      = blue
+#     line-numbers-left-format      = '│{nm:^4}│'
+#     line-numbers-right-format     = '│{np:^4}│'
+#     max-line-distance             = 0.6
+#     max-line-length               = 512
+#     navigate                      = false
+#     paging                        = auto
+#     side-by-side                  = true
+#     syntax-theme                  = Monokai
+#     width                         = 159
+#     tabs                          = 4
+#     word-diff-regex               = '\w+'
+#
