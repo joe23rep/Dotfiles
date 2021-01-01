@@ -1,0 +1,546 @@
+/* MIN MAX CLOSE Remove */
+#TabsToolbar > .titlebar-buttonbox-container {
+  visibility: collapse !important;
+}
+
+/* Avoids white flash? */
+#tabbrowser-tabpanels {
+  /* background-color: var(--uc-light-bkgnd-color, #191B28) !important; */
+  background-color: var(--uc-light-bkgnd-color, #000106) !important;
+}
+
+/* Non active tabs have darker text */
+.tabbrowser-tab:not([visuallyselected="true"]):not([multiselected]):not(:hover) {
+  color: #ffffff5e !important;
+}
+
+:root[tabsintitlebar][sizemode="maximized"] #navigator-toolbox {
+  -moz-appearance: none !important;
+  padding-top: 8px !important;
+}
+#navigator-toolbox {
+  padding-top: 3px !important;
+}
+
+/* Fix the FUllscreen changing padding on other bars. */
+:root[tabsintitlebar][sizemode="maximized"] #titlebar {
+  -moz-appearance: none !important;
+}
+
+/* Remove the main window top border */
+#main-window:root[sizemode="normal"][tabsintitlebar] {
+  border-top: 0px !important;
+}
+
+/*  Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true */
+.urlbarView {
+  background-image: url(image/noise-512x512.png) !important;
+  background-color: #99ffff !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  backdrop-filter: blur(32px) !important;
+  -moz-backdrop-filter: blur(32px) !important;
+}
+#urlbar-background {
+  display: none !important;
+}
+
+/* Bookmarks bar with BLUR need layout.css.backdrop-filter.enabled = true */
+#PersonalToolbar {
+  background-image: url(image/noise-512x512.png) !important;
+  /* background-color: #191B28C0 !important; */
+  background-color: #00010666 !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  backdrop-filter: blur(32px) !important;
+  -webkit-backdrop-filter: blur(32px) !important;
+  -moz-backdrop-filter: blur(32px) !important;
+}
+
+/* Remove the top tab line - TopBar */
+.tab-line {
+  display: none !important;
+}
+
+/* Remove the empty squere - TopBar */
+#TabsToolbar {
+  padding-inline-start: initial !important;
+}
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"] {
+  display: none !important;
+}
+
+/* Icons */
+#PanelUI-menu-button {
+  list-style-image: url(image/Fx-Browser-icon-oneColor-white.png) !important;
+}
+#PanelUI-button {
+  margin-inline-start: 0 !important;
+  padding-inline-start: 0 !important;
+  border: none !important;
+  border-inline-start: none !important;
+}
+#PanelUI-button #PanelUI-menu-button .toolbarbutton-icon {
+  opacity: 0.7 !important;
+}
+#home-button {
+  list-style-image: url(image/fire-2-32.ico) !important;
+}
+#home-button .toolbarbutton-icon {
+  opacity: 0.7 !important;
+}
+#PlacesToolbarItems .bookmark-item[container] {
+  list-style-image: url(image/folder.svg) !important;
+}
+#forward-button {
+  list-style-image: url(image/right-arrow.svg) !important;
+}
+#back-button {
+  list-style-image: url(image/left-arrow.svg) !important;
+}
+#back-button > .toolbarbutton-icon {
+  border: none !important;
+  border-radius: 0 !important;
+  background: none !important;
+  width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+  height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+  padding: var(--toolbarbutton-inner-padding) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important;
+}
+#back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+  background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+/* BOOKMARK MENU AUTOHIDE */
+#PersonalToolbar {
+  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
+  --uc-bm-padding: 6px; /* Vertical padding to be applied to bookmarks */
+}
+
+:root[uidensity="compact"] #PersonalToolbar {
+  --uc-bm-padding: 1px;
+}
+:root[uidensity="touch"] #PersonalToolbar {
+  --uc-bm-padding: 6px;
+}
+
+#PersonalToolbar:not([customizing]) {
+  margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+  transform: rotateX(90deg);
+  transform-origin: top;
+  transition: transform 135ms linear 600ms !important;
+  z-index: 2;
+}
+#PlacesToolbarItems > .bookmark-item {
+  padding-block: var(--uc-bm-padding) !important;
+}
+
+/* Show when cursor is over the toolbar area */
+#navigator-toolbox:hover > #PersonalToolbar {
+  transition-delay: 100ms !important;
+  transform: rotateX(0);
+}
+
+#PersonalToolbar {
+  -moz-box-ordinal-group: 3 !important;
+}
+#titlebar {
+  -moz-box-ordinal-group: 2 !important;
+}
+#nav-bar {
+  -moz-box-ordinal-group: 1 !important;
+  background-color: transparent !important;
+}
+
+#nav-bar:not([customizing="true"])
+  > #nav-bar-customization-target
+  > #urlbar-container:not(:hover)
+  > #urlbar:not([focused])
+  > #urlbar-input-container
+  > #page-action-buttons {
+  opacity: 0;
+}
+#page-action-buttons {
+  transition: opacity 0.15s ease;
+}
+
+#nav-bar:not([customizing="true"])
+  > #nav-bar-customization-target
+  > #urlbar-container:not(:hover)
+  > #urlbar:not([focused])
+  > #urlbar-input-container
+  > #identity-box {
+  opacity: 0;
+  /*visibility: collapse;*/
+}
+
+#identity-box {
+  /*transition: visibility 0.30s ease-in-out, opacity 0.30s ease-in-out;*/
+  transition: opacity 0.15s ease;
+}
+
+#nav-bar:not([customizing="true"])
+  > #nav-bar-customization-target
+  > #urlbar-container:not(:hover)
+  > #urlbar:not([focused])
+  > #urlbar-input-container
+  > #tracking-protection-icon-container {
+  opacity: 0;
+}
+#tracking-protection-icon-container {
+  transition: opacity 0.15s ease;
+}
+
+/* Search Bar #2b2b2bd1 262626ed #1E1E1EBF*/
+#urlbar {
+  --autocomplete-popup-highlight-background: transparent !important;
+  --autocomplete-popup-highlight-background: #01040a;
+}
+#urlbar-container {
+  border-radius: 8px 8px 8px 8px !important;
+  /* padding-top: 0px !important; */
+  padding-bottom: 8px !important;
+}
+
+#urlbar[breakout] {
+  height: var(--urlbar-height) + 1 !important;
+}
+
+#tracking-protection-icon-container {
+  border-inline-end: none !important;
+  border-image: none !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
+  transition: none !important;
+}
+#urlbar[breakout][breakout-extend] {
+  top: calc(
+    (var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2
+  ) !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+.urlbarView.megabar .urlbarView-body-inner {
+  border-top: 0px !important;
+}
+
+#urlbar-input-container {
+  /* Fixing icons right and left padding inside search bar for hovering  */
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#navigator-toolbox {
+  --lwt-toolbar-field-border-color: transparent !important;
+  --lwt-toolbar-field-focus: transparent !important;
+  --toolbar-field-focus-border-color: #6263714d !important;
+}
+
+#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme,
+#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme:hover {
+  border-color: transparent;
+}
+#urlbar {
+  border: 0 !important;
+  border-bottom: 1px solid #ffffff30 !important;
+  border-radius: 8px 8px 8px 8px !important;
+  background-color: #191b28;
+}
+
+#urlbar {
+  box-shadow: none !important;
+  text-align: center !important;
+}
+#tracking-protection-icon-container {
+  border-inline-end: none !important;
+  border-image: none !important;
+}
+
+/* /* ---------------------------------------------------------------------- */
+change padding in inner box somehow */
+/* ----------------------------------------------------------------------- */
+
+
+
+/*  Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true */
+	.urlbarView {
+  /* 	background-image: url(image/noise-512x512.png) !important; */
+  background-color: #191b2888 !important;
+  /* background-color: #00010666 !important; */
+  -webkit-backdrop-filter: blur(32px) !important;
+  backdrop-filter: blur(32px) !important;
+}
+#urlbar-background {
+  display: none !important;
+}
+
+#urlbar-background {
+  display: none !important;
+}
+/* .urlbarView{ backdrop-filter: blur(32px); background-color: #191B2888 !important; } */
+.urlbarView {
+  backdrop-filter: blur(32px);
+  background-color: #191b2800 !important;
+  border-radius: 16px !important;
+}
+
+#urlbar {
+  border: 0 !important;
+  border-bottom: 1px solid #ffffff30 !important;
+  border-radius: 16px !important;
+  background-color: #191b2899;
+  backdrop-filter: blur(32px);
+}
+
+/* ========================================================= */
+/* ========================================================= */
+/* rgb(50, 50, 52)
+========================================================= */
+/* New tab icon size (16 is default) Important to not change the rest of calc */
+#tabs-newtab-button .toolbarbutton-icon {
+  width: calc(2 * var(--toolbarbutton-inner-padding) + 12px) !important;
+  height: calc(2 * var(--toolbarbutton-inner-padding) + 12px) !important;
+}
+/* Main BAR */
+#navigator-toolbox {
+  /* background-color: #1E2030 !important; */
+  background-color: #000106 !important;
+  --tabs-border-color: none !important;
+  --my-tab-min-width: 100px !important; /* 36px */
+  --tabs-navbar-shadow-size: 0px !important;
+  /*border: 0 !important; */
+}
+
+/* Remove the fill when loading on the tab which
+isnt formated for different border radius */
+#tabbrowser-tabs {
+  --tab-loading-fill: transparent !important;
+  margin-left: 4px !important; /* fix the left tab being too close to the edge */
+}
+
+/* Width of the tabs. Important to have Fadein or it breaks fonctionality */
+.tabbrowser-tab[fadein]:not([pinned]) {
+  max-width: 155px !important; /* 135px */
+  min-width: var(--my-tab-min-width) !important;
+}
+.tabbrowser-tab:not([visuallyselected="true"]):not([multiselected]):not(:hover)
+  .tab-icon-image {
+  opacity: 0.8 !important;
+}
+
+/* Fix the Heigh of a tab because
+if you change --tab-min-height it doesnt work for fullcreen
+ */
+#TabsToolbar {
+  padding-top: 0px !important;
+  padding-bottom: 1px !important;
+}
+/* Seperate tabs and make them smaller */
+#TabsToolbar .tabbrowser-tab[fadein] > .tab-stack {
+  padding-right: 4px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+/* Remove the line between the tabs / seperators */
+#tabbrowser-tabs .tabbrowser-tab::before,
+#tabbrowser-tabs .tabbrowser-tab::after {
+  border: 0 !important;
+}
+
+/* Selected tabs design */
+.tabbrowser-tab .tab-background[selected="true"]:-moz-lwtheme {
+  border: 0 !important;
+  border-bottom: 1px solid #ffffff30 !important;
+  /* border-radius: 8px 8px 8px 8px !important; */
+  /* border-radius: 44px !important; */
+  background-image: none !important;
+  /* background-color:#64646E4d !important; */
+  background: linear-gradient(to right, #970bf8, #8bf6ff) left bottom #00000000
+    no-repeat !important;
+  background-size: 100% 3px !important;
+  border: 0 !important;
+  border-image: none !important;
+}
+
+/* Normal tabs design on hover */
+#tabbrowser-tabs
+  .tabbrowser-tab:hover
+  > .tab-stack
+  > .tab-background:not([selected="true"]) {
+  border: 0 !important;
+  border-radius: 16px !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Multiselect tabs design on hover */
+#tabbrowser-tabs .tabbrowser-tab .tab-background[multiselected="true"] {
+  border: 0 !important;
+  border-radius: 16px !important;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Fixing Multiselect */
+.tab-background[multiselected="true"]:not([selected="true"])
+  > .tab-background-inner {
+  background: none !important;
+}
+
+/* Design of the plus/newtab button */
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 20px 20px 20px 20px !important;
+  background-image: none !important;
+  /* background-color:#191B28d9 !important; */
+  background-color: #6263714d !important;
+}
+
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :hover:active)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-bottom: 1px solid #ffffff30 !important;
+  border-radius: 20px 20px 20px 20px !important;
+  background-image: none !important;
+  background-color: #191b284d !important;
+}
+
+/* Show Tab close button on hover */
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: -moz-box !important;
+  opacity: 0;
+  visibility: collapse !important;
+  transition: opacity 0.25s, visibility 0.25s ease-in !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+#tabs-newtab-button {
+  opacity: 0.5 !important;
+}
+
+/* hide scrollbar  */
+
+:-moz-any(#content, #appcontent) browser {
+  margin-right: -17px !important;
+  overflow-y: scroll;
+  margin-bottom: 0px !important;
+  overflow-x: scroll;
+}
+
+/* Move traffic lights in the space carved above. */
+.titlebar-buttonbox-container {
+  position: absolute;
+  margin-left: -120px;
+  display: none;
+}
+
+/* Favicon icon when mouse over over inactive tab grayscale(15%) */
+.tabbrowser-tab:hover .tab-icon-image:not([selected="true"]):not([pinned]) {
+  visibility: initial;
+}
+
+/* Desaturate the favicon icon on the inactive tab */
+.tabbrowser-tab .tab-icon-image:not([selected="true"]):not([pinned]) {
+  filter: grayscale(100%) !important;
+  visibility: collapse;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+* {
+  /* --------------------  Customization  -------------------- */
+  --tab-corner-rounding: 5px;
+  --animation-speed: 0.2s;
+  --button-corner-rounding: 30px;
+}
+
+#TabsToolbar:hover {
+  background: transparent;
+}
+
+#TabsToolbar {
+  padding-bottom: 30px;
+}
+
+.tab-line {
+  display: none;
+}
+
+tab:not(:active) .tab-background {
+  transition: background-color var(--animation-speed) !important;
+}
+
+#tabbrowser-tabs .tab-label-container[customizing] {
+  color: transparent;
+  transition: ease 0.5s;
+  transition-delay: 3s;
+}
+
+:root:not([customizing]) :hover > #tabbrowser-tabs,
+:root:not([customizing]) #tabbrowser-tabs:focus-within,
+#urlbar[focused="true"],
+#identity-box[open="true"],
+#navigator-toolbox:hover > #tabbrowser-tabs:not([customizing]),
+#toolbar-menubar:not([inactive="true"]) ~ #tabbrowser-tabs:not([customizing]) {
+  color: white !important;
+  transition: linear 0s;
+  transition-delay: 3s;
+}
+
+:root[uidensity="compact"] {
+  --tab-min-height: 38px !important;
+}
+
+/* Removal of black bottom 1px line */
+#navigator-toolbox::after {
+  display: none !important;
+}
+
+menubar,
+menubutton,
+menulist,
+menu,
+menuitem,
+textbox,
+toolbar,
+tab,
+tree,
+.tree-rows {
+  font-weight: 700;
+}
+
+/* hide navbar */
+#nav-bar:not([customizing]) {
+  visibility: visible;
+  margin-top: -42px;
+  transition-delay: 1s;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  transition: visibility, ease 0.5s, margin-top, ease 0.5s, opacity, ease 0.5s !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar,
+#nav-bar:focus-within,
+#urlbar[focused="true"],
+#identity-box[open="true"],
+#navigator-toolbox:hover > #nav-bar:not([customizing]),
+#toolbar-menubar:not([inactive="true"]) ~ #nav-bar:not([customizing]) {
+  visibility: visible;
+  margin-top: 0;
+  filter: alpha(opacity=100);
+  opacity: 100;
+}
