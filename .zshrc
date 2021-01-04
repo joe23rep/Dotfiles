@@ -255,6 +255,7 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gp="git pull"
 alias gf="git fetch"
+alias gp="git push -u origin master"
 
 
 #------------------------------------------------------------------------------------------
