@@ -250,6 +250,11 @@ alias br="broot"
 alias b="jump"
 alias bm="showmarks"
 alias handy="scrcpy"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git pull"
+alias gf="git fetch"
 
 
 #------------------------------------------------------------------------------------------
